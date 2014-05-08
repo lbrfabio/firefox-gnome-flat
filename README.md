@@ -10,19 +10,12 @@ We recommend [HTitle](https://addons.mozilla.org/en-US/firefox/addon/htitle)
 for the full GNOME 3 experience.
 
 For current issues please see the 
-[bug tracker](https://github.com/gnome-integration-team/firefox-gnome/issues).
+[bug tracker](https://github.com/lbrfabio/firefox-gnome-flat/issues).
 
 Help & feedback are both appreciated! ;-)
 
 ### Screenshots
-
-Tabs on top:
-
-![Screenshot](https://raw.github.com/gnome-integration-team/firefox-gnome/master/screenshots/screenshot-tabs-on-top.png)
-
-Tabs on bottom:
-
-![Screenshot](https://raw.github.com/gnome-integration-team/firefox-gnome/master/screenshots/screenshot-tabs-on-bottom.png)
+![Screenshot](https://raw.github.com/lbrfabio/firefox-gnome-flat/master/screenshots/screenshot-tabs-on-bottom.png)
 
 If you'd like to change tab positions or any additional settings, 
 please install [GNOME Theme Tweak](https://addons.mozilla.org/en-US/firefox/addon/gnome-theme-tweak/)

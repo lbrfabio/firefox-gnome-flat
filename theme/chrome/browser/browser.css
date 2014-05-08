@@ -2989,7 +2989,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 .statuspanel-label {
   margin: 0;
   padding: 2px 4px;
-  background: linear-gradient(#fff, #ddd);
+  background: #eeeeee;
   border: 1px none #ccc;
   border-top-style: solid;
   color: #333;

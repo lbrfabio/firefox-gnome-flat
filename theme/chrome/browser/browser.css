@@ -2251,7 +2251,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 }
 
 #TabsToolbar[newstyletabs] > #tabbrowser-tabs {
-  min-height: 35px;
+  min-height: 28px;
 }
 
 /* put some space between the newtab-button and regular tabs and align it vetically with the close button*/
@@ -2327,7 +2327,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 
 #TabsToolbar[newstyletabs] .tabbrowser-tab[selected=true] .tab-background-middle {
   background: #ededed;
-  -moz-border-bottom-colors: Highlight;
+  -moz-border-bottom-colors: #8da9e0;
 }
 
 #TabsToolbar[newstyletabs] .tabbrowser-tab[selected=true] .tab-background-middle:-moz-lwtheme {
@@ -2377,7 +2377,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 }
 
 #TabsToolbar[newstyletabs] .tabbrowser-tab > .tab-stack {
-  min-height: 35px;
+  min-height: 28px;
 }
 
 .tabbrowser-tab:first-of-type > .tab-stack {
@@ -2525,8 +2525,9 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 }
 
 #TabsToolbar[newstyletabs] .tabbrowser-tab[titlechanged]:not([selected="true"]) > .tab-stack > .tab-content {
-  background-image: radial-gradient(ellipse 30px 6px at 50% 100%, rgba(255,255,255,1), rgba(255,255,255,1) 5%, rgba(187,201,217,1) 30%, rgba(187,201,217,0.1) 70%);
+  background-image: none;
   background-repeat: no-repeat;
+  border-bottom: 2px solid #ef2929;
 }
 
 #TabsToolbar:not([newstyletabs]) .tab-content > .tab-spacer {
@@ -2640,6 +2641,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 
 #TabsToolbar .tab-close-button:hover {
   border-color: rgba(0, 0, 0, 0.1) !important;
+  background: #f8f8f8 !important;
 }
 #TabsToolbar[newstyletabs] .tab-close-button:hover {
   transition-timing-function: ease-in;

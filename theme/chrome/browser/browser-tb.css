@@ -390,6 +390,19 @@
   border-radius: 0px 0 0 0px;
 }
 
+/* fix back\forward separation on ff32+ */
+#nav-bar :-moz-any(#back-button)[disabled="true"]{
+    border-right: 0px !important;
+}
+
+#nav-bar :-moz-any(#forward-button)[disabled="true"]{
+    border-left: 0px !important;
+}
+
+#nav-bar :-moz-any(#forward-button) {
+  -moz-margin-start: -3px !important;
+}
+
 /* ::::: Tabs bar ::::: */
 
 #TabsToolbar[newstyletabs] .toolbarbutton-1,

@@ -184,7 +184,7 @@ menuseparator {
   */
   margin: 3px 4px;
   border: 1px solid rgba(0,0,0,.08);
-  border-width: 1px 0 0;
+  border-width: 0px 0 0;
 }
 
 menulist > menupopup > menuseparator,

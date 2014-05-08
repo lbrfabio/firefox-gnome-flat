@@ -21,8 +21,18 @@
   /*
   width: 150px;
   */
-  width: 350px; /* Should give a nice squarish thumbnails */
+  width: 40px; /* Should give a nice squarish thumbnails */
   min-width: 10px;
+}
+
+/* TOP MARGIN */
+#newtab-margin-top {
+    display: none !important;
+}
+
+/* SEARCH FORM*/
+#newtab-search-text, #newtab-search-submit {
+    display: none; 
 }
 
 /* UNDO */
@@ -111,7 +121,7 @@
 
 /* CELLS */
 .newtab-cell {
-  -moz-margin-end: 20px;
+  -moz-margin-end: 13px;
   background-color: rgba(255,255,255,.2);
   border: 1px solid;
   border-color: rgba(8,22,37,.12) rgba(8,22,37,.14) rgba(8,22,37,.16);
@@ -131,6 +141,11 @@
 
 .newtab-cell:hover:not(:empty):not([dragged]) {
   border-color: rgba(8,22,37,.25) rgba(8,22,37,.27) rgba(8,22,37,.3);
+}
+
+div.newtab-cell { 
+    height: 121px !important;
+    width:188px !important 
 }
 
 /* SITES */
@@ -169,8 +184,7 @@
 .newtab-title {
   padding: 0 8px;
   background-color: rgb(229,229,229);
-  background-image: url(chrome://browser/skin/devtools/noise.png),
-                     linear-gradient(to bottom, rgba(255,255,255,.3), rgba(255,255,255,.2));
+  background-image: linear-gradient(to bottom, rgba(255,255,255,.3), rgba(255,255,255,.2));
   background-attachment: fixed;
   color: rgba(0,0,0,0.55);
   text-shadow: 0 1px 0 rgba(255,255,255,1);

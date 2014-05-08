@@ -1103,7 +1103,7 @@ toolbarpaletteitem[place="palette"] > :-moz-any(#home-button, #print-button, #do
   background: linear-gradient(to bottom, #f0f0f0, #fff);
   border: 1px solid;
   border-color: #b2b6b2 #b8bbb8 #bdbfbd;
-  border-radius: 3px;
+  border-radius: 0px;
   box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.15), 0px 1px 0 0 rgba(255,255,255,0.37);
   color: #2e3436;
   margin: 0px 3px;
@@ -1190,7 +1190,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not([fo
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not([forwardshowalways]) > #back-button:not([open="true"]) {
-  border-radius: 3px !important;
+  border-radius: 0px !important;
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not([forwardshowalways]) > #back-button:not(:active):not([disabled="true"]):not([open="true"]) {
@@ -1633,7 +1633,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not([fo
   background-color: rgba(255, 255, 255, 0.4);
   background-clip: padding-box;
   padding-left: 4px;
-  border-radius: 2.5px 0 0 2.5px;
+  border-radius: 0px 0 0 0px;
   border-width: 0 8px 0 0;
   border-style: solid;
   border-color: #fff;
@@ -2629,7 +2629,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
   padding: 0;
   background: none !important;
   border: 1px solid transparent !important;
-  border-radius: 3px;
+  border-radius: 0px;
   box-shadow: none !important;
 }
 #TabsToolbar[newstyletabs] .tab-close-button {
@@ -2766,7 +2766,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
   -moz-border-start: 2px solid transparent;
   -moz-border-end: 0;
   transition: 1s box-shadow ease-out;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 
 #TabsToolbar:not([newstyletabs]) .tabbrowser-arrowscrollbox > .scrollbutton-down[notifybgtab] {
@@ -2776,14 +2776,14 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 
 #TabsToolbar:not([newstyletabs]) .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):-moz-locale-dir(ltr),
 #TabsToolbar:not([newstyletabs]) .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled]):-moz-locale-dir(rtl) {
-  border-width: 0 2px 0 0;
+  border-width: 0 0px 0 0;
   border-style: solid;
   border-image: url("chrome://browser/skin/tabbrowser/tab-overflow-border.png") 0 2 0 2 fill;
 }
 
 #TabsToolbar:not([newstyletabs]) .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled]):-moz-locale-dir(ltr),
 #TabsToolbar:not([newstyletabs]) .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):-moz-locale-dir(rtl) {
-  border-width: 0 0 0 2px;
+  border-width: 0 0 0 0px;
   border-style: solid;
   border-image: url("chrome://browser/skin/tabbrowser/tab-overflow-border.png") 0 2 0 2 fill;
 }
@@ -2997,21 +2997,21 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 .statuspanel-label:-moz-locale-dir(ltr):not([mirror]),
 .statuspanel-label:-moz-locale-dir(rtl)[mirror] {
   border-right-style: solid;
-  border-top-right-radius: .3em;
+  border-top-right-radius: 0px;
   margin-right: 1em;
 }
 
 .statuspanel-label:-moz-locale-dir(rtl):not([mirror]),
 .statuspanel-label:-moz-locale-dir(ltr)[mirror] {
   border-left-style: solid;
-  border-top-left-radius: .3em;
+  border-top-left-radius: 0px;
   margin-left: 1em;
 }
 
 #full-screen-warning-message {
   background-image: url("chrome://browser/skin/fullscreen-darknoise.png");
   color: white;
-  border-radius: 4px;
+  border-radius: 0px;
   margin-top: 30px;
   padding: 30px 50px;
   box-shadow: 0 0 2px white;
@@ -3215,7 +3215,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 
 .highlighter-nodeinfobar {
   color: hsl(216,33%,97%);
-  border-radius: 3px;
+  border-radius: 0px;
   background: hsl(214,13%,24%) no-repeat padding-box;
   padding: 5px;
   /* Avoid cases where the infobar is smaller than the arrow, when the text is
@@ -3626,7 +3626,7 @@ notification.pluginVulnerable .messageImage {
   min-height: 0;
   margin-top: 1px;
   margin-bottom: 2px;
-  border-radius: 2px;
+  border-radius: 0px;
   box-shadow: 0 1px 0 hsla(0,0%,100%,.4);
 }
 
@@ -3639,7 +3639,7 @@ notification.pluginVulnerable .messageImage {
   background-color: #73d216;
   border: 1px solid;
   border-color: rgba(0,43,86,.6) rgba(0,43,86,.4) rgba(0,43,86,.4);
-  border-radius: 2px 0 0 2px;
+  border-radius: 0px 0 0 0px;
 }
 
 #downloads-indicator-progress > .progress-remainder {
@@ -3650,7 +3650,7 @@ notification.pluginVulnerable .messageImage {
   border: 1px solid;
   border-color: hsla(0,0%,0%,.6) hsla(0,0%,0%,.4) hsla(0,0%,0%,.4);
   -moz-border-start: none;
-  border-radius: 0 2px 2px 0;
+  border-radius: 0 0px 0px 0;
 }
 
 #downloads-button[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-bar {
@@ -3676,7 +3676,7 @@ notification.pluginVulnerable .messageImage {
   min-width: 16px;
   text-shadow: none;
   background-image: linear-gradient(#B4211B, #8A1915);
-  border-radius: 1px;
+  border-radius: 0px;
   -moz-margin-end: 2px;
 }
 
@@ -3708,7 +3708,7 @@ toolbar[iconsize="small"] .toolbarbutton-badge-container {
   color: #fff;
   background-color: rgb(240,61,37);
   border: 1px solid rgb(216,55,34);
-  border-radius: 2px;
+  border-radius: 0px;
   box-shadow: 0 1px 0 rgba(0,39,121,0.77);
   position: absolute;
   top: 0;
@@ -4193,7 +4193,7 @@ chatbox {
 
 .customizationmode-button {
   border: 1px solid rgb(192,192,192);
-  border-radius: 3px;
+  border-radius: 0px;
   margin: 0;
   padding: 2px 12px;
   background-color: rgb(251,251,251);
@@ -4364,7 +4364,7 @@ toolbarpaletteitem[place="toolbar"] {
   min-width: 400px;
   max-width: 1000px;
   min-height: 200px;
-  border-radius: 3px;
+  border-radius: 0px;
   background-image: linear-gradient(90deg, #a0dfff 0%, #ceeeff 100%);
   border: 0px solid rgba(0,148,221,.5);
   box-shadow: 0 1px 5px 0 rgba(0,0,0,.5), inset 0 1px 1px 0 #fff;
@@ -4587,7 +4587,7 @@ toolbarpaletteitem[place="toolbar"] {
 #UITourTooltipButtons > button:not(.button-link) {
   -moz-appearance: none;
   background-color: rgb(251,251,251);
-  border-radius: 3px;
+  border-radius: 0px;
   border: 1px solid;
   border-color: rgb(192,192,192);
   color: rgb(71,71,71);

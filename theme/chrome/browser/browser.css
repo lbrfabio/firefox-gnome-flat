@@ -3543,7 +3543,7 @@ notification.pluginVulnerable .messageImage {
 }
 
 #downloads-button[cui-areatype="toolbar"][attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#green);
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
 }
 
 #downloads-button[cui-areatype="menu-panel"][attention] {
@@ -3561,7 +3561,7 @@ notification.pluginVulnerable .messageImage {
 }
 
 #downloads-button:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#green);
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
 }
 
 /*** Download notifications ***/

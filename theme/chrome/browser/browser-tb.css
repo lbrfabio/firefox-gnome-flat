@@ -26,7 +26,7 @@
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([disabled="true"]):hover,
 :-moz-any(#window-controls, .window-controls) > toolbarbutton:hover,
 .tabs-closebutton:hover {
-  background-image: linear-gradient(to bottom, #fff, #ebebeb);
+  background: #f8f8f8;
   border-color: #b2b6b2 #b8bbb8 #bdbfbd;
   box-shadow: 0 1px 0 rgba(255,255,255,0.37),
               inset 0 1px 0 rgba(255,255,255,0.45),
@@ -193,7 +193,7 @@
 #nav-bar :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]),
 #nav-bar :-moz-any(#back-button, #forward-button):not(:hover):not([open="true"]):not([disabled="true"]),
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]) {
-  background-image: linear-gradient(to bottom, #f8f8f8, #ededed 40%, #dbdbdb);
+  background: #f0f0f0;
   border-color: #b2b6b2 #b8bbb8 #bdbfbd;
   border-radius: 0px !important;
 }
@@ -229,7 +229,7 @@
 #nav-bar :-moz-any(#back-button, #forward-button)[disabled="true"],
 #nav-bar :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1[disabled="true"],
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1[disabled="true"] {
-  background: #f4f4f2;
+  background: #c8c8c8;
   border-color: #b2b6b2 #b8bbb8 #bdbfbd;
   box-shadow: none;
   border-radius: 0px !important;

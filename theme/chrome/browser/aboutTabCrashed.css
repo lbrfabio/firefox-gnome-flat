@@ -75,7 +75,7 @@ button {
   background-clip: padding-box;
   border: 1px solid hsla(210,15%,25%,.4);
   border-color: hsla(210,15%,25%,.3) hsla(210,15%,25%,.35) hsla(210,15%,25%,.4);
-  border-radius: 3px;
+  border-radius: 0px;
   box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
               0 0 0 1px hsla(0,0%,100%,.3) inset,
               0 1px 0 hsla(0,0%,100%,.1);

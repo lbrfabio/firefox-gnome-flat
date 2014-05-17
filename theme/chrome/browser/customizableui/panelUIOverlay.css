@@ -298,11 +298,11 @@ toolbarbutton[sdk-button="true"][cui-areatype="menu-panel"] > .toolbarbutton-ico
 
 .panelUI-grid .toolbarbutton-1:not([buttonover]):not(:-moz-any([disabled],[open],:active)):hover > .toolbarbutton-menubutton-dropmarker {
   background-color: hsla(210,4%,10%,.1) !important;
-  border-radius: 0 0 0 2px;
+  border-radius: 0 0 0 0px;
 }
 
 .panelUI-grid .toolbarbutton-1:not([buttonover]):not(:-moz-any([disabled],[open],:active)):hover > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(rtl) {
-  border-radius: 0 0 2px 0;
+  border-radius: 0 0 0px 0;
 }
 
 #main-window:not([customizing]) .panel-combined-button[disabled] > .toolbarbutton-icon {
@@ -611,7 +611,7 @@ panelview .toolbarbutton-1,
   -moz-appearance: none;
   padding: 0 6px;
   background-color: hsla(210,4%,10%,0);
-  border-radius: 2px;
+  border-radius: 0px;
   border-style: solid;
   border-color: hsla(210,4%,10%,0);
 }
@@ -890,7 +890,7 @@ toolbarpaletteitem[place="palette"] > #search-container {
 
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) {
   background-color: hsla(210,4%,10%,0);
-  border-radius: 2px;
+  border-radius: 0px;
   border: 1px solid;
   border-color: hsla(210,4%,10%,0);
   border-bottom-color: hsla(210,4%,10%,.1);

@@ -265,7 +265,7 @@ div.CodeMirror span.eval-text {
 .theme-tooltip-panel .panel-arrowcontent {
   padding: 5px;
   background: rgba(19, 28, 38, .9);
-  border-radius: 5px;
+  border-radius: 0px;
   box-shadow: none;
   border: 3px solid #434850;
 }
@@ -343,7 +343,7 @@ div.CodeMirror span.eval-text {
   min-height: 22px;
   text-shadow: none;
   border: 1px solid hsla(210,8%,5%,.45);
-  border-radius: 3px;
+  border-radius: 0px;
   margin: 0 3px;
 }
 
@@ -507,7 +507,7 @@ div.CodeMirror span.eval-text {
 }
 
 .devtools-toolbarbutton-group {
-  border-radius: 3px;
+  border-radius: 0px;
   margin: 0 3px;
 }
 
@@ -529,7 +529,7 @@ div.CodeMirror span.eval-text {
   -moz-appearance: none;
   margin: 0 3px;
   border: 1px solid;
-  border-radius: 2px;
+  border-radius: 0px;
   padding: 4px 6px;
 }
 

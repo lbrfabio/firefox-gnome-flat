@@ -31,7 +31,7 @@ findbar toolbarbutton {
   -moz-appearance: none;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 0px;
   color: #2e3436;
   padding: 3px 5px;
   transition-property: border, box-shadow, background;
@@ -59,7 +59,7 @@ findbar toolbarbutton[open="true"]:active:hover {
   background: rgba(255,255,255,0.8);
   border-color: rgba(255,255,255,0.8);
   box-shadow: 0 1px 0 rgba(255,255,255,0.37);
-  border-radius: 3px 3px 0 0;
+  border-radius: 0px 0px 0 0;
 }
 
 findbar toolbarbutton[disabled="true"],
@@ -92,12 +92,12 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 }
 
 .findbar-textbox:-moz-locale-dir(ltr) {
-  border-radius: 3px 0 0 3px;
+  border-radius: 0px 0 0 0px;
   border-right-width: 0;
 }
 
 .findbar-textbox:-moz-locale-dir(rtl) {
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 0px 0px 0;
   border-left-width: 0;
 }
 
@@ -121,7 +121,7 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 
 .findbar-textbox.minimal {
   border-width: 1px;
-  border-radius: 3px;
+  border-radius: 0px;
 }
 
 .findbar-find-previous,
@@ -165,7 +165,7 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 
 .findbar-find-next {
   list-style-image: url(chrome://symbolic-icons/skin/go-down.svg);
-  border-radius: 0 3px 3px 0 !important;
+  border-radius: 0 0px 0px 0 !important;
 }
 
 .findbar-find-previous > .toolbarbutton-icon,
@@ -184,13 +184,13 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 }
 
 .findbar-find-next:-moz-locale-dir(ltr) {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .findbar-find-next:-moz-locale-dir(rtl) {
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .findbar-find-previous:focus + .findbar-find-next {

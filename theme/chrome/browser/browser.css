@@ -2191,6 +2191,10 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
               inset 0 1px hsla(0,0%,0%,.03);
 }
 
+#main-window[privatebrowsingmode=temporary] #TabsToolbar[newstyletabs] {
+  background-image: repeating-linear-gradient(-45deg, hsla(0,0%,0%,.02), hsla(0,0%,0%,.02) 10px, transparent 10px, transparent 20px);
+}
+
 #TabsToolbar[newstyletabs][tabsontop="true"] {
   border-bottom: 1px solid #a7aba7;
 }
@@ -2332,6 +2336,10 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 
 #TabsToolbar[newstyletabs] .tabbrowser-tab[selected=true] .tab-background-middle:-moz-lwtheme {
   background: hsla(0,0%,100%,.38);
+}
+
+#main-window[privatebrowsingmode=temporary] #TabsToolbar[newstyletabs] .tabbrowser-tab[selected=true] .tab-background-middle {
+  -moz-border-bottom-colors: #bc52ff;
 }
 
 #TabsToolbar[newstyletabs] .tabbrowser-tab:not([selected=true]):hover .tab-background-middle {
@@ -4476,12 +4484,14 @@ toolbarpaletteitem[place="toolbar"] {
 
 /* End customization mode */
 
+/*
 #main-window[privatebrowsingmode=temporary] #private-browsing-indicator {
   background: url(chrome://symbolic-icons/skin/privatebrowsing.svg) center no-repeat;
   width: 36px;
   -moz-margin-start: -10px;
   opacity: 0.4;
 }
+*/
 
 /* UI Tour */
 

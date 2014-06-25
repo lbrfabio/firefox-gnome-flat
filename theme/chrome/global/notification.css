@@ -2,35 +2,43 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+%filter substitution
+%define infoIconValues [value="popup-blocked"], [value="refresh-blocked"], [value="offline-app-usage"], [value*="offline-app-requested-"]
+%define pluginIconValues [value="missing-plugins"], [value="plugin-hidden"], [value="plugin-crashed"]
+%define replaceIconValues @infoIconValues@, @pluginIconValues@
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 notification {
-  background: #faad3d;
-  color: rgba(0,0,0,0.8) !important;
-  text-shadow: none;
+  background: #69a8e9;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 1px hsla(0,0%,0%,.2);
 }
 
 notification[type="info"] {
+  background-color: #69e981;
 }
 
 notification[type="critical"] {
+  background-color: #f55a62;
 }
 
 .notification-inner {
   border: 0 !important;
-  padding: 4px 0;
+  padding: 7px 9px 6px;
 }
 
 .messageText {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 8px !important;
 }
 
 .messageImage {
   width: 16px;
   height: 16px;
-  -moz-margin-start: 15px;
+  -moz-margin-start: 5px;
   -moz-margin-end: 1px;
+  margin-bottom: 4px;
 }
 
 /* Default icons for notifications */
@@ -47,13 +55,15 @@ notification[type="critical"] {
   list-style-image: url("chrome://symbolic-icons/skin/critical.svg");
 }
 
-/* Replace icons */
+.messageImage:not([image]) {
+  filter: url(chrome://global/skin/filters.svg#notification-icon);
+}
 
-notification[value="popup-blocked"] .messageImage,
-notification[value="refresh-blocked"] .messageImage,
-notification[value="offline-app-usage"] .messageImage,
-notification[value*="offline-app-requested-"] .messageImage,
-notification[value="missing-plugins"] .messageImage {
+/* Replace custom icons */
+
+notification:-moz-any(@replaceIconValues@) .messageImage {
+  background: no-repeat center !important;
+  filter: url(chrome://global/skin/filters.svg#notification-icon);
   min-width: 16px !important;
   max-width: 16px !important;
   min-height: 16px !important;
@@ -61,42 +71,41 @@ notification[value="missing-plugins"] .messageImage {
   overflow: hidden !important;
 }
 
-notification[value="popup-blocked"] .messageImage,
-notification[value="refresh-blocked"] .messageImage,
-notification[value="offline-app-usage"] .messageImage,
-notification[value*="offline-app-requested-"] .messageImage {
-  background: url(chrome://symbolic-icons/skin/info.svg) no-repeat center !important;
+notification:-moz-any(@infoIconValues@) .messageImage {
+  background-image: url(chrome://symbolic-icons/skin/info.svg) !important;
 }
 
-notification[value="missing-plugins"] .messageImage {
-  background: url(chrome://symbolic-icons/skin/plugin.svg) no-repeat center !important;
+notification:-moz-any(@pluginIconValues@) .messageImage {
+  background-image: url(chrome://symbolic-icons/skin/plugin.svg) !important;
 }
+
+/* Close button */
 
 notification .messageCloseButton {
-  background: transparent !important;
-  border: 1px solid transparent !important;
   list-style-image: url(chrome://symbolic-icons/skin/close.svg);
-  margin-top: 3px !important;
-  margin-bottom: 3px !important;
-  -moz-margin-end: 10px;
-  -moz-margin-start: 5px;
-  padding: 1px !important;
+  /* Override style from notificationButton.inc.css */
+  -moz-margin-end: 0px !important;
+  padding: 1px 3px 1px 4px !important;
+  /* Override style for .close-icon from global.css */
+  background-image: none !important;
 }
 
 notification .messageCloseButton > .toolbarbutton-icon {
-  opacity: .4;
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
   min-width: 16px;
   min-height: 16px;
 }
 
 notification .messageCloseButton:hover > .toolbarbutton-icon {
-  opacity: 1;
+  filter: url(chrome://global/skin/filters.svg#notification-icon);
 }
 
 :not(notification) .messageCloseButton {
+%if APP_VERSION == 30
   -moz-appearance: none;
   width: 16px;
   height: 16px;
+%endif
   padding-left: 11px;
   padding-right: 11px;
 }
@@ -105,6 +114,14 @@ notification .messageCloseButton:hover > .toolbarbutton-icon {
 
 .popup-notification-description {
   max-width: 24em;
+}
+
+.popup-notification-learnmore-link {
+  margin-top: 1em !important;
+}
+
+.popup-notification-learnmore-link:not([href]) {
+  display: none;
 }
 
 .popup-notification-button-container {

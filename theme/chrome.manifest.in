@@ -1,0 +1,11 @@
+skin    browser            Adwaita    chrome-@VERSION@/browser/
+skin    global             Adwaita    chrome-@VERSION@/global/
+skin    symbolic-icons     Adwaita    chrome-@VERSION@/symbolic-icons/
+skin    adwaita-mozapps    Adwaita    chrome-@VERSION@/mozapps/
+
+style  chrome://browser/content/browser.xul                chrome://browser/skin/browser-tb.css
+
+style  about:addons                                        chrome://adwaita-mozapps/skin/extensions/extensions.css
+style  chrome://mozapps/content/extensions/extensions.xul  chrome://adwaita-mozapps/skin/extensions/extensions.css
+
+style  chrome://mozapps/content/downloads/downloads.xul    chrome://adwaita-mozapps/skin/downloads/downloads.css

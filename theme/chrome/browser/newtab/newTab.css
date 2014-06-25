@@ -9,21 +9,25 @@
 }
 
 /* SCROLLBOX */
+%if APP_VERSION == 30
 #newtab-scrollbox:not([page-disabled]) {
+%else
+#newtab-scrollbox:not([page-disabled]),
+#newtab-scrollbox:not([page-disabled]) #newtab-margin-bottom {
+%endif
   background-color: rgb(229,229,229);
   background-image: url(chrome://browser/skin/devtools/noise.png),
-                     linear-gradient(to bottom, rgba(255,255,255,.3), rgba(255,255,255,.2));
+                    linear-gradient(to bottom, rgba(255,255,255,.3), rgba(255,255,255,.2));
   background-attachment: fixed;
 }
 
+%if APP_VERSION == 30
 /* SIDE MARGIN */
 .newtab-side-margin {
-  /*
-  width: 150px;
-  */
   width: 40px; /* Should give a nice squarish thumbnails */
   min-width: 10px;
 }
+%endif
 
 /* TOP MARGIN */
 #newtab-margin-top {
@@ -89,9 +93,11 @@
   opacity: 1;
 }
 
+%if APP_VERSION == 30 || APP_VERSION == 31 || APP_VERSION == 32
 #newtab-undo-close-button > .toolbarbutton-text {
   display: none;
 }
+%endif
 
 #newtab-undo-close-button:-moz-focusring {
   outline: 1px dotted;
@@ -110,6 +116,16 @@
   background-position: -232px 0;
 }
 
+%if APP_VERSION != 30 && APP_VERSION != 31 && APP_VERSION != 32
+@media (min-resolution: 2dppx) {
+  #newtab-toggle {
+    background-image: url(chrome://browser/skin/newtab/controls@2x.png);
+    background-size: 296px;
+  }
+}
+%endif
+
+%if APP_VERSION == 30
 /* ROWS */
 .newtab-row {
   margin-bottom: 20px;
@@ -118,10 +134,19 @@
 .newtab-row:last-child {
   margin-bottom: 0;
 }
+%endif
 
 /* CELLS */
 .newtab-cell {
   -moz-margin-end: 0px;
+
+%if APP_VERSION == 30
+  -moz-margin-end: 20px;
+%else
+  height: 162px;
+  margin: 10px;
+%endif
+
   background-color: rgba(255,255,255,.2);
   border: 1px solid;
   border-color: rgba(8,22,37,.12) rgba(8,22,37,.14) rgba(8,22,37,.16);
@@ -135,11 +160,17 @@
   border-color: rgba(8,22,37,.15) rgba(8,22,37,.17) rgba(8,22,37,.19);
 }
 
+%if APP_VERSION == 30
 .newtab-cell:last-child {
   -moz-margin-end: 0px;
 }
+%endif
 
+%if APP_VERSION == 30
 .newtab-cell:hover:not(:empty):not([dragged]) {
+%else
+.newtab-cell:hover:not(:empty):not([dragged]):not([ignorehover]) {
+%endif
   border-color: rgba(8,22,37,.25) rgba(8,22,37,.27) rgba(8,22,37,.3);
 }
 
@@ -160,7 +191,11 @@ div.newtab-cell {
   background-position: 50% calc(50% - (24px / 2)); /* Half height, compensate for text title */
 }
 
+%if APP_VERSION == 30
 .newtab-site:hover,
+%else
+.newtab-cell:not([ignorehover]) > .newtab-site:hover,
+%endif
 .newtab-site[dragged] {
   box-shadow: 0 0 10px rgba(8,22,37,.3);
 }
@@ -177,11 +212,26 @@ div.newtab-cell {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
+%if APP_VERSION != 30
+  border-radius: 0px;
+%endif
   opacity: 1;
 }
 
+%if APP_VERSION != 30
+.newtab-site[type=affiliate] .newtab-thumbnail,
+.newtab-site[type=organic] .newtab-thumbnail,
+.newtab-site[type=sponsored] .newtab-thumbnail {
+  background-position: 50% calc(50% - (24px / 2)); /* Half height, compensate for text title */
+  background-size: auto;
+}
+%endif
+
 /* TITLES */
 .newtab-title {
+%if APP_VERSION != 30
+  bottom: 0;
+%endif
   padding: 0 8px;
   background-color: rgb(229,229,229);
   background-image: linear-gradient(to bottom, rgba(255,255,255,.3), rgba(255,255,255,.2));
@@ -196,6 +246,13 @@ div.newtab-cell {
   border-radius: 0 0 2px 2px;
   text-align: center;
 }
+
+%if APP_VERSION != 30
+.newtab-site[type=sponsored] .newtab-title {
+  -moz-padding-start: 24px;
+  -moz-padding-end: 24px;
+}
+%endif
 
 .newtab-cell:hover .newtab-title {
   background-image: none;
@@ -240,6 +297,35 @@ div.newtab-cell {
 .newtab-control-block:hover {
   background-color: rgba(0,0,0,0.85);
 }
+
+%if APP_VERSION != 30
+.newtab-control-sponsored {
+  background: transparent url(chrome://browser/skin/newtab/controls.png);
+  background-position: -249px -1px;
+  border: none;
+  padding: 1px 2px 3px;
+  /* Override chrome://browser/content/newtab/newTab.css */
+  -moz-margin-end: 0 !important;
+  bottom: 5px !important;
+}
+
+.newtab-control-sponsored:hover {
+  background-position: -265px -1px;
+}
+
+.newtab-control-sponsored[panelShown] {
+  background-position: -281px -1px;
+}
+
+%if APP_VERSION != 31 && APP_VERSION != 32
+@media (min-resolution: 2dppx) {
+  .newtab-control-sponsored {
+    background-image: url(chrome://browser/skin/newtab/controls@2x.png);
+    background-size: 296px;
+  }
+}
+%endif
+%endif
 
 .newtab-control-pin,
 .newtab-control-block,

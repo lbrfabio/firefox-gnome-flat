@@ -5239,28 +5239,23 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 }
 
 #context-navigation > #context-back > .menu-iconic-left {
-  list-style-image: url("chrome://browser/skin/Toolbar.png");
-  -moz-image-region: rect(0, 36px, 18px, 18px);
+  list-style-image: url(chrome://symbolic-icons/skin/go-previous.svg) !important;
 }
 
 #context-navigation > #context-forward > .menu-iconic-left {
-  list-style-image: url("chrome://browser/skin/Toolbar.png");
-  -moz-image-region: rect(0, 72px, 18px, 54px);
+  list-style-image: url(chrome://symbolic-icons/skin/go-next.svg) !important;
 }
 
 #context-navigation > #context-reload > .menu-iconic-left {
-  list-style-image: url("chrome://browser/skin/reload-stop-go.png");
-  -moz-image-region: rect(0, 14px, 14px, 0);
+  list-style-image: url(chrome://symbolic-icons/skin/view-refresh.svg);
 }
 
 #context-navigation > #context-stop > .menu-iconic-left {
-  list-style-image: url("chrome://browser/skin/reload-stop-go.png");
-  -moz-image-region: rect(0, 28px, 14px, 14px);
+  list-style-image: url(chrome://symbolic-icons/skin/process-stop.svg);
 }
 
 #context-navigation > #context-bookmarkpage > .menu-iconic-left {
-  list-style-image: url("chrome://browser/skin/Toolbar.png");
-  -moz-image-region: rect(0, 144px, 18px, 126px);
+  list-style-image: url(chrome://symbolic-icons/skin/bookmark-new.svg);
 }
 
 #context-back:-moz-locale-dir(rtl),
@@ -5272,13 +5267,13 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 #context-navigation > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
   width: 18px;
   height: 18px;
-  margin: 7px;
+  margin: 3px;
 }
 
 #context-navigation {
   background-color: -moz-dialog;
   padding-bottom: 2px;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   -moz-appearance: menuitem;
 }
 

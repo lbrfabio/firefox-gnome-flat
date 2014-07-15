@@ -73,13 +73,6 @@ var Tweaks = {
         attributeName: "hidehistorydropmarker"
     },
 
-    forwardButton: {
-        key: "forward-button",
-        type: "attribute",
-        elements: ["urlbar-container"],
-        attributeName: "forwardshowalways"
-    },
-
     inactiveState: {
         key: "inactive-state",
         type: "stylesheet"
@@ -100,7 +93,8 @@ var Tweaks = {
     darkVariant: {
         key: "dark-variant",
         type: "attribute",
-        elements: ["main-window", "navigator-toolbox", "TabsToolbar", "nav-bar",
+        elements: ["main-window", "navigator-toolbox",
+                   "TabsToolbar", "nav-bar", "PersonalToolbar",
                    "urlbar", "identity-box", "notification-popup-box"],
         attributeName: "darkvariant",
         attributeValue: function() {

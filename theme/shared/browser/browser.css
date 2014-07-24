@@ -1396,41 +1396,47 @@ toolbarpaletteitem[place="palette"] > :-moz-any(#edit-controls, #zoom-controls) 
   margin-bottom: 2px;
   -moz-margin-start: 4px;
   -moz-margin-end: 3px;
-  list-style-image: url(chrome://symbolic-icons/skin/identity-icons-generic.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/identity-icons.svg#generic);
   opacity: 0.35;
 }
 
-#urlbar@darkTheme@ #page-proxy-favicon {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+@darkTheme@ > #page-proxy-favicon {
+  list-style-image: url(chrome://symbolic-icons/skin/identity-icons.svg#generic-bright);
   opacity: 0.2;
 }
 
 .chromeUI > #page-proxy-favicon[pageproxystate="valid"] {
-  list-style-image: url(chrome://symbolic-icons/skin/identity-icons-brand.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/identity-icons.svg#brand);
+}
+.chromeUI@darkTheme@ > #page-proxy-favicon[pageproxystate="valid"] {
+  list-style-image: url(chrome://symbolic-icons/skin/identity-icons.svg#brand-bright);
 }
 
 .verifiedDomain > #page-proxy-favicon[pageproxystate="valid"] {
-  list-style-image: url(chrome://symbolic-icons/skin/identity-icons-https.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/identity-icons.svg#https);
+}
+.verifiedDomain@darkTheme@ > #page-proxy-favicon[pageproxystate="valid"] {
+  list-style-image: url(chrome://symbolic-icons/skin/identity-icons.svg#https-bright);
 }
 
 .verifiedIdentity > #page-proxy-favicon[pageproxystate="valid"] {
-  list-style-image: url(chrome://symbolic-icons/skin/identity-icons-https-ev.svg);
-  opacity: 0.6;
-}
-#urlbar@darkTheme@ .verifiedIdentity > #page-proxy-favicon[pageproxystate="valid"] {
-  filter: none;
+  list-style-image: url(chrome://symbolic-icons/skin/identity-icons.svg#https-ev);
   opacity: 0.6;
 }
 
 .mixedActiveContent > #page-proxy-favicon[pageproxystate="valid"] {
-  list-style-image: url(chrome://symbolic-icons/skin/identity-icons-https-mixed-active.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/identity-icons.svg#https-mixed-active);
   opacity: 0.6;
 }
 
 .mixedDisplayContent > #page-proxy-favicon[pageproxystate="valid"],
 .mixedDisplayContentLoadedActiveBlocked > #page-proxy-favicon[pageproxystate="valid"] {
-  list-style-image: url(chrome://symbolic-icons/skin/identity-icons-https-mixed-display.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/identity-icons.svg#https-mixed-display);
   opacity: 0.5;
+}
+.mixedDisplayContent@darkTheme@ > #page-proxy-favicon[pageproxystate="valid"],
+.mixedDisplayContentLoadedActiveBlocked@darkTheme@ > #page-proxy-favicon[pageproxystate="valid"] {
+  list-style-image: url(chrome://symbolic-icons/skin/identity-icons.svg#https-mixed-display-bright);
 }
 
 #page-proxy-favicon[pageproxystate="invalid"] {
@@ -1452,8 +1458,7 @@ toolbarpaletteitem[place="palette"] > :-moz-any(#edit-controls, #zoom-controls) 
   max-width: 50ch;
 }
 
-#identity-box:-moz-any(:hover, :active, [open="true"]) > #page-proxy-favicon,
-#urlbar@darkTheme@ #identity-box:-moz-any(:hover, :active, [open="true"]) > #page-proxy-favicon {
+#identity-box:-moz-any(:hover, :active, [open="true"]) > #page-proxy-favicon {
   opacity: 1;
 }
 
@@ -1626,6 +1631,13 @@ toolbarpaletteitem[place="palette"] > :-moz-any(#edit-controls, #zoom-controls) 
 .popup-notification-icon[popupid="webRTC-shareMicrophone"] {
   list-style-image: url(chrome://browser/skin/webRTC-shareMicrophone-64.png);
 }
+
+%if APP_VERSION != 31 && APP_VERSION != 32
+.popup-notification-icon[popupid="webRTC-sharingScreen"],
+.popup-notification-icon[popupid="webRTC-shareScreen"] {
+  list-style-image: url(chrome://browser/skin/webRTC-shareScreen-64.png);
+}
+%endif
 
 .popup-notification-icon[popupid="pointerLock"] {
   list-style-image: url(chrome://browser/skin/pointerLock-64.png);
@@ -1818,6 +1830,18 @@ toolbarpaletteitem[place="palette"] > :-moz-any(#edit-controls, #zoom-controls) 
   list-style-image: url(chrome://browser/skin/webRTC-sharingMicrophone-16.png);
 }
 
+%if APP_VERSION != 31 && APP_VERSION != 32
+.webRTC-shareScreen-notification-icon,
+#webRTC-shareScreen-notification-icon {
+  list-style-image: url(chrome://browser/skin/webRTC-shareScreen-16.png);
+}
+
+.webRTC-sharingScreen-notification-icon,
+#webRTC-sharingScreen-notification-icon {
+  list-style-image: url(chrome://browser/skin/webRTC-sharingScreen-16.png);
+}
+%endif
+
 .web-notifications-notification-icon,
 #web-notifications-notification-icon {
   list-style-image: url(chrome://symbolic-icons/skin/notification.svg);
@@ -2001,40 +2025,40 @@ notification[value="translation"] menulist > .menulist-dropmarker {
 /* */
 
 #treecolAutoCompleteImage {
-  max-width : 36px;
+  max-width: 36px;
 }
 
 .ac-result-type-bookmark,
 .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
-  list-style-image: url(chrome://symbolic-icons/skin/user-bookmarks.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#bookmark);
   width: 16px;
   height: 16px;
 }
 richlistitem[selected="true"] .ac-result-type-bookmark,
 richlistitem[selected="true"] .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+  list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#bookmark-active);
 }
 
 .ac-result-type-keyword,
 .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage) {
-  list-style-image: url(chrome://symbolic-icons/skin/edit-find.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#keyword);
   width: 16px;
   height: 16px;
 }
 richlistitem[selected="true"] .ac-result-type-keyword,
 richlistitem[selected="true"] .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage) {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+  list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#keyword-active);
 }
 
 .ac-result-type-tag,
 .autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
-  list-style-image: url(chrome://symbolic-icons/skin/tag.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#tag);
   width: 16px;
   height: 16px;
 }
 richlistitem[selected="true"] .ac-result-type-tag,
 richlistitem[selected="true"] .autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+  list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#tag-active);
 }
 
 .ac-comment {
@@ -2060,12 +2084,11 @@ richlistitem {
 }
 
 richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-icon {
-  list-style-image: url(chrome://symbolic-icons/skin/actionicon-tab.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#tab);
   padding: 0 3px;
-
 }
 richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-icon {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+  list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#tab-active);
 }
 
 .autocomplete-treebody::-moz-tree-cell-text(treecolAutoCompleteComment) {
@@ -3451,6 +3474,23 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   color: inherit;
 }
 
+%if APP_VERSION != 31 && APP_VERSION != 32
+.devtools-responsiveui-menulist .menulist-editable-box {
+  -moz-appearance: none;
+  background-color: transparent;
+}
+
+.devtools-responsiveui-menulist html|*.menulist-editable-input {
+  -moz-appearance: none;
+  color: inherit;
+  text-align: center;
+}
+
+.devtools-responsiveui-menulist html|*.menulist-editable-input::-moz-selection {
+  background: hsla(212,7%,57%,.35);
+}
+%endif
+
 %if APP_VERSION != 31
 .devtools-responsiveui-toolbarbutton > .toolbarbutton-icon {
   width: 16px;
@@ -4117,6 +4157,16 @@ notification.pluginVulnerable .messageImage {
 #downloads-button > #downloads-indicator-anchor {
   min-width: 16px;
   min-height: 16px;
+  filter: none;
+}
+
+#downloads-button > #downloads-indicator-anchor {
+  min-width: 16px;
+  min-height: 16px;
+}
+
+#navigator-toolbox@darkTheme@ #downloads-button > #downloads-indicator-anchor {
+  filter: none;
 }
 
 /*** Main indicator icon ***/
@@ -4124,10 +4174,10 @@ notification.pluginVulnerable .messageImage {
 #downloads-button[cui-areatype="toolbar"] > #downloads-indicator-anchor > #downloads-indicator-icon {
   background: -moz-image-rect(url(chrome://symbolic-icons/skin/download.svg),
                               0, 16, 16, 0) center no-repeat;
-  /* Is it needed?
-  min-width: 18px;
-  min-height: 18px;
-  */
+}
+
+#navigator-toolbox@darkTheme@ #downloads-button[cui-areatype="toolbar"]:not([attention]) > #downloads-indicator-anchor > #downloads-indicator-icon {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }
 
 #downloads-button[cui-areatype="toolbar"][attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
@@ -4146,6 +4196,10 @@ notification.pluginVulnerable .messageImage {
   background: -moz-image-rect(url(chrome://symbolic-icons/skin/download.svg),
                               0, 16, 16, 0) center no-repeat;
   background-size: 12px;
+}
+
+#navigator-toolbox@darkTheme@ #downloads-button:not([counter]):not([attention]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }
 
 #downloads-button:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
@@ -4209,6 +4263,10 @@ notification.pluginVulnerable .messageImage {
   text-align: center;
 }
 
+#navigator-toolbox@darkTheme@ #downloads-indicator-counter {
+  color: #eeeeec;
+}
+
 #downloads-indicator-progress {
   width: 16px;
   height: 4px;
@@ -4232,6 +4290,10 @@ notification.pluginVulnerable .messageImage {
   border-radius: 0px 0 0 0px;
 }
 
+#navigator-toolbox@darkTheme@ #downloads-indicator-progress > .progress-bar {
+  border-color: hsla(0,0%,100%,.2);
+}
+
 #downloads-indicator-progress > .progress-remainder {
   -moz-appearance: none;
   min-width: 0;
@@ -4243,8 +4305,12 @@ notification.pluginVulnerable .messageImage {
   border-radius: 0 0px 0px 0;
 }
 
+#navigator-toolbox@darkTheme@ #downloads-indicator-progress > .progress-remainder {
+  border-color: hsla(0,0%,100%,.2);
+}
+
 #downloads-button[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-bar {
-  background-color: rgb(220, 230, 81);
+  background-color: #dce651;
 }
 
 #downloads-button[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-remainder {

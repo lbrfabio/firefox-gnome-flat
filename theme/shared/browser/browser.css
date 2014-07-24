@@ -5391,7 +5391,7 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
   -moz-appearance: none;
 }
 
-%if APP_VERSION == 33
+%if APP_VERSION == 34
 #context-navigation > #context-back > .menu-iconic-left {
   list-style-image: url(chrome://symbolic-icons/skin/go-previous.svg) !important;
 }
@@ -5471,7 +5471,7 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 }
 
 #context-navigation {
-%if APP_VERSION == 33
+%if APP_VERSION == 34
   background-color: -moz-dialog;
   padding-bottom: 2px;
   margin-bottom: 3px;

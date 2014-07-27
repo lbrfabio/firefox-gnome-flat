@@ -91,6 +91,7 @@
   outline: 1px dotted;
 }
 
+%if APP_VERSION == 31 || APP_VERSION == 32 || APP_VERSION == 33
 /* TOGGLE */
 #newtab-toggle {
   width: 16px;
@@ -104,12 +105,26 @@
   background-position: -232px 0;
 }
 
-%if APP_VERSION != 31 && APP_VERSION != 32
+%if APP_VERSION == 33
 @media (min-resolution: 2dppx) {
   #newtab-toggle {
     background-image: url(chrome://browser/skin/newtab/controls@2x.png);
     background-size: 296px;
   }
+}
+%endif
+%else
+/* CUSTOMIZE */
+#newtab-customize-button {
+  background-color: transparent;
+  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 32, 32, 0);
+  border: none;
+  height: 32px;
+  width: 32px;
+}
+
+#newtab-customize-button:-moz-any(:hover, :active, [active]) {
+  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 64, 32, 32);
 }
 %endif
 
@@ -163,6 +178,13 @@ div.newtab-cell {
   background-color: rgb(242,242,242);
 }
 
+%if APP_VERSION != 31 && APP_VERSION != 32 && APP_VERSION != 33
+/* LINKS */
+.newtab-link {
+  border-radius: 10px;
+}
+%endif
+
 /* THUMBNAILS */
 .newtab-thumbnail {
   background-origin: padding-box;
@@ -171,10 +193,22 @@ div.newtab-cell {
   background-size: cover;
   background-position: 0 0;
   border-radius: 0px;
+%if APP_VERSION != 31 && APP_VERSION != 32 && APP_VERSION != 33
+  transition: opacity 100ms ease-out;
+%endif
   opacity: 1;
 }
 
+%if APP_VERSION != 31 && APP_VERSION != 32 && APP_VERSION != 33
+.newtab-thumbnail.enhanced-content:hover {
+  opacity: 0;
+}
+%endif
+
 .newtab-site[type=affiliate] .newtab-thumbnail,
+%if APP_VERSION != 31 && APP_VERSION != 32 && APP_VERSION != 33
+.newtab-site[type=enhanced] .newtab-thumbnail,
+%endif
 .newtab-site[type=organic] .newtab-thumbnail,
 .newtab-site[type=sponsored] .newtab-thumbnail {
   background-position: 50% calc(50% - (24px / 2)); /* Half height, compensate for text title */
@@ -258,14 +292,6 @@ div.newtab-cell {
   bottom: 5px !important;
 }
 
-.newtab-control-sponsored:hover {
-  background-position: -265px -1px;
-}
-
-.newtab-control-sponsored[panelShown] {
-  background-position: -281px -1px;
-}
-
 %if APP_VERSION != 31 && APP_VERSION != 32
 @media (min-resolution: 2dppx) {
   .newtab-control-sponsored {
@@ -274,6 +300,14 @@ div.newtab-cell {
   }
 }
 %endif
+
+.newtab-control-sponsored:hover {
+  background-position: -265px -1px;
+}
+
+.newtab-control-sponsored[panelShown] {
+  background-position: -281px -1px;
+}
 
 .newtab-control-pin,
 .newtab-control-block,

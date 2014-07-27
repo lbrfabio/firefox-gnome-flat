@@ -1,17 +1,15 @@
-## GNOME theme for Firefox
+# GNOME theme for Firefox
 
-(This is the theme previously known as "Adwaita".)
+The latest stable version is always available from [Mozilla's Add-ons](https://addons.mozilla.org/firefox/addon/adwaita/).
 
-An easy-to-install version of this theme is available at 
-[Mozilla's ADD-ONS site](https://addons.mozilla.org/en-US/firefox/addon/adwaita).  
-Bleeding edge releases are available [here](https://launchpad.net/gnome-integration/firefox-gnome/firefox-gnome-releases).
+Bleeding-edge releases are usually made avilable on [Launchpad](https://launchpad.net/gnome-integration/firefox-gnome/firefox-gnome-releases) and early-access builds are also on [our GitHub releases page](https://github.com/gnome-integration-team/firefox-gnome/releases).
 
 For current issues please see the 
 [bug tracker](https://github.com/lbrfabio/firefox-gnome-flat/issues).
 
 Help & feedback are both appreciated! ;-)
 
-### How to build
+## How to build
 
 You can use __make-xpi.py__ script to build xpi and clean temporary files:
 

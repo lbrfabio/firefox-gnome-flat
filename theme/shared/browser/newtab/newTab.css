@@ -9,12 +9,16 @@
 }
 
 /* SCROLLBOX */
-#newtab-scrollbox:not([page-disabled]),
-#newtab-scrollbox:not([page-disabled]) #newtab-margin-bottom {
+#newtab-scrollbox:not([page-disabled]) {
   background-color: rgb(229,229,229);
   background-image: url(chrome://browser/skin/devtools/noise.png),
                     linear-gradient(to bottom, rgba(255,255,255,.3), rgba(255,255,255,.2));
   background-attachment: fixed;
+  color: rgb(0,0,0);
+}
+
+#newtab-scrollbox:not([page-disabled]) #newtab-margin-bottom {
+  background: inherit;
 }
 
 /* TOP MARGIN */
@@ -81,7 +85,7 @@
   opacity: 1;
 }
 
-%if APP_VERSION == 31 || APP_VERSION == 32
+%if APP_VERSION == 32
 #newtab-undo-close-button > .toolbarbutton-text {
   display: none;
 }
@@ -91,7 +95,7 @@
   outline: 1px dotted;
 }
 
-%if APP_VERSION == 31 || APP_VERSION == 32 || APP_VERSION == 33
+%if APP_VERSION == 32 || APP_VERSION == 33
 /* TOGGLE */
 #newtab-toggle {
   width: 16px;
@@ -118,9 +122,10 @@
 #newtab-customize-button {
   background-color: transparent;
   /*background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 32, 32, 0);*/
+  background-size: 28px;
   border: none;
-  height: 32px;
-  width: 32px;
+  height: 28px;
+  width: 28px;
   display:none;
 }
 
@@ -179,7 +184,7 @@ div.newtab-cell {
   background-color: rgb(242,242,242);
 }
 
-%if APP_VERSION != 31 && APP_VERSION != 32 && APP_VERSION != 33
+%if APP_VERSION != 32 && APP_VERSION != 33
 /* LINKS */
 .newtab-link {
   border-radius: 10px;
@@ -193,21 +198,26 @@ div.newtab-cell {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
+<<<<<<< HEAD
   border-radius: 0px;
 %if APP_VERSION != 31 && APP_VERSION != 32 && APP_VERSION != 33
+=======
+  border-radius: 3px;
+%if APP_VERSION != 32 && APP_VERSION != 33
+>>>>>>> upstream/master
   transition: opacity 100ms ease-out;
 %endif
   opacity: 1;
 }
 
-%if APP_VERSION != 31 && APP_VERSION != 32 && APP_VERSION != 33
+%if APP_VERSION != 32 && APP_VERSION != 33
 .newtab-thumbnail.enhanced-content:hover {
   opacity: 0;
 }
 %endif
 
 .newtab-site[type=affiliate] .newtab-thumbnail,
-%if APP_VERSION != 31 && APP_VERSION != 32 && APP_VERSION != 33
+%if APP_VERSION != 32 && APP_VERSION != 33
 .newtab-site[type=enhanced] .newtab-thumbnail,
 %endif
 .newtab-site[type=organic] .newtab-thumbnail,
@@ -293,7 +303,7 @@ div.newtab-cell {
   bottom: 5px !important;
 }
 
-%if APP_VERSION != 31 && APP_VERSION != 32
+%if APP_VERSION != 32
 @media (min-resolution: 2dppx) {
   .newtab-control-sponsored {
     background-image: url(chrome://browser/skin/newtab/controls@2x.png);

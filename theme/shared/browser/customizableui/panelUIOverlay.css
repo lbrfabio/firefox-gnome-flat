@@ -486,6 +486,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 #PanelUI-fxa-status,
 #PanelUI-customize,
 #PanelUI-quit {
+  color: inherit;
   margin: 0;
 %if APP_VERSION == 32
   padding: 10px 0;
@@ -685,7 +686,7 @@ panelview .toolbarbutton-1,
 }
 
 .subviewbutton.panel-subview-footer > .toolbarbutton-icon {
-  margin: 0;
+  display none;
 }
 
 .subviewbutton.panel-subview-footer > .toolbarbutton-text {
@@ -762,8 +763,9 @@ menuitem.subviewbutton:not([disabled])[_moz-menuactive]:active,
 .subviewbutton.panel-subview-footer {
   margin: 4px -4px -4px;
   background-color: hsla(210,4%,10%,.07);
-  border-top: 1px solid hsla(210,4%,10%,.12);
+  border-top: 1px solid hsla(210,4%,10%,.14);
   border-radius: 0;
+  color: inherit;
 }
 
 menuitem.panel-subview-footer:not(:-moz-any([disabled],:active))[_moz-menuactive],
@@ -889,7 +891,13 @@ toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button 
                     linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0));
   background-repeat: no-repeat;
   background-color: Highlight;
-  background-position: left 10px center, 0; /* this doesn't need to be changed for RTL */
+  background-position: left 10px center, 0;
+}
+
+#PanelUI-help[panel-multiview-anchor="true"]:-moz-locale-dir(rtl)::after {
+  background-image: url(chrome://browser/skin/customizableui/subView-arrow-back-inverted-rtl.png),
+                    linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0));
+  background-position: right 10px center, 0;
 }
 
 toolbarbutton[panel-multiview-anchor="true"] {
@@ -1097,7 +1105,8 @@ menuitem[checked="true"].subviewbutton > .menu-iconic-left {
 }
 
 .panel-subviews {
-  background-color: -moz-dialog;
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
 }
 
 #BMB_bookmarksPopup > menuitem[type="checkbox"] {

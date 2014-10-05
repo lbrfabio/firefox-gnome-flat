@@ -31,6 +31,16 @@
     display: none; 
 }
 
+/* SEACH LOGO*/
+#newtab-search-logo {
+    display: none;
+}
+
+/* WHAT'S THIS PAGE?*/
+#newtab-intro-what {
+    display: none;
+}
+
 /* UNDO */
 #newtab-undo-container {
   padding: 4px 3px;

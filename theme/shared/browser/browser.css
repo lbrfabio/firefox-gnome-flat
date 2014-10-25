@@ -2515,7 +2515,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 }
 
 #tabbrowser-tabs {
-  min-height: 35px;
+  min-height: 28px;
   /* override the global style to allow the selected tab to be above the nav-bar */
   z-index: auto;
 }

@@ -7,16 +7,10 @@
 <!DOCTYPE window SYSTEM "chrome://gnome-theme-tweak/locale/options.dtd">
 
 <vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-  <setting pref="extensions.gnome-theme-tweak.newtab-page"
-           type="bool" title="&newtabpage.label;"/>
   <setting pref="extensions.gnome-theme-tweak.relief-buttons"
            type="bool" title="&reliefbuttons.label;"/>
   <setting pref="extensions.gnome-theme-tweak.inactive-state"
            type="bool" title="&inactivestate.label;"/>
-  <setting pref="extensions.gnome-theme-tweak.tabs-on-top"
-           type="bool" title="&tabontop.label;"/>
-  <setting pref="extensions.gnome-theme-tweak.new-style-tabs"
-           type="bool" title="&newstyletabs.label;"/>
 
   <setting pref="extensions.gnome-theme-tweak.tab-max-width"
            type="radio" title="&maxtabwidth.label;">
@@ -35,12 +29,8 @@
     </radiogroup>
   </setting>
 
-  <setting pref="extensions.gnome-theme-tweak.tabs-border"
-           type="bool" title="&tabsborder.label;"/>
   <setting pref="extensions.gnome-theme-tweak.urlbar-history-dropmarker"
            type="bool" title="&urlbarhistorydropmarker.label;"/>
   <setting pref="extensions.gnome-theme-tweak.disable-popup-animation"
            type="bool" title="&disablepopupanimation.label;"/>
-  <setting pref="extensions.gnome-theme-tweak.three-line-menu-icon"
-           type="bool" title="&threelinemenuicon.label;"/>
 </vbox>

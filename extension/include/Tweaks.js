@@ -38,34 +38,6 @@ var Tweaks = {
         }
     },
 
-    newStyleTabs: {
-        key: "new-style-tabs",
-        type: "attribute",
-        elements: ["navigator-toolbox", "nav-bar", "TabsToolbar"],
-        attributeName: "newstyletabs",
-        attributeValue: "true"
-    },
-
-    newtabPage: {
-        key: "newtab-page",
-        type: "stylesheet"
-    },
-
-    tabsOnTop: {
-        key: "tabs-on-top",
-        type: "attribute",
-        elements: ["navigator-toolbox", "nav-bar", "TabsToolbar"],
-        attributeName: "tabsontop"
-    },
-
-    tabsBorder: {
-        key: "tabs-border",
-        type: "attribute",
-        elements: ["TabsToolbar"],
-        attributeName: "bottomborder",
-        attributeValue: "false"
-    },
-
     urlbarHistoryDropmarker: {
         key: "urlbar-history-dropmarker",
         type: "attribute",
@@ -105,10 +77,5 @@ var Tweaks = {
                     return "toolbar";
             }
         }
-    },
-
-    threeLineMenuIcon: {
-        key: "three-line-menu-icon",
-        type: "stylesheet"
     },
 }

@@ -2693,7 +2693,9 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 .tabbrowser-tab[titlechanged]:not([selected="true"]) > .tab-stack > .tab-content {
   background-image: none;
   background-repeat: no-repeat;
-  border-bottom: 2px solid #ef2929;
+  border-bottom-style: solid;
+  border-bottom-color: #ef2929;
+  /*border-bottom: 2px solid #ef2929;*/
 }
 
 .tab-label {

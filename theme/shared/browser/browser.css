@@ -2084,7 +2084,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 .ac-comment[selected="true"],
 .ac-url-text[selected="true"],
 .ac-action-text[selected="true"] {
-  color: #8da9e0 !important;
+  color: #829fa9 !important;
 }
 
 .autocomplete-treebody::-moz-tree-cell-text(suggesthint, treecolAutoCompleteComment),
@@ -2541,7 +2541,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 
 .tabbrowser-tab[selected=true] .tab-background-middle {
   background: #ededed;
-  -moz-border-bottom-colors: #8da9e0;
+  -moz-border-bottom-colors: #829fa9;
 }
 
 .tabbrowser-tab[selected=true] .tab-background-middle:-moz-lwtheme {
@@ -3911,7 +3911,9 @@ notification.pluginVulnerable .messageImage {
 }
 
 #downloads-button[cui-areatype="toolbar"][attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
+  /*filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);*/
+    background: -moz-image-rect(url(chrome://symbolic-icons/skin/download-material.svg),
+                              0, 16, 16, 0) center no-repeat;
 }
 
 #downloads-button[cui-areatype="menu-panel"][attention] {

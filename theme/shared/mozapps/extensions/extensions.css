@@ -59,7 +59,7 @@
 }
 
 .category[selected] {
-  background: #7487e4;
+  background: #829fa9;
   background-clip: padding-box;
   border-color: #bdc9e8;
   color: #fff !important;
@@ -76,7 +76,7 @@
 }
 
 .category-badge {
-  background-color: #7487e4;
+  background-color: #829fa9;
   border-radius: 2px;
   color: #fff;
   font-size: 0.9em;
@@ -87,7 +87,7 @@
 
 .category[selected] .category-badge {
   background-color: #eaeaea;
-  color: #7487e4;
+  color: #829fa9;
 }
 
 .category-icon {

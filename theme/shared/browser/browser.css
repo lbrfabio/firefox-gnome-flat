@@ -71,6 +71,10 @@
   background-color: #a1a1a1;
 }
 
+#main-window@darkTheme@ #navigator-toolbox::after {
+  background-color: #1c1f1f;
+}
+
 /* Toolbars */
 
 #toolbar-menubar {
@@ -2418,6 +2422,10 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
   border-bottom: 1px solid #a1a1a1;
 }
 
+#TabsToolbar@darkTheme@::after {
+  border-bottom-color: #1c1f1f;
+}
+
 /*
 #toolbar-menubar:not([autohide="true"]):not(:-moz-lwtheme):-moz-system-metric(menubar-drag),
 #TabsToolbar:not(:-moz-lwtheme):-moz-system-metric(menubar-drag) {
@@ -2568,10 +2576,22 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
   background-image: linear-gradient(to top, Highlight, #c0c0c0 2px, #c0c0c0);
 }
 
+#main-window[privatebrowsingmode=temporary] .tab-background-start[selected=true],
+#main-window[privatebrowsingmode=temporary] .tab-background-end[selected=true] {
+  background: #c0c0c0;
+  background-image: linear-gradient(to top, #bc52ff, #c0c0c0 2px, #c0c0c0);
+}
+
 #TabsToolbar@darkTheme@ .tab-background-start[selected=true],
 #TabsToolbar@darkTheme@ .tab-background-end[selected=true] {
   background: #2a3033;
   background-image: linear-gradient(to top, #346099, #2a3033 2px, #2a3033);
+}
+
+#main-window[privatebrowsingmode=temporary]@darkTheme@ .tab-background-start[selected=true],
+#main-window[privatebrowsingmode=temporary]@darkTheme@ .tab-background-end[selected=true] {
+  background: #c0c0c0;
+  background-image: linear-gradient(to top, #bc52ff, #2a3033 2px, #2a3033);
 }
 
 .tabbrowser-tab:hover .tab-background-start:not([selected=true]),

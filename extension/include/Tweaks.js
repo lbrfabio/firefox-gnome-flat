@@ -17,6 +17,16 @@ var Tweaks = {
     },
     */
 
+    e10sDisableUnderline: {
+        key: "e10s-disable-underline",
+        type: "stylesheet"
+    },
+
+    tabBoldLabel: {
+        key: "tab-bold-label",
+        type: "stylesheet"
+    },
+
     tabMaxWidth: {
         key: "tab-max-width",
         type: "attribute",

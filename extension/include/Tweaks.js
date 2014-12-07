@@ -38,6 +38,13 @@ var Tweaks = {
         }
     },
 
+    tabsOnTop: {
+        key: "tabs-on-top",
+        type: "attribute",
+        elements: ["navigator-toolbox", "nav-bar", "TabsToolbar"],
+        attributeName: "tabsontop"
+    },
+
     urlbarHistoryDropmarker: {
         key: "urlbar-history-dropmarker",
         type: "attribute",
@@ -55,11 +62,6 @@ var Tweaks = {
         type: "attribute",
         elements: ["nav-bar", "bookmarked-notification-anchor"],
         attributeName: "reliefbuttons"
-    },
-
-    disablePopupAnimation: {
-        key: "disable-popup-animation",
-        type: "stylesheet"
     },
 
     darkVariant: {

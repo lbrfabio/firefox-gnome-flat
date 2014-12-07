@@ -6,7 +6,7 @@ const DefaultPrefs = {
     "tab-max-width": 0,
     "relief-buttons": false,
     "inactive-state": false,
+    "tabs-on-top": false,
     "urlbar-history-dropmarker": false,
-    "disable-popup-animation": false,
     "dark-variant": 0,
 }

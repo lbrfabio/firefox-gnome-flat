@@ -4,11 +4,10 @@
 
 %include variables.inc.css
 
-%if APP_VERSION != 35
 #PopupSearchAutoComplete {
   -moz-margin-start: -24px;
+  padding: 1px;
 }
-%endif
 
 .searchbar-textbox {
   min-height: 22px;
@@ -138,11 +137,9 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   padding: 5px;
 }
 
-%if APP_VERSION != 35
 .searchbar-search-button[addengines="true"] {
   list-style-image: url(chrome://symbolic-icons/skin/search-field.svg);
 }
-%endif
 
 #main-window@darkTheme@ .searchbar-search-button {
   filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
@@ -152,15 +149,17 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 
 .search-panel-current-engine {
   border-top: none !important;
-  border-bottom: 1px solid #ccc;
   -moz-box-align: center;
+}
+
+.search-panel-current-engine:not([showonlysettings]) {
+  border-bottom: 1px solid #ccc;
 }
 
 .search-panel-header {
   font-weight: normal;
   background-color: rgb(245, 245, 245);
   border-top: 1px solid #ccc;
-  margin: 0 1px;
   padding: 3px 5px;
   color: #666;
 }
@@ -174,7 +173,7 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 }
 
 .search-panel-one-offs {
-  margin: 0 0 !important;
+  margin: 0 -1px !important;
   border-top: 1px solid #ccc;
 }
 
@@ -201,7 +200,6 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   background-image: none;
 }
 
-.searchbar-engine-one-off-item:hover:not(.dummy),
 .searchbar-engine-one-off-item[selected] {
   background-color: Highlight;
   background-image: none;
@@ -209,7 +207,7 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 
 .searchbar-engine-one-off-item > .button-box {
   border: none;
-  padding: 0 0;
+  padding: 0;
 }
 
 .searchbar-engine-one-off-item > .button-box > .button-text {
@@ -227,7 +225,7 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   -moz-appearance: none;
   border: none;
   height: 32px;
-  margin: 0 0;
+  margin: 0;
   padding: 0 10px;
 }
 
@@ -239,16 +237,11 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   border-top: 1px solid #ccc;
 }
 
-.addengine-item:hover {
+.addengine-item[selected] {
   background-color: Highlight;
   color: HighlightText;
 }
 
-%if APP_VERSION == 35
-.addengine-item > .button-box > .button-icon {
-  width: 16px;
-}
-%else
 .addengine-icon {
   width: 16px;
 }
@@ -259,7 +252,6 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   margin: -7px -9px 7px 9px;
   list-style-image: url("chrome://browser/skin/badge-add-engine.png");
 }
-%endif
 
 .addengine-item > .button-box > .button-text {
   -moz-box-flex: 1;
@@ -284,11 +276,7 @@ searchbar[oneoffui] .searchbar-engine-button {
 }
 
 .search-panel-tree > .autocomplete-treebody::-moz-tree-image {
-%if APP_VERSION == 35
-  -moz-padding-start: 6px;
-%else
   -moz-padding-start: 5px;
-%endif
   width: 14px;
   height: 14px;
 }
@@ -307,14 +295,13 @@ searchbar[oneoffui] .searchbar-engine-image {
 
 .search-setting-button {
   -moz-appearance: none;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  -moz-border-top-colors: none;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0;
   min-height: 32px;
 }
 
-.search-setting-button:hover {
+.search-setting-button[selected] {
   background-color: #d3d3d3;
   border-top-color: #bdbebe;
 }

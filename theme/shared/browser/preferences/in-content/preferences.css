@@ -4,23 +4,7 @@
 
 @namespace html "http://www.w3.org/1999/xhtml";
 
-%if APP_VERSION == 35
-#dialogBox,
-dialog,
-window,
-prefwindow,
-.windowDialog {
-  -moz-appearance: none;
-  background-color: #eaeaea;
-  color: #424E5A;
-}
-%endif
-
-%if APP_VERSION == 35
-prefpane {
-%else
 #mainPrefPane {
-%endif
   max-width: 800px;
   padding: 0;
   font: message-box;
@@ -42,6 +26,12 @@ treecol {
 
 .category-icon {
   display: none;
+}
+
+@media (max-width: 800px) {
+  .category-name {
+    display: none;
+  }
 }
 
 /* header */
@@ -70,6 +60,13 @@ treecol {
   -moz-margin-start: 0;
 }
 
+/* Content pane */
+#playDRMContentLink {
+  /* Line up with the buttons in the other grid bits: */
+  margin-left: 4px !important;
+  margin-right: 4px !important;
+}
+
 /* Applications Pane Styles */
 
 #applicationsContent {
@@ -80,86 +77,8 @@ treecol {
   -moz-margin-start: 0;
 }
 
-#handlersView {
-  -moz-appearance: none;
-  -moz-margin-start: 0;
-  font-size: 1.0rem;
-  line-height: 20px;
-  color: #333333;
-  border: 1px solid #C1C1C1;
-  border-radius: 2px;
-  background-color: #FBFBFB;
-  overflow-y: auto;
-  height: 500px;
-}
-
-#handlersView > listheader {
-  -moz-appearance: none;
-  border: 0;
-  padding: 0;
-}
-
-#typeColumn,
-#actionColumn {
-  -moz-appearance: none;
-  line-height: 20px;
-  color: #333333;
-  height: 36px;
-  padding: 0 10px;
-  background-color: #FBFBFB;
-  border: 1px solid #C1C1C1;
-  -moz-border-top-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-bottom-colors: none;
-  -moz-border-left-colors: none;
-}
-
-#typeColumn:-moz-locale-dir(ltr),
-#actionColumn:-moz-locale-dir(rtl) {
-  border-top-left-radius: 2px;
-}
-
-#typeColumn:-moz-locale-dir(rtl),
-#actionColumn:-moz-locale-dir(ltr) {
-  border-top-right-radius: 2px;
-}
-
-#typeColumn:hover,
-#actionColumn:hover {
-  border-color: #0095DD;
-}
-
-#typeColumn:hover:active,
-#actionColumn:hover:active {
-  padding: 0 10px;
-}
-
-#typeColumn > .treecol-sortdirection[sortDirection=ascending],
-#actionColumn > .treecol-sortdirection[sortDirection=ascending],
-#typeColumn > .treecol-sortdirection[sortDirection=descending],
-#actionColumn > .treecol-sortdirection[sortDirection=descending] {
-  -moz-appearance: none;
-  list-style-image: url("chrome://global/skin/in-content/sorter.png");
-}
-
-#typeColumn > .treecol-sortdirection[sortDirection=descending],
-#actionColumn > .treecol-sortdirection[sortDirection=descending] {
-  transform: scaleY(-1);
-}
-
-@media (min-resolution: 2dppx) {
-  #typeColumn > .treecol-sortdirection[sortDirection=ascending],
-  #actionColumn > .treecol-sortdirection[sortDirection=ascending],
-  #typeColumn > .treecol-sortdirection[sortDirection=descending],
-  #actionColumn > .treecol-sortdirection[sortDirection=descending] {
-    width: 12px;
-    height: 8px;
-    list-style-image: url("chrome://global/skin/in-content/sorter@2x.png");
-  }
-}
-
 #handlersView > richlistitem {
-  min-height: 40px !important;
+  min-height: 36px !important;
 }
 
 .typeIcon {
@@ -173,8 +92,7 @@ treecol {
 }
 
 .actionsMenu {
-  height: 40px;
-  max-height: 40px;
+  min-height: 36px;
 }
 
 .actionsMenu > menupopup > menuitem {
@@ -189,16 +107,6 @@ treecol {
    bug has a solution. */
 description > html|a {
   cursor: pointer;
-}
-
-#offlineAppsList,
-#syncEnginesList {
-  -moz-appearance: none;
-  color: #333333;
-  padding: 10px;
-  border: 1px solid #C1C1C1;
-  border-radius: 2px;
-  background-color: #FBFBFB;
 }
 
 #noFxaAccount {
@@ -222,6 +130,10 @@ description > html|a {
   padding-bottom: 0; /* no padding needed in inContent prefs */
 }
 
+#tabsElement {
+  -moz-margin-end: 4px; /* add the 4px end-margin of other elements */
+}
+
 #encryptionPanel {
   margin-top: 10px;
 }
@@ -238,7 +150,6 @@ description > html|a {
   -moz-margin-start: 33px;
 }
 
-%if APP_VERSION != 35
 #trackingProtectionImage {
   width: 16px;
   height: 16px;
@@ -250,7 +161,6 @@ description > html|a {
     list-style-image: url(chrome://browser/skin/bad-content-blocked-16@2x.png);
   }
 }
-%endif
 
 /**
  * Dialog
@@ -262,37 +172,32 @@ description > html|a {
 }
 
 #dialogBox {
-%if APP_VERSION == 35
-  border: 1px solid #666;
-%else
   background-color: #fbfbfb;
+  background-clip: content-box;
   color: #424e5a;
   font-size: 14px;
+<<<<<<< HEAD
   border-radius: 2.5px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
-%endif
+=======
+  /* `transparent` will use the dialogText color in high-contrast themes and
+     when page colors are disabled */
+  border: 1px solid transparent;
+  border-radius: 3.5px;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);
+>>>>>>> e1a3751... Rebase on 37.0.1 version
   display: -moz-box;
   margin: 0;
-%if APP_VERSION == 35
-  padding-right: 6px;
-  padding-left: 6px;
-%else
   padding: 0;
-%endif
 }
 
 #dialogBox[resizable="true"] {
   resize: both;
   overflow: hidden;
-%if APP_VERSION == 35
-  min-height: 30em;
-%else
   min-height: 20em;
-%endif
   min-width: 66ch;
 }
 
-%if APP_VERSION != 35
 #dialogBox > .groupbox-title {
   padding: 3.5px 0;
   background-color: #f1f1f1;
@@ -302,7 +207,6 @@ description > html|a {
 #dialogTitle {
   text-align: center;
 }
-%endif
 
 .close-icon {
   background-color: transparent !important;
@@ -315,38 +219,41 @@ description > html|a {
 
 #dialogBox > .groupbox-body {
   -moz-appearance: none;
-%if APP_VERSION == 35
-  padding: 0;
-%else
   padding: 20px;
-%endif
 }
 
 #dialogFrame {
   -moz-box-flex: 1;
   /* Default dialog dimensions */
-%if APP_VERSION == 35
-  height: 30em;
-%else
   height: 20em;
-%endif
   width: 66ch;
 }
-
-%if APP_VERSION == 35
-tree:not(#rejectsTree) {
-  min-height: 15em;
-}
-
-:-moz-any(dialog, window, prefwindow) groupbox {
-  -moz-margin-start: 8px;
-  -moz-margin-end: 8px;
-}
-%endif
 
 /**
  * End Dialog
  */
+
+/**
+ * Sync migration
+ */
+#sync-migrate-upgrade-description {
+  /* description elts need a min-width to wrap correctly - bug 630864? */
+  min-width: 100px
+}
+
+#sync-migration {
+  border: 1px solid rgba(0, 0, 0, 0.32);
+  background-color: InfoBackground;
+  color: InfoText;
+  text-shadow: none;
+  margin: 5px 0 0 0;
+  animation: fadein 3000ms;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
 spinbuttons {
   -moz-appearance: none;
@@ -383,16 +290,6 @@ filefield + button {
   -moz-margin-start: -4px;
 }
 
-%if APP_VERSION == 35
-#dialogTitle {
-  -moz-margin-start: 12px !important;
-}
-
-.actionButtons {
-  margin-right: 8px !important;
-  margin-left: 8px !important;
-}
-%else
 /**
  * Dialog
  */
@@ -400,4 +297,3 @@ filefield + button {
 #dialogTitle {
   font-size: 1em;
 }
-%endif

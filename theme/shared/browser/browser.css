@@ -2055,7 +2055,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 .ac-comment[selected="true"],
 .ac-url-text[selected="true"],
 .ac-action-text[selected="true"] {
-  color: #8da9e0 !important;
+  color: #f3f3f3 !important;
 }
 
 .autocomplete-treebody::-moz-tree-cell-text(suggesthint, treecolAutoCompleteComment),
@@ -2575,7 +2575,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 
 .tabbrowser-tab[selected=true] .tab-background-middle {
   background: #ededed;
-  -moz-border-bottom-colors: #8da9e0;
+  -moz-border-bottom-colors: #5294e2;
 }
 
 .tabbrowser-tab[selected=true] .tab-background-middle:-moz-lwtheme {

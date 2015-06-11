@@ -587,7 +587,7 @@ xul|*.category {
 }
 
 xul|*.category[selected] {
-  background: #7487e4;
+  background: #5294e2;
   background-clip: padding-box;
   border-color: #bdc9e8;
   color: #fff;

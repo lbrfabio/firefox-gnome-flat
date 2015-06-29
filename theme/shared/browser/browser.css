@@ -2055,7 +2055,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 .ac-comment[selected="true"],
 .ac-url-text[selected="true"],
 .ac-action-text[selected="true"] {
-  color: #829fa9 !important;
+  color: #f3f3f3 !important;
 }
 
 .autocomplete-treebody::-moz-tree-cell-text(suggesthint, treecolAutoCompleteComment),

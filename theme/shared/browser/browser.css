@@ -1236,11 +1236,11 @@ toolbarpaletteitem[place="palette"] > :-moz-any(#edit-controls, #zoom-controls) 
 /* remove ugly white border around location and searchbars */
 #urlbar, .searchbar-textbox {
  -moz-appearance: none;
-  background: linear-gradient(to bottom, #f0f0f0, #fff);
+  background: #f7f8f9;
   border: 1px solid;
   border-color: #b2b6b2 #b8bbb8 #bdbfbd;
-  border-radius: 0px;
-  box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.15), 0px 1px 0 0 rgba(255,255,255,0.37);
+  border-radius: 1px;
+  box-shadow: inset 0px 1px 1px 0px rgba(0,0,0,0.15), 0px 1px 0 0 rgba(255,255,255,0.37);
   color: #2e3436;
   margin: 0px 3px;
   min-height: 28px;
@@ -1254,7 +1254,7 @@ toolbarpaletteitem[place="palette"] > :-moz-any(#edit-controls, #zoom-controls) 
 #urlbar:-moz-lwtheme, .searchbar-textbox:-moz-lwtheme {
   background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.8));
   border-color: rgba(50,50,50,.4);
-  box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.15), 0px 1px 0 0 rgba(255,255,255,0.15);
+  box-shadow: inset 0px 1px 1px 0px rgba(0,0,0,0.15), 0px 1px 0 0 rgba(255,255,255,0.15);
 }
 
 #main-window@darkTheme@ :-moz-any(#urlbar, .searchbar-textbox) {
@@ -2415,7 +2415,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
   border-top: 1px solid #a1a1a1;
   border-bottom: 0;
   box-shadow: 0 -1px #d9d9d9,
-              inset 0 2px 3px -1px hsla(0,0%,0%,.15);
+              inset 0 1px 2px -1px hsla(0,0%,0%,.15);
   min-height: 0;
   padding: 0 10px !important; /* FIXME */
   margin-bottom: -1px;
@@ -2426,7 +2426,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
   background: hsla(0,0%,0%,.048);
   border-top-color: hsla(120,100%,2.8%,.338);
   box-shadow: 0 -1px hsla(0,0%,0%,.048),
-              inset 0 2px 3px -1px hsla(0,0%,0%,.15);
+              inset 0 1px 2px -1px hsla(0,0%,0%,.15);
 }
 
 #TabsToolbar@darkTheme@ {

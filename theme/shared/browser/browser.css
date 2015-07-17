@@ -2629,7 +2629,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 }
 
 .tabbrowser-tab:hover .tab-background-middle {
-  background: #e5e5e5;
+  background: #e8e8e8;
   border-top: 1px solid #cdced4;
 }
 

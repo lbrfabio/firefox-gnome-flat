@@ -2467,7 +2467,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 
 #TabsToolbar {
   -moz-appearance: none;
-  background: #dbdbdb;
+  background: #dfdfdf;
   border-top: 1px solid #cdced4;
   border-bottom: 0;
   box-shadow: none;
@@ -2536,6 +2536,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
   min-height: 28px;
   /* override the global style to allow the selected tab to be above the nav-bar */
   z-index: auto;
+  padding-top: 2px;
 }
 
 #TabsToolbar toolbarbutton {
@@ -2628,13 +2629,14 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 }
 
 .tabbrowser-tab:hover .tab-background-middle {
-  background: #dadada;
-  border-bottom: 2px solid #cdced4;
+  background: #e5e5e5;
+  border-top: 1px solid #cdced4;
 }
 
 .tabbrowser-tab[visuallyselected=true] .tab-background-middle {
-  background: #ededed;
+  background: #f0f0f0;
   border-bottom: 1px solid #cdced4;
+  border-top: 1px solid #cdced4;
 }
 
 #main-window[privatebrowsingmode=temporary] .tabbrowser-tab[visuallyselected=true] .tab-background-middle {
@@ -2681,7 +2683,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 }
 
 .tabbrowser-tab > .tab-stack {
-  min-height: 35px;
+  min-height: 28px;
   margin: 0;
   padding: 0;
 }
@@ -2716,8 +2718,7 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 .tabbrowser-tab[titlechanged]:not([visuallyselected="true"]) > .tab-stack > .tab-content {
   background-image: none;
   background-repeat: no-repeat;
-  border-bottom-style: solid;
-  border-bottom: 2px solid #ef2929;
+  box-shadow: inset 0px -2px 0px 0px #ef2929;
 }
 
 .tab-throbber,

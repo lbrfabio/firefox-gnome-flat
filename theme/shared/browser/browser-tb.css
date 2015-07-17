@@ -13,7 +13,7 @@
   -moz-appearance: none;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 0px;
+  border-radius: 3px;
   color: #2e3436;
   text-shadow: none;
   transition-property: background, border, box-shadow;
@@ -37,9 +37,8 @@
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([disabled="true"]):hover,
 :-moz-any(#window-controls, .window-controls) > toolbarbutton:hover,
 .tabs-closebutton:hover {
-  background: #f8f8f8;
-  border-color: #b2b6b2 #b8bbb8 #bdbfbd;
-  border-color: #a1a1a1;
+  background: #fafbfb;
+  border-color: #d8dadf;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.45),
               0 1px 0 rgba(255,255,255,.37);
   text-shadow: 0 1px rgba(255,255,255,.77);
@@ -72,10 +71,9 @@
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[checked="true"]:hover,
 :-moz-any(#window-controls, .window-controls) > toolbarbutton:active:hover,
 .tabs-closebutton:active:hover {
-  background-image: linear-gradient(to bottom, #d6d6d6, #e0e0e0);
-  border-color: #a1a1a1;
-  box-shadow: inset 0 1px rgba(0,0,0,.07),
-              0 1px rgba(255,255,255,0.37);
+  background: #5294e2;
+  border-color: #4f8ed9;
+  box-shadow: none;
   text-shadow: 0 1px rgba(255,255,255,.77);
 }
 
@@ -113,9 +111,9 @@
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[type="menu"][open="true"]:hover,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[type="menu"][open="true"]:active,
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[type="menu"][open="true"]:active:hover {
-  background: #fff;
-  border-color: #fff;
-  border-radius: 0px 0px 0 0;
+  background: #5294e2;
+  border-color: #4f8ed9;
+  border-radius: 3px 3px 0 0;
   box-shadow: none;
 }
 
@@ -189,7 +187,7 @@
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-menubutton-button {
   background: none !important;
   border: none !important;
-  border-radius: 0 !important;
+  border-radius: 2 !important;
   box-shadow: none !important;
   -moz-padding-start: 3px !important;
   -moz-padding-end: 0px !important;
@@ -243,22 +241,22 @@
 
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1 {
   min-width: 32px !important;
-  border-radius: 0px !important;
+  border-radius: 3px !important;
 }
 
 #nav-bar :-moz-any(#back-button, #forward-button),
 #nav-bar[reliefbuttons="true"] :-moz-any(#back-button, #forward-button) {
-  min-width: 31px !important;
-  border-radius: 0px !important;
+  min-width: 33px !important;
+  border-radius: 3px !important;
 }
 
 /* default */
 #nav-bar :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]),
 #nav-bar :-moz-any(#back-button, #forward-button):not(:hover):not([open="true"]):not([disabled="true"]),
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]) {
-  background: #f0f0f0;
-  border-color: #b2b6b2 #b8bbb8 #bdbfbd;
-  border-radius: 0px !important;
+  background: transparent;
+  border-color: transparent;
+  border-radius: 3px !important;
   text-shadow: 0 1px rgba(255,255,255,.77);
 }
 
@@ -267,7 +265,7 @@
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]):-moz-lwtheme {
   background-image: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(200,200,200,0.5));
   border-color: rgba(50,50,50,.4);
-  border-radius: 0px !important;
+  border-radius: 3px !important;
 }
 
 #nav-bar@darkTheme@ :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]),
@@ -281,17 +279,15 @@
 #nav-bar :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]),
 #nav-bar :-moz-any(#back-button, #forward-button):not(:hover):not([open="true"]):not([disabled="true"]),
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]) {
-  box-shadow: 0 1px 0 rgba(255,255,255,0.37), /* bottom */
-              inset 0 1px 0 rgba(255,255,255,0.45);
+  box-shadow: none !important;
   border-radius: 0px !important;
 }
 
 #nav-bar :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]):-moz-lwtheme,
 #nav-bar :-moz-any(#back-button, #forward-button):not(:hover):not([open="true"]):not([disabled="true"]):-moz-lwtheme,
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]):-moz-lwtheme {
-  box-shadow: 0 1px 0 rgba(255,255,255,0.15),
-  inset 0 1px 0 rgba(255,255,255,0.3);
-  border-radius: 0px !important;
+  box-shadow: none !important;
+  border-radius: 3px !important;
 }
 
 #nav-bar@darkTheme@ :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]),
@@ -305,10 +301,10 @@
 #nav-bar :-moz-any(#back-button, #forward-button)[disabled="true"],
 #nav-bar :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1[disabled="true"],
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1[disabled="true"] {
-  background: #c8c8c8;
-  border-color: #b2b6b2 #b8bbb8 #bdbfbd;
-  box-shadow: none;
-  border-radius: 0px !important;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none !important;
+  border-radius: 3px !important;
 }
 
 #nav-bar :-moz-any(#back-button, #forward-button)[disabled="true"]:-moz-lwtheme,
@@ -546,7 +542,7 @@
 #TabsToolbar .tabs-closebutton:-moz-any(:hover, :hover:active),
 #TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-up:-moz-any(:hover, :hover:active),
 #TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-down:-moz-any(:hover, :hover:active) {
-  box-shadow: inset 0 3px hsla(0,0%,0%,.03), inset 0 2px hsla(0,0%,0%,.03), inset 0 1px hsla(0,0%,0%,.03);
+  box-shadow: inset 0 1x hsla(0,0%,0%,.03), inset 0 1px hsla(0,0%,0%,.03), inset 0 1px hsla(0,0%,0%,.03);
 }
 
 /* */

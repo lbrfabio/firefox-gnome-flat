@@ -14,7 +14,7 @@
 }
 
 windowdragbox#search {
-  border-bottom: 1px solid #a7aba7;
+  border-bottom: 1px solid #cdced4;
   -moz-box-ordinal-group: 1;
   -moz-binding: url(chrome://global/content/bindings/toolbar.xml#toolbar-drag);
 }

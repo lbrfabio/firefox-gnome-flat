@@ -66,7 +66,7 @@ findbar toolbarbutton[disabled="true"],
 findbar toolbarbutton[disabled="true"]:hover,
 findbar toolbarbutton[disabled="true"]:active,
 findbar toolbarbutton[disabled="true"]:active:hover {
-  color: #a7aba7;
+  color: #cdced4;
 }
 
 .findbar-closebutton {

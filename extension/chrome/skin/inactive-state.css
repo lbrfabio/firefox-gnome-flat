@@ -7,7 +7,7 @@
 /* ::::: global/findBar.css ::::: */
 
 findbar:-moz-window-inactive {
-  background: #e0e0e0 !important;
+  background: #dbdbdb !important;
 }
 
 .findbar-find-status:-moz-window-inactive {
@@ -95,7 +95,7 @@ notification .messageImage:-moz-window-inactive {
 
 #nav-bar[darkvariant] :-moz-any(#back-button, #forward-button):-moz-window-inactive,
 #nav-bar[reliefbuttons="true"][darkvariant] .toolbarbutton-1:-moz-window-inactive {
-  border-color: #a8a8a8 !important;
+  border-color: #cdced4 !important;
 }
 
 :-moz-any(
@@ -112,7 +112,7 @@ notification .messageImage:-moz-window-inactive {
 }
 
 #main-window:-moz-window-inactive #TabsToolbar {
-  border-top-color: #a8a8a8 !important;
+  border-top-color: #cdced4 !important;
   box-shadow: none !important;
 }
 

@@ -2715,12 +2715,6 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
   -moz-padding-start: 7px;
 }
 
-.tabbrowser-tab[titlechanged]:not([visuallyselected="true"]) > .tab-stack > .tab-content {
-  background-image: none;
-  background-repeat: no-repeat;
-  box-shadow: inset 0px -2px 0px 0px #ef2929;
-}
-
 .tab-throbber,
 .tab-icon-image {
   width: 18px;
@@ -2745,6 +2739,17 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
   display: -moz-box;
   list-style-image: url("chrome://browser/skin/tabbrowser/crashed.svg");
 }
+
+.tabbrowser-tab[pinned][titlechanged]:not([visuallyselected="true"]) .tab-icon-overlay:not([crashed]) {
+  display: -moz-box;
+  list-style-image: url("chrome://browser/skin/tabbrowser/titlechanged.svg");
+}
+
+/*.tabbrowser-tab[pinned][titlechanged]:not([visuallyselected="true"]) > .tab-stack > .tab-content {
+  background-image: none;
+  background-repeat: no-repeat;
+  box-shadow: inset 0px -2px 0px 0px #ef2929;
+}*/
 
 .tab-throbber[busy] {
   list-style-image: url(chrome://browser/skin/tabbrowser/connecting.png);

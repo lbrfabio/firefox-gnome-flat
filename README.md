@@ -27,4 +27,4 @@ For more details please check [this page](https://github.com/seleznev/firefox-co
 
 If you'd like to change tab positions or any additional settings, 
 please install [GNOME Theme Tweak](https://addons.mozilla.org/en-US/firefox/addon/gnome-theme-tweak/)
-(an extension we also make).
+

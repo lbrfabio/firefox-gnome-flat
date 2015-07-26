@@ -22,9 +22,9 @@
 }
 
 /* TOP MARGIN */
-#newtab-margin-top {
+/*#newtab-margin-top {
     display: none !important;
-}
+}/*
 
 /* SEARCH FORM*/
 #newtab-search-text, #newtab-search-submit {
@@ -103,9 +103,16 @@
 #newtab-customize-button,
 .newtab-customize {
   background-color: transparent;
-  /*background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 32, 32, 0);*/
-  background-size: 28px;
+  /*background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 32, 32, 0);*/  background-size: 28px;
+  height: 38px;
+  width: 38px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
   border: none;
+}
+
+.newtab-customize {
   height: 28px;
   width: 28px;
   display:none;
@@ -113,11 +120,14 @@
 
 #newtab-customize-button:-moz-any(:hover, :active, [active]) {
   /*background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 64, 32, 32);*/
+  background-color: #FFFFFF;
+  border: solid 1px #CCCCCC;
+  border-radius: 2px;
 }
 
 /* CELLS */
 .newtab-cell {
-  height: 162px;
+  height: 158px;
   margin: 7px;
   margin-bottom: 15px;
   margin-top: 15px;
@@ -155,7 +165,8 @@ div.newtab-cell {
   background-position: 50% calc(50% - (24px / 2)); /* Half height, compensate for text title */
 }
 
-.newtab-cell:not([ignorehover]) > .newtab-site:hover,
+.newtab-cell:not([ignorehover]) .newtab-control:hover ~ .newtab-link,
+.newtab-cell:not([ignorehover]) .newtab-link:hover,
 .newtab-site[dragged] {
   box-shadow: 0 0 10px rgba(8,22,37,.3);
 }
@@ -167,7 +178,8 @@ div.newtab-cell {
 
 /* LINKS */
 .newtab-link {
-  border-radius: 10px;
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 /* THUMBNAILS */
@@ -254,7 +266,7 @@ div.newtab-cell {
 
 /*
 .newtab-site[pinned] .newtab-title {
-  padding: 0 15px;
+  -moz-padding-start: 24px;
 }
 
 .newtab-site[pinned] .newtab-title::before {
@@ -265,6 +277,8 @@ div.newtab-cell {
   left: 0;
   position: absolute;
   width: 10px;
+  margin-left: 8px;
+  margin-top: 6px;
 }
 
 .newtab-site[pinned] .newtab-title:-moz-locale-dir(rtl)::before {

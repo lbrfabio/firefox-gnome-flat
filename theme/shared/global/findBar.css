@@ -25,6 +25,22 @@ findbar[hidden] {
   transition-delay: 0s, 0s, 150ms;
 }
 
+findbar[movetotop]:not([inPDFJS]) {
+  background-color: #dfdfdf !important;
+  border: 1px solid #cdced4 !important;
+}
+
+/* Rounded inner corners */
+
+findbar[movetotop]:not([inPDFJS]):-moz-locale-dir(ltr):before,
+findbar[movetotop]:not([inPDFJS]):-moz-locale-dir(rtl):after {
+    box-shadow: 	none !important;
+}
+findbar[movetotop]:not([inPDFJS]):-moz-locale-dir(ltr):after,
+findbar[movetotop]:not([inPDFJS]):-moz-locale-dir(rtl):before {
+    box-shadow: 	none !important;
+}
+
 /* Buttons */
 
 findbar toolbarbutton {
@@ -92,19 +108,18 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 }
 
 .findbar-textbox:-moz-locale-dir(ltr) {
-  border-radius: 0px 0 0 0px;
+  border-radius: 25px 0 0 25px;
   border-right-width: 0;
 }
 
 .findbar-textbox:-moz-locale-dir(rtl) {
-  border-radius: 0 0px 0px 0;
+  border-radius: 0 25px 25px 0;
   border-left-width: 0;
 }
 
 .findbar-textbox[focused="true"] {
   border-color: Highlight;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.6),
-              inset 0 1px 2px 0 rgba(0,106,221,0.3);
+  box-shadow: none;
 }
 
 .findbar-textbox[status="notfound"] {

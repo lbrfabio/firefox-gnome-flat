@@ -91,10 +91,6 @@ toolbar[brighttext] {
   background-color: #cdced4;
 }
 
-#main-window@darkTheme@ #navigator-toolbox::after {
-  background-color: var(--toolbar-border-color);
-}
-
 /* Toolbars */
 
 #toolbar-menubar {
@@ -2670,10 +2666,6 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   right: 0;
   z-index: 0;
   border-bottom: 1px solid #cdced4;
-}
-
-#TabsToolbar@darkTheme@::after {
-  border-bottom: 1px solid var(--toolbar-border-color);
 }
 
 /*

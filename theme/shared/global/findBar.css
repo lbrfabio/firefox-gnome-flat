@@ -49,7 +49,7 @@ findbar toolbarbutton {
   border: 1px solid transparent;
   border-radius: 0px;
   color: ButtonText;
-  padding: 3px 5px;
+  padding: 5px;
   transition-property: border, box-shadow, background;
   transition-duration: 200ms;
 }

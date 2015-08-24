@@ -178,7 +178,7 @@ div.newtab-cell {
 
 /* LINKS */
 .newtab-link {
-  border-radius: 3px;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -215,9 +215,10 @@ div.newtab-cell {
   background-attachment: fixed;
   color: rgba(0,0,0,0.55);
   text-shadow: 0 1px 0 rgba(255,255,255,1);
+  border: none;
   border-top: 1px solid;
   border-color: rgba(8,22,37,.12) rgba(8,22,37,.14) rgba(8,22,37,.16);
-  font-size: 100%;
+  font-size: 90%;
   line-height: 24px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
   border-radius: 0 0 0px 0px;
@@ -231,7 +232,6 @@ div.newtab-cell {
   text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
 }
 
-#newtab-intro-what,
 .newtab-sponsored,
 .newtab-suggested {
   color: rgba(0,0,0,0.55);
@@ -337,7 +337,7 @@ div.newtab-cell {
 }
 
 /*
-#newtab-intro-panel {
+.newtab-title {
   font-family: sans-serif;
 }
 */

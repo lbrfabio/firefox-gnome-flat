@@ -1239,7 +1239,7 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
   background: #fff;
   border: 1px solid;
   border-color: #d6dbe6 #d6dbe6 #d6dbe6;
-  border-radius: 25px;
+  border-radius: 3px;
   box-shadow: none;
   color: ButtonText;
   margin: 0px 3px;

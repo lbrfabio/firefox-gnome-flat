@@ -477,6 +477,7 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
   border: 0 solid transparent;
   border-left-width: 1px;
   border-right-width: 1px;
+  border-top-width: 1px;
   border-radius: 0;
   box-shadow: none;
   transition: none;
@@ -530,7 +531,7 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 #TabsToolbar .tabs-closebutton:active:hover,
 #TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-up:active:hover,
 #TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-down:active:hover {
-  background: #c0c0c0;
+  background: #d8d8d8;
   border-color: transparent;
 }
 

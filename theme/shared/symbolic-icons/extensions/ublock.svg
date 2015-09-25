@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="0.91+devel+osxmenu r12922"
+   height="16"
+   width="16"
+   version="1.1"
+   sodipodi:docname="ublock.svg"
+   id="svg8146"
+   viewBox="0 0 16 16">
+  <defs
+     id="defs8170" />
+  <metadata
+     id="metadata8148">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Gnome Symbolic Icon Theme</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:zoom="22.627417"
+     borderopacity="1"
+     inkscape:current-layer="g8156"
+     inkscape:cx="10.376677"
+     inkscape:window-y="23"
+     inkscape:snap-grids="true"
+     inkscape:snap-bbox-midpoints="false"
+     inkscape:object-paths="true"
+     inkscape:window-maximized="0"
+     inkscape:snap-bbox="true"
+     showgrid="false"
+     inkscape:snap-nodes="false"
+     inkscape:guide-bbox="true"
+     inkscape:snap-global="true"
+     showguides="true"
+     bordercolor="#666666"
+     inkscape:window-x="0"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:object-nodes="true"
+     inkscape:window-width="1280"
+     inkscape:pageopacity="1"
+     inkscape:cy="5.3987905"
+     inkscape:pageshadow="2"
+     pagecolor="#ffffff"
+     gridtolerance="10"
+     inkscape:bbox-paths="false"
+     inkscape:snap-to-guides="true"
+     inkscape:window-height="751"
+     showborder="true"
+     id="namedview8150"
+     inkscape:document-units="px"
+     inkscape:snap-page="true"
+     inkscape:bbox-nodes="true">
+    <inkscape:grid
+       visible="true"
+       enabled="true"
+       spacingy="1px"
+       spacingx="1px"
+       snapvisiblegridlinesonly="true"
+       type="xygrid"
+       empspacing="2"
+       id="grid8152" />
+  </sodipodi:namedview>
+  <title
+     id="title8154">Gnome Symbolic Icon Theme</title>
+  <g
+     inkscape:label="status"
+     transform="translate(-81,-397)"
+     inkscape:groupmode="layer"
+     fill="ButtonText"
+     id="g8156">
+    <g
+       id="g7293-8"
+       transform="translate(161,-527.3622)">
+      <g
+         id="g4986">
+        <rect
+           style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:0;fill:#fafaf7;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;enable-background:accumulate"
+           id="rect7291-2"
+           width="16"
+           height="16"
+           x="176"
+           y="272"
+           transform="translate(-256,652.3622)" />
+        <g
+           id="g5898-0"
+           transform="matrix(1.0463216,0,0,1.0211104,-23.310624,-149.22886)">
+          <path
+             sodipodi:nodetypes="cccccccccccczcccccczcccc"
+             inkscape:connector-curvature="0"
+             id="path5906-9"
+             d="m -49.280582,1052.3759 -3.906916,4.0008 0,5.6822 3.906916,4.0008 5.530909,0 3.905052,-4.0008 0,-5.6822 -3.905052,-4.0008 z m 0.871732,2.9246 0.955729,0 0,2.9379 c 0,0 0.326945,0.3395 0.955729,0.3395 0.628784,0 0.955729,-0.3395 0.955729,-0.3395 l 0,-2.9379 0.955729,0 0,5.8759 -0.955729,0 0,-1.9586 c 0,0 -0.311548,0.3565 -0.955729,0.3395 -0.644181,-0.017 -0.955729,-0.3395 -0.955729,-0.3395 l 0,3.9173 -0.955729,0 z"
+             style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.03728056" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

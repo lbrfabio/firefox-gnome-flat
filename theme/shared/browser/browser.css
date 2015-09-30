@@ -1330,6 +1330,10 @@ toolbar[brighttext] .searchbar-textbox {
   min-width: calc(54px + 11ch);
 }
 
+#urlbar-search-footer {
+    display: none;
+}
+
 /* ::::: Identity box ::::: */
 
 #identity-box {

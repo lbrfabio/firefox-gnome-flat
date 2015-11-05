@@ -1334,6 +1334,11 @@ toolbar[brighttext] .searchbar-textbox {
     display: none;
 }
 
+
+#userContext-icons {
+    display: none;
+}
+
 /* ::::: Identity box ::::: */
 
 #identity-box {

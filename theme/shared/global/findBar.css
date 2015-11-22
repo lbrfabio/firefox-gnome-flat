@@ -30,6 +30,10 @@ findbar[movetotop]:not([inPDFJS]) {
   border: 1px solid #cdced4 !important;
 }
 
+.findbar-container {
+  background: #dfdfdf !important;
+}
+
 /* Rounded inner corners */
 
 findbar[movetotop]:not([inPDFJS]):-moz-locale-dir(ltr):before,

@@ -6,11 +6,11 @@
 
 findbar {
   -moz-appearance: none;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.08));
+  background: linear-gradient(to bottom, #d4d4d4, #ececec);
+  padding: 4px 8px;
   border-top: 2px solid;
   -moz-border-top-colors: ThreeDShadow ThreeDHighlight;
   min-width: 1px;
-  padding: 4px 8px;
   transition-property: margin-bottom, opacity, visibility;
   transition-duration: 150ms, 150ms, 0s;
   transition-timing-function: ease-in-out, ease-in-out, linear;

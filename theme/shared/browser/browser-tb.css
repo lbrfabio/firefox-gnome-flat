@@ -492,23 +492,28 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 
 #TabsToolbar .toolbarbutton-1:-moz-any(:hover, :hover:active, [checked="true"], [open="true"]),
 #TabsToolbar .tabs-newtab-button:-moz-any(:hover, :hover:active),
-#TabsToolbar .tabs-closebutton:-moz-any(:hover, :hover:active),
+#TabsToolbar .tabs-closebutton:-moz-any(:hover, :hover:active) {
+  box-shadow: none !important;
+}
+
 #TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-up:-moz-any(:hover, :hover:active),
 #TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-down:-moz-any(:hover, :hover:active) {
   box-shadow: none !important;
-  border-color: transparent !important;
+  background: none !important;
 }
 
 /* */
 #TabsToolbar .toolbarbutton-1:hover,
 #TabsToolbar .tabs-newtab-button:hover,
-#TabsToolbar .tabs-closebutton:hover,
-#TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-up:hover,
-#TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-down:hover {
+#TabsToolbar .tabs-closebutton:hover {
   /*background: #e1e1e1;
   border-color: #d2d5d2;*/
   background: transparent !important;
-  border-color: transparent !important;
+  border-color: #dfdfdf !important;
+}
+
+#TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-up:hover,
+#TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-down:hover {
 }
 
 #TabsToolbar .toolbarbutton-1:hover:-moz-lwtheme,

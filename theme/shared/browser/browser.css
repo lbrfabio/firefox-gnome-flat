@@ -1233,7 +1233,6 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
   opacity: 1 !important;
 }
 
-
 /* Show/hide buttons */
 
 #minimize-button,
@@ -3125,7 +3124,6 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 #TabsToolbar .tab-close-button:active > .toolbarbutton-icon {
   background-image: -moz-image-rect(url(chrome://browser/skin/tabbrowser/close.svg), 0, 16, 16, 0);
   opacity: 0.9;
-  transition-timing-function: ease-in;
 }
 
 #TabsToolbar[brighttext] .tab-close-button:hover > .toolbarbutton-icon {
@@ -3161,11 +3159,11 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):not(:active) {
-  -moz-border-end-color: #c0c0c0 !important;
+-moz-border-end-color: #cdced4 !important;
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled]):not(:active) {
-  -moz-border-start-color: #c0c0c0 !important;
+  -moz-border-start-color: #cdced4 !important;
 }
 
 #TabsToolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):not(:active) {

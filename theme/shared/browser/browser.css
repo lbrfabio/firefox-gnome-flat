@@ -2320,8 +2320,9 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 }
 
 #urlbar > toolbarbutton:not([disabled="true"]):active {
-  background: linear-gradient(to bottom, #d1d1d1, #fff) !important;
-  box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.15) !important;
+  background: transparent !important;
+  box-shadow: none  !important;
+  opacity: .35;
 }
 
 toolbar[brighttext] #urlbar > toolbarbutton:not([disabled="true"]):active {

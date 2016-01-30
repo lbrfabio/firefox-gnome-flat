@@ -1446,8 +1446,8 @@ toolbar[brighttext] .searchbar-textbox {
 
 #identity-box:-moz-any(:hover:active, [open="true"]),
 #identity-box:-moz-any(:hover:active, [open="true"]):before {
-  background: linear-gradient(to bottom, #d1d1d1, #fff);
-  box-shadow: inset 0 1px 1px -1px hsla(0,0%,0%,.15);
+  background: transparent  !important;
+  box-shadow: none !important;
 }
 toolbar[brighttext] #identity-box:-moz-any(:hover:active, [open="true"]),
 toolbar[brighttext] #identity-box:-moz-any(:hover:active, [open="true"]):before {

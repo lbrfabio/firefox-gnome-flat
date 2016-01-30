@@ -187,6 +187,12 @@ notification .messageImage:-moz-window-inactive {
   opacity: .38 !important;
 }
 
+
+#close-button:hover:-moz-window-inactive > .toolbarbutton-icon  {
+  filter: grayscale(0);
+  opacity: .6 !important;
+}
+
 /* ::::: browser/extensions/flagfox.css ::::: */
 
 /* Flagfox

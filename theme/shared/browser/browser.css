@@ -1225,7 +1225,7 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
 }
 
 :-moz-any(#minimize-button, #restore-button, #fullscreen-leave-button, #close-button):hover > .toolbarbutton-icon {
-  opacity: 0.70 !important;
+  opacity: 0.65 !important;
 }
 
 :-moz-any(#minimize-button, #restore-button, #fullscreen-leave-button, #close-button):active:hover > .toolbarbutton-icon {
@@ -3107,10 +3107,11 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   background-repeat: no-repeat;
   min-width: 16px;
   min-height: 16px;
-  opacity: .7;
+  opacity: .55;
 
   transition: opacity 200ms ease-in;
 }
+
 #TabsToolbar[brighttext] .tab-close-button > .toolbarbutton-icon {
   background-image: -moz-image-rect(url(chrome://browser/skin/tabbrowser/close-dark.svg), 0, 32, 16, 16);
 }
@@ -3123,7 +3124,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 #TabsToolbar .tab-close-button:active > .toolbarbutton-icon {
   background-image: -moz-image-rect(url(chrome://browser/skin/tabbrowser/close.svg), 0, 16, 16, 0);
-  opacity: 1;
+  opacity: 0.9;
   transition-timing-function: ease-in;
 }
 
@@ -3136,6 +3137,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 #TabsToolbar > #new-tab-button,
 #TabsToolbar > #wrapper-new-tab-button > #new-tab-button {
   list-style-image: url(chrome://symbolic-icons/skin/list-add.svg);
+  opacity: .55;
   -moz-image-region: auto;
 }
 

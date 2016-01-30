@@ -28,10 +28,10 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     inkscape:zoom="45.254834"
+     inkscape:zoom="16"
      borderopacity="1"
      inkscape:current-layer="g12"
-     inkscape:cx="6.6694018"
+     inkscape:cx="-2.8553336"
      inkscape:window-y="37"
      inkscape:snap-grids="true"
      inkscape:snap-bbox-midpoints="false"
@@ -55,7 +55,7 @@
      pagecolor="#555753"
      gridtolerance="10"
      inkscape:bbox-paths="false"
-     inkscape:cy="6.6456398"
+     inkscape:cy="8.0145763"
      inkscape:window-height="678"
      showborder="false"
      id="namedview6">
@@ -77,7 +77,7 @@
      inkscape:groupmode="layer"
      id="g12">
     <path
-       style="color:#2e3436;fill:#434c4f;fill-opacity:1"
+       style="color:#2e3436;fill:#000000;fill-opacity:1"
        d="m67 729v4h-4v2h4v4h2v-4h4v-2h-4v-4h-2z"
        fill="#2e3436"
        id="path14" />

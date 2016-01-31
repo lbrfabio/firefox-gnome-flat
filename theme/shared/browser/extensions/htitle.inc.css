@@ -28,10 +28,11 @@
   display: -moz-box !important;
 }
 
-#main-window[sizemode="fullscreen"] #window-controls[htitle="true"],
+/* Show window controls in TabsToolbar
+/*#main-window[sizemode="fullscreen"] #window-controls[htitle="true"],
 #main-window[sizemode="fullscreen"] #window-controls[htitle="true"] > #restore-button {
   display: -moz-box !important;
-}
+}*/
 
 #main-window[sizemode="fullscreen"] #window-controls[htitle="true"] > :-moz-any(#minimize-button, #close-button) {
   display: none !important;
@@ -39,9 +40,9 @@
 
 /* Hide theme's window controls */
 
-#main-window[htitlemode] .window-controls {
+/*#main-window[htitlemode] .window-controls {
   display: none !important;
-}
+}*/
 
 /* Remove "toolbar-drag" binding */
 

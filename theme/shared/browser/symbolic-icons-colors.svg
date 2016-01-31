@@ -31,10 +31,10 @@
   </filter>
   
   <filter id="azure" filterRes="512" x="0" y="0" width="16px" height="16px">
-    <feColorMatrix values="1.5 0    0    0 0
-                           0    1.5 0    0 0
-                           0    0    1.5 0 1
-                           0    0    0    1 0" color-interpolation-filters="sRGB"/>
+    <feColorMatrix values="0    0    0    0 0.325
+                           0    0    0    0 0.585
+                           0    0    0    0 0.89
+                           0    0    0    1.0 0" color-interpolation-filters="sRGB"/>
   </filter>
   
   <filter id="green" filterRes="512" x="0" y="0" width="16px" height="16px">

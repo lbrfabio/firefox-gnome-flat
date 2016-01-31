@@ -29,6 +29,7 @@
 %include ghostery.inc.css
 %include greasefire.inc.css
 %include greasemonkey.inc.css
+%include googleshortener.inc.css
 
 % H
 %include https-everywhere.inc.css

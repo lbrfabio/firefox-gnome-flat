@@ -1,0 +1,13 @@
+%if 0
+/* Google Shortener
+ * id: {B81B80BF-8F35-4BC0-9236-EFB3F7EE9282}
+ * URL: https://addons.mozilla.org/firefox/addon/google-shortener/ */
+%endif
+
+#googleshortener-urlbar-button {
+  opacity: 0.35;
+}
+
+#googleshortener-urlbar-button:hover {
+  opacity: 1;
+}

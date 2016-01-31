@@ -1453,6 +1453,7 @@ toolbar[brighttext] .searchbar-textbox {
 
 #identity-box:-moz-any(:hover:active, [open="true"]),
 #identity-box:-moz-any(:hover:active, [open="true"]):before {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
   background: transparent  !important;
   box-shadow: none !important;
 }
@@ -1903,6 +1904,10 @@ toolbar[brighttext] #notification-popup-box .notification-anchor-icon {
   list-style-image: url(chrome://symbolic-icons/skin/plugin.svg);
 }
 
+#plugins-notification-icon:active {
+  list-style-image: url(chrome://symbolic-icons/skin/plugin-alert.svg);
+}
+
 #plugins-notification-icon.plugin-hidden {
   list-style-image: url(chrome://symbolic-icons/skin/plugin-alert.svg);
 }
@@ -2327,9 +2332,9 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 }
 
 #urlbar > toolbarbutton:not([disabled="true"]):active {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
   background: transparent !important;
   box-shadow: none  !important;
-  opacity: .35;
 }
 
 toolbar[brighttext] #urlbar > toolbarbutton:not([disabled="true"]):active {
@@ -2383,6 +2388,10 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 .urlbar-history-dropmarker:hover,
 .urlbar-history-dropmarker[open="true"] {
   opacity: 1;
+}
+
+.urlbar-history-dropmarker[open="true"] {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
 }
 
 /* Popup blocker button */

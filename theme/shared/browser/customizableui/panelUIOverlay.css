@@ -857,7 +857,7 @@ panelview .toolbarbutton-1,
   -moz-appearance: none;
   padding: 0 6px;
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 3px;
   border-style: solid;
   border-color: transparent;
 }

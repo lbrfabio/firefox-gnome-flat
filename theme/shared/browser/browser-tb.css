@@ -458,12 +458,12 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 #nav-bar:-moz-locale-dir(ltr) :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:first-of-type,
 #nav-bar:-moz-locale-dir(rtl) :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:last-of-type,
 #nav-bar :-moz-any(#back-button:-moz-locale-dir(ltr), #forward-button:-moz-locale-dir(rtl)) {
-  border-radius: 0px 0 0 0px;
+  border-radius: 3px 0 0 3px;
 }
 #nav-bar:-moz-locale-dir(ltr) :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:last-of-type,
 #nav-bar:-moz-locale-dir(rtl) :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:first-of-type,
 #nav-bar :-moz-any(#forward-button:-moz-locale-dir(ltr), #back-button:-moz-locale-dir(rtl)) {
-  border-radius: 0 0px 0px 0;
+  border-radius: 0 3px 3px 0;
 }
 
 /* ::::: Tabs bar ::::: */
@@ -514,6 +514,8 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 
 #TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-up:hover,
 #TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-down:hover {
+  /*background: #e1e1e1;
+  border-color: #d2d5d2;*/
 }
 
 #TabsToolbar .toolbarbutton-1:hover:-moz-lwtheme,

@@ -5,14 +5,10 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="go-next.svg"
-   height="16"
-   width="16"
+   id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   id="svg2">
+   width="16"
+   height="16">
   <defs
      id="defs16" />
   <metadata
@@ -27,60 +23,14 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <sodipodi:namedview
-     inkscape:zoom="15.999999"
-     borderopacity="1"
-     inkscape:current-layer="g12"
-     inkscape:cx="6.9395572"
-     guidetolerance="10"
-     inkscape:snap-grids="true"
-     inkscape:snap-bbox-midpoints="false"
-     inkscape:object-paths="true"
-     inkscape:window-maximized="0"
-     inkscape:snap-bbox="true"
-     showgrid="false"
-     inkscape:snap-nodes="false"
-     inkscape:snap-global="true"
-     showguides="true"
-     bordercolor="#666666"
-     inkscape:window-x="0"
-     inkscape:guide-bbox="true"
-     objecttolerance="10"
-     inkscape:object-nodes="true"
-     inkscape:window-y="0"
-     inkscape:window-width="960"
-     inkscape:pageopacity="1"
-     inkscape:snap-to-guides="true"
-     inkscape:pageshadow="2"
-     pagecolor="#ffffff"
-     gridtolerance="10"
-     inkscape:bbox-paths="false"
-     inkscape:cy="8.5870703"
-     inkscape:window-height="1080"
-     showborder="true"
-     id="namedview6">
-    <inkscape:grid
-       spacingx="1px"
-       enabled="true"
-       spacingy="1px"
-       visible="true"
-       snapvisiblegridlinesonly="true"
-       type="xygrid"
-       empspacing="2"
-       id="grid8" />
-  </sodipodi:namedview>
   <title
      id="title10">Gnome Symbolic Icon Theme</title>
   <g
-     inkscape:label="actions"
-     transform="translate(-120,-626)"
-     inkscape:groupmode="layer"
-     id="g12">
+     id="g12"
+     transform="translate(-120,-626)">
     <path
-       style="color:#2e3436;text-indent:0;text-transform:none;fill:#2e3436"
-       inkscape:connector-curvature="0"
+       id="path14"
        d="m 125.00435,627.12638 0.99938,0 c 0.0104,-1.4e-4 0.0208,-5.3e-4 0.0313,0 0.25479,0.013 0.50955,0.14904 0.68707,0.36222 l 5.2779,6.04907 -5.27792,6.01278 c -0.18988,0.22023 -0.44972,0.32455 -0.71955,0.32455 l -0.99938,0 0,-1.15909 c 0,-0.3075 0.093,-0.61499 0.28107,-0.8331 l 3.81014,-4.34659 -3.81014,-4.38276 c -0.21061,-0.22559 -0.30297,-0.5439 -0.28107,-0.86932 l 0,-1.15909 z"
-       sodipodi:nodetypes="ccsccccccccccc"
-       id="path14" />
+       style="color:#2e3436;text-indent:0;text-transform:none;fill:#2e3436" />
   </g>
 </svg>

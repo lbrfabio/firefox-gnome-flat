@@ -8,34 +8,22 @@
   background-color: transparent;
 }
 
-/* TOP MARGIN */
-#newtab-search-container {
-    /*display: none !important;*/
-    margin: 0px;
-}
-
 #newtab-vertical-margin {
     background-color: rgb(229,229,229);
     background-image: url(chrome://browser/skin/devtools/noise.png),
                     linear-gradient(to bottom, rgba(255,255,255,.3), rgba(255,255,255,.2));
 }
 
-/* CLEANUP */
-#newtab-search-text, #newtab-search-submit {
-    display: none; 
+#newtab-margin-top {
+    -moz-box-flex: 2;
 }
 
-#newtab-search-logo {
-    display: none;
+/* HIDE SEARCH BAR, CUSTOMIZE BUTTON */
+#newtab-search-container,
+#newtab-customize-button {
+    display: none !important;
 }
 
-#newtab-intro-what {
-    display: none;
-}
-
-#newtab-search-icon {
-    display: none;
-}
 
 /* UNDO */
 #newtab-undo-container {
@@ -114,8 +102,8 @@
 /* CUSTOMIZE */
 #newtab-customize-button,
 .newtab-customize {
-  background-color: transparent;
-  /*background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 32, 32, 0);*/  background-size: 28px;
+  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 32, 32, 0);
+  background-size: 28px;
   height: 38px;
   width: 38px;
   background-repeat: no-repeat;
@@ -127,42 +115,39 @@
 .newtab-customize {
   height: 28px;
   width: 28px;
-  display:none;
 }
 
 #newtab-customize-button:-moz-any(:hover, :active, [active]) {
-  /*background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 64, 32, 32);*/
+  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 64, 32, 32);
   background-color: #FFFFFF;
   border: solid 1px #CCCCCC;
   border-radius: 2px;
 }
 
 /* CELLS */
+div.newtab-cell { 
+    height: 121px;
+    width:188px; 
+}
+
 .newtab-cell {
   height: 158px;
-  margin: 7px;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  margin: 15px 7px 15px 7px;
   background-color: rgba(255,255,255,.2);
   border: 1px solid;
   border-color: rgba(8,22,37,.12) rgba(8,22,37,.14) rgba(8,22,37,.16);
-  border-radius: 0px;
+  border-radius: 3px;
   transition: border-color 100ms ease-out;
 }
 
 .newtab-cell:empty {
   border: 1px dashed;
-  border-radius: 0px;
+  border-radius: 3px;
   border-color: rgba(8,22,37,.15) rgba(8,22,37,.17) rgba(8,22,37,.19);
 }
 
 .newtab-cell:hover:not(:empty):not([dragged]):not([ignorehover]) {
   border-color: rgba(8,22,37,.25) rgba(8,22,37,.27) rgba(8,22,37,.3);
-}
-
-div.newtab-cell { 
-    height: 121px !important;
-    width:188px !important 
 }
 
 /* SITES */
@@ -201,7 +186,7 @@ div.newtab-cell {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
-  border-radius: 0px;
+  border-radius: 3px;
   transition: opacity 100ms ease-out;
   opacity: 1;
 }
@@ -220,7 +205,7 @@ div.newtab-cell {
 
 /* TITLES */
 .newtab-title {
-  bottom: 1;
+  bottom: 0;
   padding: 0 8px;
   background-color: rgb(229,229,229);
   background-image: linear-gradient(to bottom, rgba(255,255,255,.3), rgba(255,255,255,.2));
@@ -233,7 +218,7 @@ div.newtab-cell {
   font-size: 90%;
   line-height: 24px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
-  border-radius: 0 0 0px 0px;
+  border-radius: 0 0 2px 2px;
   text-align: center;
 }
 

@@ -46,6 +46,6 @@
 
 /* Remove "toolbar-drag" binding */
 
-#main-window[htitlemode]:not([customizing]) #TabsToolbar:not([tabsontop="true"]) {
+#main-window[htitlemode]:not([customize-entered]) #TabsToolbar:not([tabsontop="true"]) {
   -moz-binding: url(chrome://browser/content/customizableui/toolbar.xml#toolbar) !important;
 }

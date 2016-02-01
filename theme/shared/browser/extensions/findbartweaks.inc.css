@@ -1,0 +1,29 @@
+%if 0
+/* FindBar Tweak
+ * id:  fbt@quicksaver */
+%endif
+
+
+.findbar-container {
+  background: transparent !important;
+}
+
+findbar[movetotop]:not([inPDFJS]) {
+  background-color: rgba(233, 233, 233, 1) !important;
+  border: 1px solid #cdced4 !important;
+}
+
+findbar[movetotop]:not([inPDFJS]):-moz-locale-dir(ltr):before,
+findbar[movetotop]:not([inPDFJS]):-moz-locale-dir(rtl):after {
+    box-shadow: 	none !important;
+}
+
+findbar[hideLabels] toolbarbutton[anonid="highlight"] {
+    list-style-image: url(chrome://symbolic-icons/skin/find-highlight.png) !important;
+	-moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+
+findbar[hideLabels] toolbarbutton[anonid="find-case-sensitive"] {
+    list-style-image: url(chrome://symbolic-icons/skin/find-case-sensitive.svg) !important;
+	-moz-image-region: rect(0px 16px 16px 0px) !important;
+}

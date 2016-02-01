@@ -640,7 +640,6 @@ xul|*.radio-label-box {
 }
 
 *|*.category[selected] {
-  /*background: #5294e2;*/
   background: var(--in-content-category-background-active);
   background-clip: padding-box;
   border-color: #bdc9e8;

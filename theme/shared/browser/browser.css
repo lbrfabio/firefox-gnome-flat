@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import url("chrome://global/skin/");
-@import url("chrome://global/skin/csd.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
@@ -87,6 +86,15 @@ toolbar[brighttext] {
   /*background-color: var(--toolbar-background);*/
   background-color: #e7e8eb;
   border-top: none;
+  border-radius: 7px 7px 0 0 !important;
+}
+
+#main-window:not([customize-entered])[htitlemode="always"] #navigator-toolbox:not(:-moz-lwtheme)  #nav-bar {
+    border-radius: 7px 7px 0 0 !important;
+}
+
+#main-window:not([darkvariant])[htitlemode="always"] > #tab-view-deck {
+    box-shadow: inset 0 0 3px #999;
 }
 
 #navigator-toolbox::after {
@@ -150,6 +158,15 @@ toolbar[brighttext] {
 #navigator-toolbox > #toolbar-menubar,
 #navigator-toolbox > #nav-bar {
   background: transparent;
+}
+
+#navigator-toolbox:not(:-moz-lwtheme) #nav-bar {
+    padding: 8px 5px 7px !important;
+    /*background-color: #e7e8eb !important;*/
+}
+
+ #navigator-toolbox:not(:-moz-lwtheme) #urlbar {
+    margin: 0 20px !important;
 }
 
 #nav-bar ~ toolbar {
@@ -1221,7 +1238,7 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
 }
 
 :-moz-any(#minimize-button, #restore-button, #fullscreen-leave-button, #close-button) > .toolbarbutton-icon {
-  opacity: 0.80 !important;
+  opacity: .8 !important;
 }
 
 :-moz-any(#minimize-button, #restore-button, #fullscreen-leave-button, #close-button):hover > .toolbarbutton-icon {
@@ -1253,7 +1270,7 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
 /* remove ugly white border around location and searchbars */
 #urlbar, .searchbar-textbox {
  -moz-appearance: none;
-  background: #fff;
+  background: linear-gradient(to bottom, #fff, #fff);
   border: 1px solid;
   border-color: #d6dbe6 #d6dbe6 #d6dbe6;
   border-radius: 3px;
@@ -1457,9 +1474,9 @@ toolbar[brighttext] .searchbar-textbox {
 
 #identity-box:-moz-any(:hover:active, [open="true"]),
 #identity-box:-moz-any(:hover:active, [open="true"]):before {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure) !important;
   background: transparent  !important;
   box-shadow: inset 0 1px 1px -1px hsla(0,0%,0%,.15);
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure) !important;
 }
 toolbar[brighttext] #identity-box:-moz-any(:hover:active, [open="true"]),
 toolbar[brighttext] #identity-box:-moz-any(:hover:active, [open="true"]):before {
@@ -1841,7 +1858,7 @@ toolbar[brighttext] .verifiedDomain > #identity-icons > #page-proxy-favicon[page
   background-color: hsla(0,0%,100%,.4);
   background-clip: padding-box;
   padding-left: 4px;
-  border-radius: 0px 0 0 0px;
+  border-radius: 2.5px 0 0 2.5px;
   border-width: 0 8px 0 0;
   border-style: solid;
   border-color: #fff;
@@ -2400,9 +2417,9 @@ richlistitem[selected="true"][type~="action"][actiontype="switchtab"] > .ac-url-
 }
 
 #urlbar > toolbarbutton:not([disabled="true"]):active {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
   background: transparent !important;
   box-shadow: none  !important;
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
 }
 
 toolbar[brighttext] #urlbar > toolbarbutton:not([disabled="true"]):active {
@@ -2964,13 +2981,6 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   list-style-image: url("chrome://browser/skin/tabbrowser/titlechanged.svg");
 }
 
-
-/*.tabbrowser-tab[pinned][titlechanged]:not([visuallyselected="true"]) > .tab-stack > .tab-content {
-  background-image: none;
-  background-repeat: no-repeat;
-  box-shadow: inset 0px -2px 0px 0px #ef2929;
-}*/
-
 /**/
 
 .tab-icon-overlay[soundplaying],
@@ -3212,7 +3222,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 #TabsToolbar > #new-tab-button,
 #TabsToolbar > #wrapper-new-tab-button > #new-tab-button {
   list-style-image: url(chrome://symbolic-icons/skin/list-add.svg);
-  opacity: .55;
+  opacity: .6;
   -moz-image-region: auto;
 }
 
@@ -3221,6 +3231,16 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   -moz-margin-end: -1px;
   padding: 0 5px;
 }
+
+.tabs-newtab-button:hover > .toolbarbutton-icon {
+    opacity: 1;
+    filter: url(chrome://browser/skin/symbolic-icons-colors.svg#red-light) !important;
+}
+
+.tabs-newtab-button:active > .toolbarbutton-icon {
+    filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure) !important;
+}
+
 
 /* Tabbrowser arrowscrollbox arrows */
 
@@ -3425,7 +3445,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 .statuspanel-label {
   margin: 0;
   padding: 2px 4px;
-  background: #eeeeee;
+  background: linear-gradient(#eeeeee, #eeeeee);
   border: 1px none #ccc;
   border-top-style: solid;
   color: #333;
@@ -3435,14 +3455,14 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 .statuspanel-label:-moz-locale-dir(ltr):not([mirror]),
 .statuspanel-label:-moz-locale-dir(rtl)[mirror] {
   border-right-style: solid;
-  border-top-right-radius: 0px;
+  border-top-right-radius: .3em;
   margin-right: 1em;
 }
 
 .statuspanel-label:-moz-locale-dir(rtl):not([mirror]),
 .statuspanel-label:-moz-locale-dir(ltr)[mirror] {
   border-left-style: solid;
-  border-top-left-radius: 0px;
+  border-top-left-radius: .3em;
   margin-left: 1em;
 }
 
@@ -4396,7 +4416,7 @@ toolbar[brighttext] #downloads-indicator-progress > .progress-remainder {
   min-width: 16px;
   text-shadow: none;
   background-image: linear-gradient(#B4211B, #8A1915);
-  border-radius: 0px;
+  border-radius: 1px;
   -moz-margin-end: 2px;
 }
 
@@ -4823,7 +4843,7 @@ window > chatbox {
 
 .customizationmode-button {
   border: 1px solid hsla(0,0%,0%,0.2);
-  border-radius: 0px;
+  border-radius: 3px;
   margin: 5px;
   padding: 2px 12px;
   background-color: -moz-Field;
@@ -5120,7 +5140,7 @@ toolbarpaletteitem[place="toolbar"] {
   min-width: 400px;
   max-width: 1000px;
   min-height: 200px;
-  border-radius: 0px;
+  border-radius: 3px;
   background-image: linear-gradient(90deg, #a0dfff 0%, #ceeeff 100%);
   border: 0px solid rgba(0,148,221,.5);
   box-shadow: 0 1px 5px 0 rgba(0,0,0,.5), inset 0 1px 1px 0 #fff;
@@ -5356,7 +5376,7 @@ toolbarpaletteitem[place="toolbar"] {
 #UITourTooltipButtons > button:not(.button-link) {
   -moz-appearance: none;
   background-color: rgb(251,251,251);
-  border-radius: 0px;
+  border-radius: 3px;
   border: 1px solid;
   border-color: rgb(192,192,192);
   color: rgb(71,71,71);
@@ -5648,11 +5668,8 @@ notification.heartbeat {
 }
 
 #context-navigation {
-  padding-top: 4px;
-  padding-bottom: 2px;
-  margin-bottom: 3px;
-  margin-top: 3px;
   -moz-appearance: menuitem;
+  padding-top: 4px;
 }
 
 #context-media-eme-learnmore {

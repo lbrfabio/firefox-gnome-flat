@@ -28,7 +28,7 @@
   display: -moz-box !important;
 }
 
-/* Show window controls in TabsToolbar
+/* Show window controls in TabsToolbar */
 /*#main-window[sizemode="fullscreen"] #window-controls[htitle="true"],
 #main-window[sizemode="fullscreen"] #window-controls[htitle="true"] > #restore-button {
   display: -moz-box !important;

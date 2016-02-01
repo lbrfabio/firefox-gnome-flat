@@ -51,4 +51,12 @@
                            0    0    1.15 0 0
                            0    0    0    1 0" color-interpolation-filters="sRGB"/>
   </filter>
+  
+    <filter id="red-light" filterRes="512" x="0" y="0" width="16px" height="16px">
+    <feColorMatrix values="0 0 0 0 1
+                           0 0 0 0 0.3
+                           0 0 0 0 0.3
+                           0 0 0 1 0"/>
+  </filter>
+  
 </svg>

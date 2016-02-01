@@ -9,5 +9,6 @@
 }
 
 #googleshortener-urlbar-button:hover {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#red-light);
   opacity: 1;
 }

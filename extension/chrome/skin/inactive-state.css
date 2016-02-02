@@ -204,6 +204,10 @@ notification .messageImage:-moz-window-inactive {
   opacity: .6 !important;
 }
 
+#notification-popup-box:-moz-window-inactive  {
+  opacity: 0.5 !important;
+}
+
 /* ::::: browser/extensions/flagfox.css ::::: */
 
 /* Flagfox

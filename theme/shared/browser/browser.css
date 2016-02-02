@@ -1494,7 +1494,7 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI:bef
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
-  -moz-border-end: 1px solid hsla(0,0%,39%,.25);
+  -moz-border-end: 1px solid hsla(0,0%,39%,.22);
   -moz-margin-end: 4px;
 }
 toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
@@ -1855,7 +1855,7 @@ toolbar[brighttext] .verifiedDomain > #identity-icons > #page-proxy-favicon[page
 /* Notification icon box */
 #notification-popup-box {
   position: relative;
-  background-color: hsla(0,0%,100%,.4);
+  background-color: hsla(0,0%,100%,.0);
   background-clip: padding-box;
   padding-left: 4px;
   border-radius: 2.5px 0 0 2.5px;
@@ -1865,6 +1865,7 @@ toolbar[brighttext] .verifiedDomain > #identity-icons > #page-proxy-favicon[page
   border-image: url(chrome://browser/skin/urlbar-arrow.svg) 0 8 0 0 fill;
   -moz-margin-end: 0;
   z-index: 1;
+  opacity: 1;
 }
 
 toolbar[brighttext] #notification-popup-box {
@@ -1895,8 +1896,20 @@ toolbar[brighttext] #notification-popup-box {
   list-style-image: url(moz-icon://stock/gtk-dialog-info?size=16);
   width: 16px;
   height: 16px;
-  opacity: 0.5;
+  opacity: 0.63;
   margin: 0 2px;
+}
+
+.notification-anchor-icon:-moz-any(:hover,:active) {
+  opacity: 1;
+}
+
+.notification-anchor-icon:hover {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#red-light);
+}
+
+.notification-anchor-icon:active {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
 }
 
 @media (min-resolution: 1.1dppx) {
@@ -1987,10 +2000,6 @@ toolbar[brighttext] #notification-popup-box .notification-anchor-icon {
 
 #plugins-notification-icon {
   list-style-image: url(chrome://symbolic-icons/skin/plugin.svg);
-}
-
-#plugins-notification-icon:active {
-  list-style-image: url(chrome://symbolic-icons/skin/plugin-alert.svg);
 }
 
 #plugins-notification-icon.plugin-hidden {

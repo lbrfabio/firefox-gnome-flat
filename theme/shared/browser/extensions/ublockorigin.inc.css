@@ -14,10 +14,12 @@
 #ublock0-button[cui-areatype="menu-panel"] > .toolbarbutton-icon,
 toolbarpaletteitem[place="palette"] > #ublock0-button {
   list-style-image: url(chrome://symbolic-icons/skin/extensions/ublockorigin.svg)!important;
+  opacity: .6;
 }
 
 
 #ublock0-button.off[cui-areatype="menu-panel"] > .toolbarbutton-icon,
 toolbarpaletteitem[place="palette"] > #ublock0-button  {
   list-style-image: url(chrome://symbolic-icons/skin/extensions/ublockorigin-off.svg) !important;
+  opacity: 1;
 }

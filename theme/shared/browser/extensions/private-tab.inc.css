@@ -10,5 +10,5 @@
 
 #privateTab-toolbar-openNewPrivateTab[cui-areatype="menu-panel"] > .toolbarbutton-icon,
 toolbarpaletteitem[place="palette"] > #privateTab-toolbar-openNewPrivateTab > .toolbarbutton-icon {
-  opacity: 0.45;
+  opacity: 0.6;
 }

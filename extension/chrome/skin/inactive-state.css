@@ -65,6 +65,10 @@ notification .messageImage:-moz-window-inactive {
 
 /* ::::: browser/browser.css ::::: */
 
+:root:-moz-window-inactive {
+  --panel-separator-color: hsla(210,4%,10%,.05) !important;
+}
+
 /*#main-window:-moz-window-inactive:not([brighttext])[htitlemode="always"] #navigator-toolbox {
   background-color: #eff0f2 !important;
 }*/
@@ -149,11 +153,11 @@ notification .messageImage:-moz-window-inactive {
 }
 
 #identity-box:-moz-window-inactive {
-    opacity: 0.5 !important;
+    opacity: .5 !important;
 }
 
 .urlbar-input-box:-moz-window-inactive {
-     opacity: 0.65 !important;
+     opacity: .65 !important;
 }
 
 #page-proxy-favicon:-moz-window-inactive {
@@ -170,7 +174,7 @@ notification .messageImage:-moz-window-inactive {
 }
 
 .urlbar-icon:-moz-window-inactive {
-  opacity: 0.35 !important;
+  opacity: .35 !important;
 }
 
 #star-button[starred="true"]:-moz-window-inactive {
@@ -200,7 +204,7 @@ notification .messageImage:-moz-window-inactive {
 }
 
 #TabsToolbar:-moz-window-inactive .toolbarbutton-icon {
-  opacity: 0.5 !important;
+  opacity: .5 !important;
 }
 
 #window-controls > toolbarbutton:-moz-window-inactive {
@@ -209,16 +213,16 @@ notification .messageImage:-moz-window-inactive {
 
 :-moz-any(#minimize-button, #restore-button, #close-button):-moz-window-inactive > .toolbarbutton-icon {
   filter: grayscale(1);
-  opacity: .5 !important;
+  opacity: .45 !important;
 }
 
 #close-button:hover:-moz-window-inactive > .toolbarbutton-icon  {
-  filter: grayscale(0);
+  filter: grayscale(0) !important;
   opacity: .6 !important;
 }
 
 #notification-popup-box:-moz-window-inactive  {
-  opacity: 0.5 !important;
+  opacity: .5 !important;
 }
 
 /* ::::: browser/extensions/flagfox.css ::::: */

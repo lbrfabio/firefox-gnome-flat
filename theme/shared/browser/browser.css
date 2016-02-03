@@ -31,8 +31,10 @@
   --tab-selected-background-color: #f0f0f0;
   --tab-selected-bottom-line-color: #d4d5db;
 
+  --tab-selected-extra-line-color: #d4d5db;
+  --tab-hover-extra-line-color: #d4d5db;
 
-  --panel-separator-color: hsla(210,4%,10%,.14); /* ThreeDShadow */
+  --panel-separator-color: hsla(210,4%,10%,.10);
 }
 
 /* ::::: Colors (Arc Theme) ::::: */
@@ -47,6 +49,9 @@
   --tab-hover-bottom-line-color: #dcdfe3;
   --tab-selected-background-color: #ffffff;
   --tab-selected-bottom-line-color: #dcdfe3;
+
+  --tab-selected-extra-line-color: #dcdfe3;
+  --tab-hover-extra-line-color: #dcdfe3;
 
   --panel-separator-color: hsla(210,4%,10%,.14);
 }*/
@@ -1256,7 +1261,7 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
 }
 
 :-moz-any(#minimize-button, #restore-button, #fullscreen-leave-button, #close-button):hover > .toolbarbutton-icon {
-  opacity: 0.65;
+  opacity: .65;
 }
 
 :-moz-any(#minimize-button, #restore-button, #fullscreen-leave-button, #close-button):active:hover > .toolbarbutton-icon {
@@ -2763,7 +2768,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 }
 
 #main-window[privatebrowsingmode=temporary] #TabsToolbar {
-  background-image: repeating-linear-gradient(-45deg, hsla(0,0%,0%,.02), hsla(0,0%,0%,.02) 10px, transparent 10px, transparent 20px);
+  background-image: repeating-linear-gradient(-45deg, hsla(0,0%,0%,.00), hsla(0,0%,0%,.00) 10px, transparent 10px, transparent 20px);
 }
 
 /*
@@ -2889,13 +2894,13 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 .tabbrowser-tab:hover .tab-background-middle {
   background: var(--tab-hover-background-color);
   -moz-border-bottom-colors: var(--tab-hover-bottom-line-color);
-  -moz-border-top-colors: var(--tab-hover-bottom-line-color);
+  -moz-border-top-colors: var(--tab-hover-extra-line-color);
 }
 
 .tabbrowser-tab[visuallyselected=true] .tab-background-middle {
   background: var(--tab-selected-background-color);
   -moz-border-bottom-colors: var(--tab-selected-bottom-line-color);
-  -moz-border-top-colors: var(--tab-selected-bottom-line-color);
+  -moz-border-top-colors: var(--tab-hover-extra-line-color);
 }
 
 .tab-background-start,
@@ -2907,7 +2912,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 .tab-background-start[visuallyselected=true],
 .tab-background-end[visuallyselected=true] {
   background: #c0c0c0;
-  background-image: linear-gradient(to top, var(--tab-selected-bottom-line-color),  var(--tab-selected-bottom-line-color) 2px,  var(--tab-selected-bottom-line-color));
+  background-image: linear-gradient(to top, var(--tab-selected-bottom-line-color),  var(--tab-selected-extra-line-color) 2px,  var(--tab-selected-extra-line-color));
 }
 
 #TabsToolbar[brighttext] .tab-background-start[visuallyselected=true],

@@ -66,13 +66,13 @@
 }
 
 #placesList + splitter + #contentView {
-  -moz-border-start: 1px solid #cdced4;
+  -moz-border-start: 1px solid #d4d5db;
 }
 
 /* Info box */
 #detailsDeck {
   padding: 5px;
-  border-top: 1px solid #cdced4;
+  border-top: 1px solid #d4d5db;
 }
 
 #infoBoxExpanderLabel {

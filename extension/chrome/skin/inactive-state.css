@@ -65,6 +65,10 @@ notification .messageImage:-moz-window-inactive {
 
 /* ::::: browser/browser.css ::::: */
 
+/*#main-window:-moz-window-inactive:not([brighttext])[htitlemode="always"] #navigator-toolbox {
+  background-color: #eff0f2 !important;
+}*/
+
 #main-menubar:-moz-window-inactive > * {
   color: #8d9091 !important;
 }
@@ -84,7 +88,7 @@ notification .messageImage:-moz-window-inactive {
 #navigator-toolbox .toolbarbutton-1:not([checked="true"]):-moz-window-inactive .toolbarbutton-icon,
 #navigator-toolbox .toolbarbutton-1:-moz-window-inactive .toolbarbutton-menu-dropmarker,
 #navigator-toolbox .toolbarbutton-1:-moz-window-inactive .toolbarbutton-menubutton-dropmarker {
-  opacity: .5;
+  opacity: .7;
 }
 
 /* Relief buttons */
@@ -92,11 +96,12 @@ notification .messageImage:-moz-window-inactive {
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:-moz-window-inactive {
   background: transparent !important;
   box-shadow: none !important;
+  opacity: .7;
 }
 
 #nav-bar[brighttext] :-moz-any(#back-button, #forward-button):-moz-window-inactive,
 #nav-bar[reliefbuttons="true"][brighttext] .toolbarbutton-1:-moz-window-inactive {
-  border-color: #cdced4 !important;
+  border-color: #d4d5db !important;
 }
 
 :-moz-any(
@@ -113,7 +118,7 @@ notification .messageImage:-moz-window-inactive {
 }
 
 #main-window:-moz-window-inactive #TabsToolbar {
-  border-top-color: #cdced4 !important;
+  border-top-color: #d4d5db !important;
   box-shadow: none !important;
 }
 
@@ -122,7 +127,7 @@ notification .messageImage:-moz-window-inactive {
 }
 
 #main-window:-moz-window-inactive textbox {
-  background: #fcfcfc !important;
+  background: #fbfcfc !important;
   box-shadow: none !important;
   color: #323232 !important;
 }
@@ -139,7 +144,7 @@ notification .messageImage:-moz-window-inactive {
   color: #c9c9c7 !important;
 }
 
-#main-window:-moz-window-inactive:not([darkvariant])[htitlemode="always"] > #tab-view-deck {
+#main-window:-moz-window-inactive:not([brighttext])[htitlemode="always"] > #tab-view-deck {
     box-shadow: inset 0 0 3px #bbb !important;
 }
 
@@ -162,6 +167,10 @@ notification .messageImage:-moz-window-inactive {
 .urlbar-history-dropmarker:-moz-window-inactive,
 .search-go-container:-moz-window-inactive {
   opacity: .35 !important;
+}
+
+.urlbar-icon:-moz-window-inactive {
+  opacity: 0.35 !important;
 }
 
 #star-button[starred="true"]:-moz-window-inactive {
@@ -190,13 +199,17 @@ notification .messageImage:-moz-window-inactive {
   opacity: 0.5;
 }
 
+#TabsToolbar:-moz-window-inactive .toolbarbutton-icon {
+  opacity: 0.5 !important;
+}
+
 #window-controls > toolbarbutton:-moz-window-inactive {
   border-color: transparent !important;
 }
 
 :-moz-any(#minimize-button, #restore-button, #close-button):-moz-window-inactive > .toolbarbutton-icon {
   filter: grayscale(1);
-  opacity: .38 !important;
+  opacity: .5 !important;
 }
 
 #close-button:hover:-moz-window-inactive > .toolbarbutton-icon  {

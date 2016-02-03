@@ -5,10 +5,14 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   id="svg2"
-   version="1.1"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="go-next.svg"
+   height="16"
    width="16"
-   height="16">
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   id="svg2">
   <defs
      id="defs16" />
   <metadata
@@ -23,14 +27,65 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <sodipodi:namedview
+     inkscape:zoom="34.869205"
+     borderopacity="1"
+     inkscape:current-layer="g12"
+     inkscape:cx="7.1185395"
+     guidetolerance="10"
+     inkscape:snap-grids="true"
+     inkscape:snap-bbox-midpoints="false"
+     inkscape:object-paths="true"
+     inkscape:window-maximized="0"
+     inkscape:snap-bbox="true"
+     showgrid="false"
+     inkscape:snap-nodes="false"
+     inkscape:snap-global="true"
+     showguides="true"
+     bordercolor="#666666"
+     inkscape:window-x="1972"
+     inkscape:guide-bbox="true"
+     objecttolerance="10"
+     inkscape:object-nodes="true"
+     inkscape:window-y="54"
+     inkscape:window-width="1109"
+     inkscape:pageopacity="1"
+     inkscape:snap-to-guides="true"
+     inkscape:pageshadow="2"
+     pagecolor="#ffffff"
+     gridtolerance="10"
+     inkscape:bbox-paths="false"
+     inkscape:cy="5.4997931"
+     inkscape:window-height="947"
+     showborder="true"
+     id="namedview6">
+    <inkscape:grid
+       spacingx="1px"
+       enabled="true"
+       spacingy="1px"
+       visible="true"
+       snapvisiblegridlinesonly="true"
+       type="xygrid"
+       empspacing="2"
+       id="grid8" />
+  </sodipodi:namedview>
   <title
      id="title10">Gnome Symbolic Icon Theme</title>
   <g
-     id="g12"
-     transform="translate(-120,-626)">
+     inkscape:label="actions"
+     transform="translate(-120,-626)"
+     inkscape:groupmode="layer"
+     id="g12">
     <path
-       id="path14"
-       d="m 125.00435,627.12638 0.99938,0 c 0.0104,-1.4e-4 0.0208,-5.3e-4 0.0313,0 0.25479,0.013 0.50955,0.14904 0.68707,0.36222 l 5.2779,6.04907 -5.27792,6.01278 c -0.18988,0.22023 -0.44972,0.32455 -0.71955,0.32455 l -0.99938,0 0,-1.15909 c 0,-0.3075 0.093,-0.61499 0.28107,-0.8331 l 3.81014,-4.34659 -3.81014,-4.38276 c -0.21061,-0.22559 -0.30297,-0.5439 -0.28107,-0.86932 l 0,-1.15909 z"
-       style="color:#2e3436;text-indent:0;text-transform:none;fill:#2e3436" />
+       style="text-indent:0;text-transform:none"
+       inkscape:connector-curvature="0"
+       fill="ButtonText"
+       d="m 126.01042,626.5051 0.69221,-0.004 c 0.0104,-1.2e-4 0.0208,-4.6e-4 0.0313,0 0.25495,0.0112 0.35362,0.13249 0.53125,0.31641 l 4.74523,6.70317 -4.72261,6.66016 c -0.19,0.19 -0.26641,0.31907 -0.53641,0.31907 l -0.73827,9e-5 -0.008,-0.94531 c 0,-0.26529 0.054,-0.88995 0.24218,-1.07812 l 3.58322,-4.96094 -3.62664,-5.01359 c -0.16813,-0.23243 -0.22109,-0.55128 -0.19919,-0.83203 l 0.004,-1.16605 z"
+       sodipodi:nodetypes="ccsccccccccsccc"
+       id="path14" />
+    <g
+       id="g6"
+       transform="matrix(0,-1.16361,0.74817,0,-435.84017,853.45506)"
+       style="fill:#616161;fill-opacity:0.52601159" />
   </g>
 </svg>

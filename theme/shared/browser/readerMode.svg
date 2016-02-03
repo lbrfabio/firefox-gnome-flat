@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
@@ -18,26 +18,12 @@
       <stop stop-color="#ff5500" offset="100%"/>
     </linearGradient>
     <style>
-      .icon-state-default { fill: url(#gradient-state-default); }
-      .icon-state-hover   { fill: url(#gradient-state-hover); }
-      .icon-state-pressed { fill: url(#gradient-state-pressed); }
+      .icon-state-default { fill: ButtonText; }
+      .icon-state-hover   { fill: ButtonText; }
+      .icon-state-pressed { fill: ButtonText; }
     </style>
   </defs>
-  <use
-     xlink:href="#glyphShape-readerMode-book"
-     class="icon-state-default"
-     id="use24"
-     style="fill:#c4c4c4;fill-opacity:1" />
-  <use
-     xlink:href="#glyphShape-readerMode-book"
-     class="icon-state-hover"
-     transform="translate(16)"
-     id="use26"
-     style="opacity:1;fill:#ff4d4d;fill-opacity:1" />
-  <use
-     xlink:href="#glyphShape-readerMode-book"
-     class="icon-state-pressed"
-     transform="translate(32)"
-     id="use28"
-     style="fill:#5294e2;fill-opacity:1" />
+  <use xlink:href="#glyphShape-readerMode-book" class="icon-state-default"/>
+  <use xlink:href="#glyphShape-readerMode-book" class="icon-state-hover" transform="translate(16)"/>
+  <use xlink:href="#glyphShape-readerMode-book" class="icon-state-pressed" transform="translate(32)"/>
 </svg>

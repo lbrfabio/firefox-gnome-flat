@@ -9,6 +9,7 @@
 findbar:-moz-window-inactive {
   background-image: linear-gradient(to bottom, rgba(233, 233, 233, 1), rgba(233, 233, 233, 1)) !important;
   color: #a7aba7 !important;
+  box-shadow: none !important;
 }
 
 .findbar-find-status:-moz-window-inactive {

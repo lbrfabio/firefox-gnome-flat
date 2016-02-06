@@ -4,27 +4,24 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.browserContainer findbar,
-#viewSource #FindToolbar {
-    -moz-box-ordinal-group: 0;
-    position: fixed !important;
-    left: 42px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, .25) !important;
-    border: 1px solid threedshadow !important;
-    border-top: none !important;
-    border-radius: 0 0 2px 2px;
-}
-
 findbar {
   -moz-appearance: none;
   background-image: linear-gradient(to bottom, rgba(233, 233, 233, 1), rgba(233, 233, 233, 1)) !important;
-  border-top: 2px solid;
+  border: 1px solid #d8dadf !important;
+  border-top: none !important;
   -moz-border-top-colors: ThreeDShadow ThreeDHighlight;
   min-width: 1px;
   padding: 4px 8px;
   transition-property: margin-bottom, opacity, visibility;
   transition-duration: 150ms, 150ms, 0s;
   transition-timing-function: ease-in-out, ease-in-out, linear;
+  box-shadow: 0 1px 2px rgba(0,0,0,.40);
+  border-radius: 0 0 2px 2px;
+
+  /* Move findbar to top left corner */
+  -moz-box-ordinal-group: 0;
+  position: fixed !important;
+  left: 42px;
 }
 
 findbar[hidden] {

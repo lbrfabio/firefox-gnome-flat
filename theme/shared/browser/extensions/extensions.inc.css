@@ -67,7 +67,8 @@
 
 % U
 %include ubufox.inc.css
-%include ublockorigin.inc.css
+%include ublock-origin.inc.css
+>>>>>>> upstream/master
 
 % X
 %include xmarks-sync.inc.css

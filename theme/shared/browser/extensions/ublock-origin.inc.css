@@ -1,0 +1,18 @@
+%if 0
+/* uBlock Origin
+ * id: {uBlock0@raymondhill.net}
+ * URL: https://addons.mozilla.org/en-US/firefox/addon/ublock-origin */
+%endif
+
+/* Default */
+#ublock0-button {
+  list-style-image: url(chrome://symbolic-icons/skin/extensions/ublock-origin.svg);
+    opacity: .4;
+}
+
+/* Stopped */
+#ublock0-button.off {
+  list-style-image: url(chrome://symbolic-icons/skin/extensions/ublock-origin-off.svg);
+    opacity: 1;
+}
+

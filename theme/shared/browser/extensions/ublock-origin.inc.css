@@ -7,12 +7,17 @@
 /* Default */
 #ublock0-button {
   list-style-image: url(chrome://symbolic-icons/skin/extensions/ublock-origin.svg);
-    opacity: .4;
 }
 
 /* Stopped */
 #ublock0-button.off {
   list-style-image: url(chrome://symbolic-icons/skin/extensions/ublock-origin-off.svg);
-    opacity: 1;
 }
 
+#ublock0-button[cui-areatype="menu-panel"] .toolbarbutton-icon {
+  opacity: .4;
+}
+
+#ublock0-button.off[cui-areatype="menu-panel"] .toolbarbutton-icon {
+  opacity: 1;
+}

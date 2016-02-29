@@ -98,7 +98,7 @@ notification:-moz-any(@pluginIconValues@) .messageImage {
 /* Close button */
 
 notification .messageCloseButton {
-  list-style-image: url(chrome://symbolic-icons/skin/close.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/close_white.svg);
   /* Override style from notificationButton.inc.css */
   -moz-margin-end: 0px !important;
   padding: 1px 3px 1px 4px !important;

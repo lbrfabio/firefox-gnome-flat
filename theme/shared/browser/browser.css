@@ -2354,7 +2354,19 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 /* Popup blocker button */
 #page-report-button {
   list-style-image: url(chrome://symbolic-icons/skin/info.svg);
-  opacity: .5;
+  opacity: .3;
+}
+
+#page-report-button:hover {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#red-light);
+}
+
+#page-report-button:hover:active {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
+}
+
+#page-report-button:-moz-any(:hover,hover:active) {
+  opacity: 1;
 }
 
 /* Reader mode button */

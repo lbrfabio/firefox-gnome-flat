@@ -54,7 +54,8 @@ panel[type="autocomplete-richlistbox"],
   -moz-border-bottom-colors: ThreeDDarkShadow;
   -moz-border-left-colors: ThreeDDarkShadow;
   padding: 0;
-  margin-top: 6px;
+  /* The awesomebar popup should open just below the navbar bottom border. */
+  margin-top: 1px;
   background-color: -moz-Field;
 }
 
@@ -143,14 +144,20 @@ treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
 .ac-site-icon {
   width: 16px; 
   height: 16px;
-  margin-bottom: -2px;
+  margin-bottom: 6px;
   -moz-margin-start: 3px;
   -moz-margin-end: 6px;
+  list-style-image: url("chrome://symbolic-icons/skin/defaultFavicon.svg");
+}
+
+.ac-site-icon[selected] {
+  list-style-image: url("chrome://symbolic-icons/skin/defaultFavicon.svg");
 }
 
 .ac-type-icon {
   width: 16px; 
   height: 16px;
+  margin-bottom: 6px;
   -moz-margin-start: 6px;
   -moz-margin-end: 4px;
 }

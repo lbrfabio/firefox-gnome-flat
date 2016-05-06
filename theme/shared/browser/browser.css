@@ -14,7 +14,7 @@
 
 %define nestedButtons #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button
 
-%define primaryToolbarButtons #back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #e10s-button, #panic-button, #webide-button, #loop-button, #pocket-button
+%define primaryToolbarButtons #back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #e10s-button, #panic-button, #webide-button
 
 %define primaryToolbarButtons @primaryToolbarButtons@, @nestedButtons@
 
@@ -60,7 +60,7 @@
 :root {
   --backbutton-urlbar-overlap: 6px;
 
-  --forwardbutton-width: 31px;
+  --forwardbutton-width: 25px;
 
   --toolbarbutton-hover-background: rgba(255,255,255,.5) linear-gradient(rgba(255,255,255,.5), transparent);
   --toolbarbutton-hover-bordercolor: rgba(0,0,0,.25);
@@ -638,12 +638,6 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
   list-style-image: url("chrome://browser/skin/places/unsortedBookmarks.png");
 }
 
-#panelMenu_pocket,
-#menu_pocket,
-#BMB_pocket {
-  list-style-image: url("chrome://browser/content/pocket/panels/img/pocketmenuitem16.png");
-}
-
 #menu_openDownloads {
   list-style-image: url("chrome://browser/skin/Toolbar-small.png");
   -moz-image-region: rect(0px 16px 16px 0px);
@@ -886,14 +880,6 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
   -moz-image-region: rect(0, 738px, 18px, 720px);
 }
 
-#pocket-button[cui-areatype="toolbar"] {
-  list-style-image: url(chrome://symbolic-icons/skin/extensions/pocket.svg);
-}
-
-#pocket-button[cui-areatype="toolbar"][open] {
-  list-style-image: url(chrome://symbolic-icons/skin/extensions/pocket-added.svg);
-}
-
 /* Menu panel and palette styles */
 
 toolbaritem[sdkstylewidget="true"] > toolbarbutton {
@@ -1025,11 +1011,6 @@ toolbarpaletteitem[place="palette"] > #web-apps-button {
   list-style-image: url(chrome://symbolic-icons/skin/moz-apps.svg);
 }
 
-#pocket-button[cui-areatype="menu-panel"],
-toolbarpaletteitem[place="palette"] > #pocket-button {
-  list-style-image: url(chrome://symbolic-icons/skin/extensions/pocket.svg);
-}
-
 #edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #cut-button,
 toolbarpaletteitem[place="palette"] > #edit-controls > #cut-button {
   list-style-image: url(chrome://symbolic-icons/skin/edit-cut.svg);
@@ -1058,6 +1039,11 @@ toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button {
 #add-share-provider {
   list-style-image: url(chrome://browser/skin/menuPanel-small.png);
   -moz-image-region: rect(0px, 96px, 16px, 80px);
+}
+
+#pocket-button[cui-areatype="menu-panel"] > .toolbarbutton-icon,
+toolbarpaletteitem[place="palette"] > #feedly-toolbar-button > .toolbarbutton-icon {
+  opacity: .76;
 }
 
 @media not all and (min-resolution: 1.1dppx) {
@@ -2266,6 +2252,52 @@ richlistitem[selected="true"][type~="action"][actiontype="tab"] > .ac-url-box > 
 
 .autocomplete-treebody::-moz-tree-cell(suggesthint) {
   border-top: 1px solid GrayText;
+}
+
+html|span.ac-tag {
+  background-color: MenuText;
+  color: Menu;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  padding: 0 1px;
+}
+
+.ac-tags-text[selected] > html|span.ac-tag {
+  background-color: HighlightText;
+  color: Highlight;
+}
+
+.ac-type-icon[type=bookmark] {
+  list-style-image: url("chrome://symbolic-icons/skin/autocomplete-icons.svg#bookmark");
+}
+
+.ac-type-icon[type=bookmark][selected][current] {
+  list-style-image: url("chrome://symbolic-icons/skin/autocomplete-icons.svg#bookmark-active");
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+}
+
+.ac-type-icon[type=keyword],
+.ac-site-icon[type=searchengine],
+.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage) {
+  list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#keyword);
+}
+
+.ac-type-icon[type=keyword][selected],
+.ac-site-icon[type=searchengine][selected],
+.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected) {
+  list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#keyword-active);
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+}
+
+.ac-type-icon[type=switchtab],
+.ac-type-icon[type=remotetab] {
+  list-style-image: url("chrome://symbolic-icons/skin/autocomplete-icons.svg#tab");
+}
+
+.ac-type-icon[type=switchtab][selected],
+.ac-type-icon[type=remotetab][selected] {
+  list-style-image: url("chrome://symbolic-icons/skin/autocomplete-icons.svg#tab-active");
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }
 
 /* ::::: Combined go/reload/stop button in location bar ::::: */

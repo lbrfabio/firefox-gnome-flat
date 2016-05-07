@@ -115,7 +115,7 @@ treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
 }
 
 .autocomplete-richlistitem {
-  padding: 6px 2px;
+  padding: 11px 2px;
   color: MenuText;
 }
 
@@ -144,7 +144,7 @@ treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
 .ac-site-icon {
   width: 16px; 
   height: 16px;
-  margin-bottom: 6px;
+  margin-bottom: -2px;
   -moz-margin-start: 3px;
   -moz-margin-end: 6px;
   list-style-image: url("chrome://symbolic-icons/skin/defaultFavicon.svg");
@@ -157,7 +157,6 @@ treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
 .ac-type-icon {
   width: 16px; 
   height: 16px;
-  margin-bottom: 6px;
   -moz-margin-start: 6px;
   -moz-margin-end: 4px;
 }
@@ -205,6 +204,26 @@ html|span.ac-emphasize-text {
 
 .ac-title, .ac-url {
   overflow: hidden;
+}
+
+/* Better align the URL/action with the title. */
+.ac-site-icon,
+.ac-type-icon,
+.ac-tags,
+.ac-separator,
+.ac-url,
+.ac-action {
+  margin-bottom: -2px;
+}
+
+.ac-title-text,
+.ac-tags-text,
+.ac-separator-text,
+.ac-url-text,
+.ac-action-text,
+.ac-text-overflow-container {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 /* ::::: textboxes inside toolbarpaletteitems ::::: */

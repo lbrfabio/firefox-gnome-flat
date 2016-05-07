@@ -2273,7 +2273,6 @@ html|span.ac-tag {
 
 .ac-type-icon[type=bookmark][selected][current] {
   list-style-image: url("chrome://symbolic-icons/skin/autocomplete-icons.svg#bookmark-active");
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }
 
 .ac-type-icon[type=keyword],
@@ -2286,7 +2285,6 @@ html|span.ac-tag {
 .ac-site-icon[type=searchengine][selected],
 .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected) {
   list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#keyword-active);
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }
 
 .ac-type-icon[type=switchtab],
@@ -2297,7 +2295,6 @@ html|span.ac-tag {
 .ac-type-icon[type=switchtab][selected],
 .ac-type-icon[type=remotetab][selected] {
   list-style-image: url("chrome://symbolic-icons/skin/autocomplete-icons.svg#tab-active");
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }
 
 /* ::::: Combined go/reload/stop button in location bar ::::: */

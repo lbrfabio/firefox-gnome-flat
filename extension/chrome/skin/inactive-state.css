@@ -226,6 +226,10 @@ notification .messageImage:-moz-window-inactive {
   opacity: .5 !important;
 }
 
+#downloads-button[cui-areatype="toolbar"]:-moz-window-inactive {
+  opacity: .6 !important;
+}
+
 /* ::::: browser/extensions/flagfox.css ::::: */
 
 /* Flagfox

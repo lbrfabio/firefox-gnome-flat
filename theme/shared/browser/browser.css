@@ -5486,6 +5486,7 @@ notification.heartbeat {
   -moz-box-flex: 1;
   -moz-box-pack: center;
   -moz-box-align: center;
+  opacity: 0.85;
 }
 
 #context-navigation > .menuitem-iconic > .menu-iconic-left {

@@ -142,6 +142,11 @@ menucaption > .menu-iconic-text {
   list-style-image: none;
   -moz-image-region: auto;
   -moz-appearance: menuarrow;
+  filter: contrast(0.001%);
+}
+
+menu[_moz-menuactive="true"] > .menu-right {
+  filter: contrast(100%);
 }
 
 .menubar-left {

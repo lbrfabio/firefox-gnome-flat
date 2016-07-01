@@ -136,8 +136,8 @@ menucaption > .menu-iconic-text {
   margin-bottom: 0px;
   -moz-margin-start: 6px;
   -moz-margin-end: 0px;
-  width: 16px;
-  height: 16px;
+  width: 8px;
+  height: 8px;
   /* These next two rules are needed to prevent inheritance and thus ugliness */
   list-style-image: none;
   -moz-image-region: auto;

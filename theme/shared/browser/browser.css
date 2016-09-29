@@ -37,25 +37,6 @@
   --panel-separator-color: hsla(210,4%,10%,.10);
 }
 
-/* ::::: Colors (Arc Theme) ::::: */
-
-/*:root {
-  --toolbar-background: #e7e8eb;
-  --toolbar-border-color: #d4d5db;
-
-  --tabstoolbar-background: #f5f6f7;
-
-  --tab-hover-background-color: #fafbfb;
-  --tab-hover-bottom-line-color: #dcdfe3;
-  --tab-selected-background-color: #ffffff;
-  --tab-selected-bottom-line-color: #dcdfe3;
-
-  --tab-selected-extra-line-color: #dcdfe3;
-  --tab-hover-extra-line-color: #dcdfe3;
-
-  --panel-separator-color: hsla(210,4%,10%,.14);
-}*/
-
 /*
 :root {
   --backbutton-urlbar-overlap: 6px;
@@ -117,7 +98,7 @@ toolbar[brighttext] {
     border-radius: 5px 5px 0 0 !important;
 }
 
-#main-window:not([brighttext])[htitlemode="always"] > #tab-view-deck {
+#main-window[htitlemode="always"] > #tab-view-deck {
     box-shadow: inset 0 0 2px #999;
 }
 #navigator-toolbox::after {
@@ -2580,7 +2561,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 #sidebar-splitter {
   -moz-appearance: none;
-  border-right: 1px solid #d4d5db;
+  border-right: 1px solid var(--toolbar-border-color);
   min-width: 4px !important;
   width: 4px !important;
 }
@@ -5579,7 +5560,7 @@ notification.heartbeat {
   width: 20px;
   height: 20px;
   margin: 3px;
-  opacity: 0.85
+  opacity: 0.85;
 }
 
 #context-navigation {
@@ -5678,4 +5659,5 @@ notification.heartbeat {
 /* ::::: Extensions ::::: */
 
 %include extensions/extensions.inc.css
+
 

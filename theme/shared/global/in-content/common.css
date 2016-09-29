@@ -18,14 +18,14 @@
   --in-content-box-border-color: #c1c1c1;
   --in-content-item-hover: rgba(0,149,221,0.25);
   --in-content-item-selected: #0095dd;
-  --in-content-border-highlight: #ff9500;
+  --in-content-border-highlight: #5294e2;
   --in-content-border-focus: #0095dd;
   --in-content-border-color: #c1c1c1;
   --in-content-category-text: #606060;
   --in-content-category-border-focus: 1px dotted #fff;
   --in-content-category-text-selected: #fff;
   --in-content-category-background: transparent;
-  --in-content-category-background-active: #7487e4;
+  --in-content-category-background-active: #5294e2;
   --in-content-tab-color: #424f5a;
   --in-content-link-color: #0095dd;
   --in-content-link-color-hover: #178ce5;
@@ -877,6 +877,7 @@ xul|menulist:not([editable="true"]) > xul|*.menulist-dropmarker {
   margin-bottom: 6px;
 }
 
+/*
 xul|checkbox {
   -moz-binding: url("chrome://global/content/bindings/checkbox.xml#checkbox");
   -moz-box-align: center;
@@ -908,6 +909,7 @@ xul|*.radio-check[selected] {
 xul|*.radio-label-box {
   -moz-appearance: none;
 }
+*/
 
 /* Override OS-theme-based color to make it visible
    on dark color themes. */

@@ -165,17 +165,20 @@ notification .messageImage:-moz-window-inactive {
   opacity: .35 !important;
 }
 
+#googleshortener-urlbar-button:-moz-window-inactive,
 #star-button:-moz-window-inactive,
+#reader-mode-button:-moz-window-inactive,
+#urlbar-zoom-button:-moz-window-inactive,
 #urlbar-go-button:-moz-window-inactive,
 #urlbar-stop-button:-moz-window-inactive,
 #urlbar-reload-button:-moz-window-inactive,
 .urlbar-history-dropmarker:-moz-window-inactive,
 .search-go-container:-moz-window-inactive {
-  opacity: .35 !important;
+  opacity: .2 !important;
 }
 
 .urlbar-icon:-moz-window-inactive {
-  opacity: .35 !important;
+  opacity: .2 !important;
 }
 
 #star-button[starred="true"]:-moz-window-inactive {
@@ -220,10 +223,6 @@ notification .messageImage:-moz-window-inactive {
 #close-button:hover:-moz-window-inactive > .toolbarbutton-icon  {
   filter: grayscale(0) !important;
   opacity: .6 !important;
-}
-
-#notification-popup-box:-moz-window-inactive  {
-  opacity: .5 !important;
 }
 
 #downloads-button[cui-areatype="toolbar"]:-moz-window-inactive {

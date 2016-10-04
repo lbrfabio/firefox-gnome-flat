@@ -14,26 +14,24 @@
 
 :root[devtoolstheme="dark"] {
   /* Chrome */
-  --chrome-background-color: #1C2126;
+  --chrome-background-color: #272b35;
   --chrome-color: #F5F7FA;
-  --chrome-secondary-background-color: #39424D;
+  --chrome-secondary-background-color: #393F4C;
   --chrome-navigator-toolbox-separator-color: rgba(0,0,0,.2);
   --chrome-nav-bar-separator-color: rgba(0,0,0,.2);
   --chrome-nav-buttons-background: #252C33;
   --chrome-nav-buttons-hover-background: #1B2127;
   --chrome-nav-bar-controls-border-color: #1D2328;
   --chrome-selection-color: #fff;
-  --chrome-selection-background-color: #074D75;
+  --chrome-selection-background-color: #5675B9;
 
   /* Tabs */
   --tabs-toolbar-color: #F5F7FA;
-  --tab-background-color: #1C2126;
+  --tab-background-color: #272b35;
   --tab-hover-background-color: #07090a;
   --tab-selection-color: #f5f7fa;
-  --tab-selection-background-color: #1a4666;
-  --tab-selection-box-shadow: 0 2px 0 #D7F1FF inset,
-                              0 -2px 0 rgba(0,0,0,.05) inset,
-                              0 -1px 0 rgba(0,0,0,.3) inset;
+  --tab-selection-background-color: #5675B9;
+  --tab-selection-box-shadow: none;
   --pinned-tab-glow: radial-gradient(22px at center calc(100% - 2px), rgba(76,158,217,0.9) 13%, rgba(0,0,0,0.4) 16%, transparent 70%);
 
   /* Toolbar buttons */
@@ -43,7 +41,7 @@
   --toolbarbutton-active-background: rgba(25,33,38,1) linear-gradient(rgba(25,33,38,1), rgba(25,33,38,1)) border-box;
   --toolbarbutton-active-boxshadow: none;
   --toolbarbutton-active-bordercolor: rgba(25,33,38,.8);
-  --toolbarbutton-checkedhover-backgroundcolor: #1D4F73;
+  --toolbarbutton-checkedhover-backgroundcolor: #3C5283;
 
   /* Url and search bars */
   --url-and-searchbar-background-color: #171B1F;
@@ -58,13 +56,6 @@
   --urlbar-dropmarker-active-2x-region: rect(0px, 33px, 14px, 22px);
 }
 
-:root[devtoolstheme="dark"] #identity-box {
-  --identity-box-chrome-color: #46afe3;
-  --identity-box-verified-background-color: transparent;
-  --identity-box-hover-background-color: rgba(231,230,230,.2);
-  --identity-box-selected-background-color: rgba(211,210,210,.2);
-}
-
 :root[devtoolstheme="light"] {
   --url-and-searchbar-background-color: #fff;
 
@@ -73,7 +64,7 @@
   --chrome-secondary-background-color: #f5f6f7;
   --chrome-navigator-toolbox-separator-color: #cccccc;
   --chrome-nav-bar-separator-color: #B6B6B8;
-  --chrome-nav-buttons-background: #fcfcfc;
+  --chrome-nav-buttons-background: #ffffff; /* --theme-body-background */
   --chrome-nav-buttons-hover-background: #DADBDB;
   --chrome-nav-bar-controls-border-color: #ccc;
   --chrome-selection-color: #f5f7fa;
@@ -83,9 +74,7 @@
   --tab-hover-background-color: #D7D8DA;
   --tab-selection-color: #f5f7fa;
   --tab-selection-background-color: #4c9ed9;
-  --tab-selection-box-shadow: 0 2px 0 #9FDFFF inset,
-                              0 -2px 0 rgba(0,0,0,.05) inset,
-                              0 -1px 0 rgba(0,0,0,.2) inset;
+  --tab-selection-box-shadow: none;
   --pinned-tab-glow: radial-gradient(22px at center calc(100% - 2px), rgba(76,158,217,0.9) 13%, transparent 16%);
 
 
@@ -123,17 +112,17 @@
   padding-inline-start: 0;
 }
 
-.tab-background-start[visuallyselected=true]::after,
-.tab-background-start[visuallyselected=true]::before,
+.tab-background-start[selected=true]::after,
+.tab-background-start[selected=true]::before,
 .tab-background-start,
 .tab-background-end,
-.tab-background-end[visuallyselected=true]::after,
-.tab-background-end[visuallyselected=true]::before {
+.tab-background-end[selected=true]::after,
+.tab-background-end[selected=true]::before {
   width: 0;
 }
 
-.tab-background-start[visuallyselected=true]::after,
-.tab-background-end[visuallyselected=true]::after {
+.tab-background-start[selected=true]::after,
+.tab-background-end[selected=true]::after {
   margin-inline-start: 0;
 }
 /* End override @tabCurveHalfWidth@ and @tabCurveWidth@ */
@@ -154,8 +143,8 @@
   color: var(--chrome-color);
 }
 
-#navigator-toolbox::after {
-  background: var(--chrome-navigator-toolbox-separator-color);
+#navigator-toolbox:-moz-lwtheme::after {
+  border-bottom-color: var(--chrome-navigator-toolbox-separator-color);
 }
 
 #navigator-toolbox > toolbar:not(#TabsToolbar):not(#toolbar-menubar),
@@ -200,6 +189,64 @@ toolbar[brighttext] #downloads-indicator-counter {
   box-shadow: none !important;
 }
 
+
+:root[devtoolstheme="dark"] #identity-icon:-moz-lwtheme {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#normal-white);
+}
+
+:root[devtoolstheme="dark"] #identity-box:hover > #identity-icon:not(.no-hover):-moz-lwtheme,
+:root[devtoolstheme="dark"] #identity-box[open=true] > #identity-icon:-moz-lwtheme {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#hover-white);
+}
+
+:root[devtoolstheme="dark"] #identity-box.grantedPermissions > #identity-icon:-moz-lwtheme {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-white);
+}
+
+:root[devtoolstheme="dark"] #identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover):-moz-lwtheme,
+:root[devtoolstheme="dark"] #identity-box.grantedPermissions[open=true] > #identity-icon:-moz-lwtheme {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-hover-white);
+}
+
+:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon:-moz-lwtheme {
+  list-style-image: url(chrome://branding/content/identity-icons-brand.svg);
+}
+
+
+:root[devtoolstheme="dark"] #tracking-protection-icon:-moz-lwtheme {
+  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#enabled-white);
+}
+
+:root[devtoolstheme="dark"] #tracking-protection-icon[state="loaded-tracking-content"]:-moz-lwtheme {
+  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#disabled-white);
+}
+
+
+:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon:-moz-lwtheme,
+:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon:-moz-lwtheme,
+:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon:-moz-lwtheme {
+  list-style-image: url(chrome://browser/skin/connection-secure.svg);
+  visibility: visible;
+}
+
+:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon:-moz-lwtheme {
+  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-white);
+  visibility: visible;
+}
+
+:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon:-moz-lwtheme,
+:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon:-moz-lwtheme {
+  list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon-white);
+  visibility: visible;
+}
+
+:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon:-moz-lwtheme,
+:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon:-moz-lwtheme,
+:root[devtoolstheme="dark"] #urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon:-moz-lwtheme {
+  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-white);
+  visibility: visible;
+}
+
 #urlbar {
   border-inline-start: none !important;
   opacity: 1 !important;
@@ -209,23 +256,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   overflow: -moz-hidden-unscrollable;
   clip-path: none;
   margin-inline-start: 0;
-}
-
-/* Swap out the white arrow with a dark one for the dark theme */
-:root[devtoolstheme="dark"] #notification-popup-box {
-  border-image: url("chrome://browser/skin/devedition/urlbar-arrow.png") 0 8 0 0 fill;
-}
-
-@media (min-resolution: 1.1dppx) {
-  :root[devtoolstheme="dark"] #notification-popup-box {
-    border-image: url("chrome://browser/skin/devedition/urlbar-arrow@2x.png") 0 16 0 0 fill;
-  }
-}
-
-/* The (white) notification box background color should match the theme */
-#notification-popup-box {
-  border-radius: 0;
-  background-color: var(--url-and-searchbar-background-color);
 }
 
 /* Nav bar specific stuff */
@@ -247,6 +277,12 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
 /* Use smaller back button icon */
 #back-button {
   -moz-image-region: rect(0, 54px, 18px, 36px);
+}
+
+@media (min-resolution: 1.1dppx) {
+  #back-button {
+    -moz-image-region: rect(0, 108px, 36px, 72px);
+  }
 }
 
 .tab-background {
@@ -272,14 +308,14 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   pointer-events: auto;
 }
 
-.tabbrowser-tab:-moz-any([image], [pinned]) > .tab-stack > .tab-content[attention]:not([visuallyselected="true"]),
-.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([visuallyselected="true"]) {
+.tabbrowser-tab:-moz-any([image], [pinned]) > .tab-stack > .tab-content[attention]:not([selected="true"]),
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
   background-image: var(--pinned-tab-glow);
   background-position: center;
   background-size: 100%;
 }
 
-.tabbrowser-tab[image] > .tab-stack > .tab-content[attention]:not([pinned]):not([visuallyselected="true"]) {
+.tabbrowser-tab[image] > .tab-stack > .tab-content[attention]:not([pinned]):not([selected="true"]) {
   background-position: left bottom var(--tab-toolbar-navbar-overlap);
   background-size: 34px 100%;
 }
@@ -293,7 +329,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
 .tabbrowser-tab[visuallyselected] {
   color: var(--tab-selection-color) !important; /* Override color: inherit */
   background-color: var(--tab-selection-background-color);
-  box-shadow: var(--tab-selection-box-shadow);
+}
+
+.tab-icon-sound[soundplaying],
+.tab-icon-sound[muted] {
+  filter: url(chrome://browser/skin/filters.svg#fill) !important; /* removes drop-shadow filter */
 }
 
 /* Don't need space for the tab curves (66px - 30px) */
@@ -311,9 +351,20 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   --forwardbutton-width: 29px;
 }
 
+:root[devtoolstheme="light"] {
+  --urlbar-dropmarker-url: url("chrome://browser/skin/devedition/urlbar-history-dropmarker.svg");
+  --urlbar-dropmarker-region: rect(0px, 11px, 14px, 0px);
+  --urlbar-dropmarker-hover-region: rect(0, 22px, 14px, 11px);
+  --urlbar-dropmarker-active-region: rect(0px, 33px, 14px, 22px);
+  --urlbar-dropmarker-2x-url: url("chrome://browser/skin/devedition/urlbar-history-dropmarker.svg");
+  --urlbar-dropmarker-2x-region: rect(0px, 11px, 14px, 0px);
+  --urlbar-dropmarker-hover-2x-region: rect(0, 22px, 14px, 11px);
+  --urlbar-dropmarker-active-2x-region: rect(0px, 33px, 14px, 22px);
+}
+
 :root[devtoolstheme="dark"] .findbar-closebutton:not(:hover),
 :root[devtoolstheme="dark"] #sidebar-header > .close-icon:not(:hover),
-.tab-close-button[visuallyselected]:not(:hover) {
+.tab-close-button[selected]:not(:hover) {
   background-image: -moz-image-rect(url("chrome://global/skin/icons/close.svg"), 0, 80, 16, 64);
 }
 
@@ -391,3 +442,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   text-shadow: none;
 }
 
+.ac-type-icon {
+  /* Left-align the type icon in awesomebar popup results with the icon in the
+     urlbar. */
+  margin-inline-start: 11px;
+}

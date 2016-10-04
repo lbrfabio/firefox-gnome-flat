@@ -5,8 +5,14 @@
 %include variables.inc.css
 
 #PopupSearchAutoComplete {
-  margin-inline-start: -24px;
-  padding: 1px;
+  /* JS code forces the panel to have the width of the searchbar rather than
+   * the width of the textfield. Alignment of the panel with the searchbar is
+   * obtained with negative margins here: margin-inline-start when the text
+   * field is in the same direction as the rest of the UI, margin-inline-end
+   * when the textfield's direction has been reversed.
+   * (eg. using ctrl+shift+X) */
+  margin-inline-start: -23px;
+  margin-inline-end: -16px;
 }
 
 .autocomplete-textbox-container {
@@ -20,11 +26,11 @@
 }
 
 /* Engine button */
-
 .searchbar-engine-image {
   height: 16px;
   width: 16px;
-  list-style-image: url(chrome://mozapps/skin/places/defaultFavicon.png);
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+  margin-inline-start: -1px;
 }
 
 .searchbar-engine-button > .button-box {
@@ -58,6 +64,7 @@ toolbar[brighttext] .searchbar-engine-button[open="true"] {
 toolbar[brighttext] .search-go-container:not(:hover),
 toolbar[brighttext] .searchbar-search-button-container:not(:hover) {
   opacity: .2;
+  width: 14px;
 }
 
 .search-go-container:hover,
@@ -71,35 +78,30 @@ toolbar[brighttext] .searchbar-search-button-container:not(:hover) {
   box-shadow: inset 0 1px 1px 0 hsla(0,0%,0%,.15) !important;
 }
 
-toolbar[brighttext] .search-go-container:active,
-toolbar[brighttext] .searchbar-search-button-container:active {
-  background-image: linear-gradient(to bottom, #272727, #333333) !important;
-}
-
 /* Search go button */
 
 .search-go-button {
-  list-style-image: url(chrome://symbolic-icons/skin/go-next.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/playback-start.svg);
   height: 26px;
   min-width: 26px;
   padding: 5px;
 }
 
 searchbar[oneoffui] .search-go-button {
-  list-style-image: url(chrome://symbolic-icons/skin/go-next.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/playback-start.svg);
 }
 
-searchbar[oneoffui] .search-go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon {
+.search-go-button:-moz-locale-dir(rtl) {
   transform: scaleX(-1);
 }
 
 /* FIXME */
 menuitem[cmd="cmd_clearhistory"] {
-  list-style-image: url(moz-icon://stock/gtk-clear?size=menu);
+  list-style-image: url("moz-icon://stock/gtk-clear?size=menu");
 }
 
 menuitem[cmd="cmd_clearhistory"][disabled] {
-  list-style-image: url(moz-icon://stock/gtk-clear?size=menu&state=disabled);
+  list-style-image: url("moz-icon://stock/gtk-clear?size=menu&state=disabled");
 }
 
 /* Search button */
@@ -117,6 +119,42 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 
 /* ... */
 
+@media (min-resolution: 1.1dppx) {
+  .searchbar-engine-image {
+    list-style-image: url("chrome://mozapps/skin/places/defaultFavicon@2x.png");
+  }
+
+  .searchbar-search-button {
+    list-style-image: url("chrome://browser/skin/search-indicator@2x.png");
+    -moz-image-region: rect(0, 40px, 40px, 0);
+  }
+
+  .searchbar-search-button[addengines="true"] {
+    list-style-image: url("chrome://browser/skin/search-indicator-badge-add@2x.png");
+  }
+
+  .searchbar-search-button:hover {
+    -moz-image-region: rect(0, 80px, 40px, 40px);
+  }
+
+  .searchbar-search-button:hover:active {
+    -moz-image-region: rect(0, 120px, 40px, 80px);
+  }
+
+  .search-go-button {
+    list-style-image: url("chrome://browser/skin/reload-stop-go@2x.png");
+    -moz-image-region: rect(0, 84px, 28px, 56px);
+  }
+
+  .search-go-button:hover {
+    -moz-image-region: rect(28px, 84px, 56px, 56px);
+  }
+
+  .search-go-button:hover:active {
+    -moz-image-region: rect(56px, 84px, 84px, 56px);
+  }
+}
+
 .search-panel-current-engine {
   border-top: none !important;
   -moz-box-align: center;
@@ -127,14 +165,16 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 }
 
 .search-panel-tree {
-  border-top: 1px solid #ccc !important;
+  border-top: 1px solid var(--panel-separator-color) !important;
 }
 
 .search-panel-header {
   font-weight: normal;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: var(--arrowpanel-dimmed);
+  border: none;
+  border-top: 1px solid var(--panel-separator-color);
   padding: 3px 5px;
-  color: MenuText;
+  color: GrayText;
 }
 
 .search-panel-header > label {
@@ -147,12 +187,12 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 }
 
 .search-panel-input-value {
-  color: Highlight;
+  color: -moz-fieldtext;
 }
 
 .search-panel-one-offs {
-  margin: 0 -1px !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0 !important;
+  border-top: 1px solid var(--panel-separator-color);
 }
 
 .searchbar-engine-one-off-item {
@@ -161,26 +201,40 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   border: none;
   min-width: 48px;
   height: 32px;
-  margin: 0 0;
-  padding: 0 0;
-  background: none;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAABmJLR0QA/wD/AP+gvaeTAAAAFElEQVQI12NgYGAwZmJgYGCgBwEAHpIAXs+dj/cAAAAASUVORK5CYII=');
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(transparent 15%, var(--panel-separator-color) 15%, var(--panel-separator-color) 85%, transparent 85%);
+  background-size: 1px auto;
   background-repeat: no-repeat;
   background-position: right center;
+  color: GrayText;
+}
+
+.searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
+  background-position: left center;
 }
 
 .searchbar-engine-one-off-item:not(.last-row) {
   box-sizing: content-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--panel-separator-color);
 }
 
-.searchbar-engine-one-off-item.last-of-row {
+.search-setting-button-compact {
+  border-bottom: none !important;
+}
+
+.search-panel-one-offs:not([compact=true]) > .searchbar-engine-one-off-item.last-of-row,
+.search-panel-one-offs[compact=true] > .searchbar-engine-one-off-item.last-of-row:not(.dummy),
+.search-panel-one-offs[compact=true] > .searchbar-engine-one-off-item.dummy:not(.last-of-row),
+.search-panel-one-offs[compact=true] > .searchbar-engine-one-off-item.last-engine,
+.search-setting-button-compact {
   background-image: none;
 }
 
 .searchbar-engine-one-off-item[selected] {
   background-color: Highlight;
   background-image: none;
+  color: HighlightText;
 }
 
 .searchbar-engine-one-off-item > .button-box {
@@ -201,6 +255,8 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 
 .addengine-item {
   -moz-appearance: none;
+  background-color: transparent;
+  color: inherit;
   border: none;
   height: 32px;
   margin: 0;
@@ -212,7 +268,7 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 }
 
 .addengine-item:first-of-type {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--panel-separator-color);
 }
 
 .addengine-item[selected] {
@@ -241,6 +297,16 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   list-style-image: url("chrome://browser/skin/search-engine-placeholder.png");
 }
 
+@media (min-resolution: 1.1dppx) {
+  .addengine-badge {
+    list-style-image: url("chrome://browser/skin/badge-add-engine@2x.png");
+  }
+
+  .addengine-item:not([image]) {
+    list-style-image: url("chrome://browser/skin/search-engine-placeholder@2x.png");
+  }
+}
+
 .search-panel-tree > .autocomplete-treebody::-moz-tree-cell {
   border-top: none !important;
 }
@@ -265,15 +331,16 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 
 .search-setting-button {
   -moz-appearance: none;
-  background-color: Menu;
-  border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
   margin: 0;
   min-height: 32px;
 }
 
 .search-setting-button[selected] {
-  background-color: Highlight;
-  color: HighlightText;
-  border-top-color: #bdbebe;
+  background-color: var(--arrowpanel-dimmed-further);
+}
+
+.search-setting-button-compact > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/gear.svg");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
 }

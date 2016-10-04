@@ -356,7 +356,7 @@ xul|*.spinbuttons-up {
   border-radius: 1px 1px 0 0;
 }
 
-xul|*.spinbuttons-down {
+xul|*.spinbuttons-down  {
   margin-bottom: 2px !important;
   border-radius: 0 0 1px 1px;
 }
@@ -644,12 +644,13 @@ xul|*.radio-label-box {
 *|*.category {
   -moz-appearance: none;
   color: var(--in-content-category-text);
-  margin: 8px 0 0 0;
+  margin: 0px;
   border: 0;
-  border-inline-start: 1px solid transparent;
-  padding: 5px 0 4px 0;
-  padding-inline-start: 16px;
+  border-inline-start: 0px solid transparent;
+  padding: 8px 0 8px 0;
+  padding-inline-start: 5px;
   padding-inline-end: 42px;
+  border-bottom: 1px solid #dbdcdd;
 }
 
 *|*.category[selected] {

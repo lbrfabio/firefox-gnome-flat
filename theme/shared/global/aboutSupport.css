@@ -53,6 +53,12 @@ th {
   color: var(--in-content-selected-text);
 }
 
+th.title-column {
+  white-space: nowrap;
+  width: 0px;
+  font-size: medium;
+}
+
 th.column {
   white-space: nowrap;
   width: 0px;
@@ -99,7 +105,7 @@ td {
   display: none;
 }
 
-#action-box:-moz-dir(rtl) {
+#action-box:dir(rtl) {
   float: left;
 }
 
@@ -109,6 +115,11 @@ td {
 
 #action-box button {
   display: block;
+}
+
+#verify-place-result {
+  max-height: 200px;
+  overflow: auto;
 }
 
 .block {

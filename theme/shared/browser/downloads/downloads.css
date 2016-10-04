@@ -1,128 +1,213 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
- * You can obtain one at http://mozilla.org/MPL/2.0/. */
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
 
 /*** Panel and outer controls ***/
 
 #downloadsPanel > .panel-arrowcontainer > .panel-arrowcontent {
+  overflow: hidden;
+  display: block;
+}
+
+#downloadsPanel > .panel-arrowcontainer > .panel-arrowcontent,
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack > .panel-subviews {
   padding: 0;
 }
 
 #downloadsListBox {
   background: transparent;
-  padding: 4px;
+  padding: 3px;
   color: inherit;
-}
-
-#downloadsPanel:not([hasdownloads]) > #downloadsListBox {
-  display: none;
-}
-
-#downloadsPanel[hasdownloads] > #emptyDownloads {
-  display: none;
+  -moz-appearance: none;
+  margin: 0;
+  border: none;
 }
 
 #emptyDownloads {
-  padding: 10px 20px;
-  max-width: 40ch;
+  padding: 16px 25px;
+  margin: 0;
+  /* The panel can be wider than this description after the blocked subview is
+     shown, so center the text. */
+  text-align: center;
 }
 
-#downloadsFooter {
+.downloadsPanelFooter {
+  background-color: var(--arrowpanel-dimmed);
+  border-top: 1px solid var(--panel-separator-color);
+}
+
+.downloadsPanelFooter toolbarseparator {
+  margin: 0;
+  border: 0;
+  min-width: 0;
+  border-left: 1px solid var(--panel-separator-color);
+  -moz-appearance: none;
+}
+
+.downloadsPanelFooterButton {
+  -moz-appearance: none;
+  background-color: transparent;
   color: inherit;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  min-height: 35px;
+  border: none;
+}
+
+.downloadsPanelFooterButton:hover {
+  outline: 1px solid var(--arrowpanel-dimmed);
+  background-color: var(--arrowpanel-dimmed);
+}
+
+.downloadsPanelFooterButton:hover:active,
+.downloadsPanelFooterButton[open="true"] {
+  outline: 1px solid var(--arrowpanel-dimmed-further);
+  background-color: var(--arrowpanel-dimmed-further);
+  box-shadow: 0 1px 0 hsla(210,4%,10%,.05) inset;
+}
+
+.downloadsPanelFooterButton[default] {
+  background-color: #0996f8;
+  color: white;
+}
+
+.downloadsPanelFooterButton[default]:hover {
+  background-color: #0675d3;
+}
+
+.downloadsPanelFooterButton[default]:hover:active {
+  background-color: #0568ba;
+}
+
+.downloadsPanelFooterButton > .button-box {
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 #downloadsHistory {
-  background: transparent;
-  color: inherit;
-  min-height: 41px;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
 }
 
-#downloadsHistory > .button-box {
-  margin: 11px 12px;
+#downloadsPanel[hasdownloads] #downloadsFooterButtons:not(.downloadsHideDropmarker) > #downloadsHistory {
+  padding-inline-start: 68px;
 }
 
-#downloadsPanel[keyfocus] > #downloadsFooter > #downloadsHistory:focus > .button-box {
-  outline: 1px -moz-dialogtext dotted;
+toolbarseparator.downloadsDropmarkerSplitter {
+  margin: 7px 0;
 }
 
-/*** Downloads Footer Background ***/
+#downloadsFooter:hover toolbarseparator.downloadsDropmarkerSplitter,
+#downloadsFooter[showingdropdown] toolbarseparator {
+  margin: 0;
+}
 
-#downloadsHistory,
+.downloadsDropmarker {
+  padding: 0 21px;
+}
+
+.downloadsDropmarker > .button-box > hbox {
+  display: none;
+}
+
+.downloadsDropmarker > .button-box > .button-menu-dropmarker {
+  /* This is to override the linux !important */
+  -moz-appearance: none !important;
+  display: -moz-box;
+  padding: 0;
+  margin: 0;
+}
+
+.downloadsDropmarker > .button-box > .button-menu-dropmarker > .dropmarker-icon {
+  width: 16px;
+  height: 16px;
+  list-style-image: url("chrome://browser/skin/downloads/menubutton-dropmarker.svg");
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+}
+
+/* Override default icon size which is too small for this dropdown */
+.downloadsDropmarker > .button-box > .button-menu-dropmarker {
+  width: 16px;
+  height: 16px;
+}
+
 #downloadsSummary {
-  background-color: hsla(180,20%,10%,.07);
-  border-top: 1px solid !important;
-  border-top-color: hsla(180,20%,10%,.14) !important;
+  padding: 0 12px;
+  cursor: inherit;
+  -moz-user-focus: normal;
 }
 
-#downloadsHistory:hover,
-#downloadsSummary:hover {
-  background-color: hsla(180,20%,10%,.15);
-  border-top-color: hsla(180,20%,10%,.14) !important;
+#downloadsSummary > .downloadTypeIcon {
+  list-style-image: url("chrome://browser/skin/downloads/download-summary.svg");
 }
 
-#downloadsHistory:hover:active,
-#downloadsSummary:hover:active {
-  background-color: hsla(180,20%,10%,.19);
-  border-top-color: hsla(180,20%,10%,.14) !important;
-  box-shadow: 0 1px 0 hsla(180,20%,10%,.05) inset;
+#downloadsSummaryDescription {
+  color: -moz-nativehyperlinktext;
 }
 
-/*** Downloads Summary and List items ***/
+/*** List items and similar elements in the summary ***/
 
 #downloadsSummary,
 richlistitem[type="download"] {
-  height: 6em;
+  height: var(--downloads-item-height);
   padding-inline-end: 0;
   color: inherit;
 }
 
-#downloadsSummary {
-  padding: 8px 38px 8px 12px;
-  -moz-user-focus: normal;
-}
-
-#downloadsPanel[keyfocus] > #downloadsFooter > #downloadsSummary:focus {
-  outline: 1px -moz-dialogtext dotted;
-  outline-offset: -5px;
-}
-
-#downloadsSummary > .downloadTypeIcon {
-  list-style-image: url("chrome://browser/skin/downloads/downloadIcon.png");
-}
-
 richlistitem[type="download"] {
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 2px;
   margin: 0;
-  padding: 0 6px;
+  border-top: 1px solid var(--downloads-item-border-top-color);
+  border-bottom: 1px solid var(--downloads-item-border-bottom-color);
+  background: transparent;
+  padding: 3px;
 }
 
-richlistitem[type="download"][selected] {
-  background-color: transparent !important;
+richlistitem[type="download"]:first-child {
+  border-top: 1px solid transparent;
 }
 
-#downloadsPanel[keyfocus] > #downloadsListBox:focus > richlistitem[type="download"][selected] {
-  outline: 1px -moz-dialogtext dotted;
-  outline-offset: -1px;
+richlistitem[type="download"]:last-child {
+  border-bottom: 1px solid transparent;
 }
 
 .downloadTypeIcon {
-  margin-inline-end: 8px;
-  /* Prevent flickering when changing states. */
-  /*
-  min-height: 32px;
-  min-width: 32px;
-  */
+  margin-top: 8px;
+  margin-inline-end: 12px;
+  margin-bottom: 8px;
+  margin-inline-start: 0;
+  width: 32px;
+  height: 32px;
 }
 
-.blockedIcon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=dialog");
+.downloadBlockedBadge {
+  margin: 0 4px;
+  background: url("moz-icon://stock/gtk-dialog-error?size=dialog") top right / 16px no-repeat;
+}
+
+.downloadBlockedBadge:-moz-locale-dir(rtl) {
+  background-position-x: left;
+}
+
+richlistitem[type="download"][verdict="PotentiallyUnwanted"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/warning.svg");
+}
+
+richlistitem[type="download"][verdict="Uncommon"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/info.svg");
 }
 
 /* We hold .downloadTarget, .downloadProgress and .downloadDetails inside of
    a vbox with class .downloadContainer. We set the font-size of the entire
-   container to 90% because:
+   container to --downloads-item-font-size-factor because:
 
    1) This is the size that we want .downloadDetails to be
    2) The container's width is set by localizers by &downloadDetails.width;,
@@ -134,37 +219,27 @@ richlistitem[type="download"][selected] {
    font-size of .downloadContainer's parent, we use calc to go from the
    smaller font-size back to the original font-size.
  */
-
 #downloadsSummaryDetails,
 .downloadContainer {
-  font-size: 90%;
+  font-size: calc(100% * var(--downloads-item-font-size-factor));
 }
 
 #downloadsSummaryDescription,
 .downloadTarget {
-  margin-bottom: 7px;
+  margin-bottom: var(--downloads-item-target-margin-bottom);
   cursor: inherit;
 }
 
 .downloadTarget {
-  font-size: calc(100%/0.9);
+  font-size: calc(100% / var(--downloads-item-font-size-factor));
 }
 
 #downloadsSummaryDetails,
 .downloadDetails {
-  margin-top: 1px;
-  opacity: 0.6;
+  margin-top: var(--downloads-item-details-margin-top);
+  opacity: var(--downloads-item-details-opacity);
   cursor: inherit;
 }
-
-/*** Highlighted list items ***/
-
-#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover {
-  background-color: hsla(180,20%,10%,.09) !important;
-  border-color: transparent;
-}
-
-/*** Inline buttons ***/
 
 .downloadButton {
   -moz-appearance: none;
@@ -180,32 +255,167 @@ richlistitem[type="download"][selected] {
   padding: 0;
 }
 
+
+/*** Blocked subview ***/
+
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype=main] > .panel-subviews {
+  /* When the main view is showing, the shadow on the left edge of the subview is
+     barely visible on the right edge of the main view, so set it to none. */
+  box-shadow: none;
+}
+
+/* When the subview is showing, turn the download button into an arrow pointing
+   back to the main view. */
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype="subview"] .download-state[showingsubview] .downloadButton {
+  list-style-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted.png");
+}
+
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype="subview"] .download-state[showingsubview] .downloadButton:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted-rtl.png");
+}
+
+#downloadsPanel-blockedSubview {
+  background-image: url("chrome://browser/skin/warning.svg");
+  background-size: 32px 32px;
+  background-position: 16px 16px;
+  background-repeat: no-repeat;
+}
+
+#downloadsPanel-blockedSubview:-moz-locale-dir(rtl) {
+  background-position: calc(100% - 16px) 16px;
+}
+
+#downloadsPanel-blockedSubview[verdict=Malware] {
+  background-image: url("moz-icon://stock/gtk-dialog-error?size=dialog");
+}
+
+#downloadsPanel-blockedSubview-title {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: calc(100% / var(--downloads-item-font-size-factor));
+}
+
+#downloadsPanel-blockedSubview-details1,
+#downloadsPanel-blockedSubview-details2 {
+  font-size: calc(100% * var(--downloads-item-font-size-factor));
+  margin-bottom: 16px;
+  opacity: var(--downloads-item-details-opacity);
+}
+
+#downloadsPanel-blockedSubview-title,
+#downloadsPanel-blockedSubview-details1,
+#downloadsPanel-blockedSubview-details2 {
+  -moz-margin-start: 64px;
+  -moz-margin-end: 16px;
+}
+
+/*** Panel and outer controls ***/
+
+#downloadsPanel[keyfocus] #downloadsSummary:focus,
+#downloadsPanel[keyfocus] .downloadsPanelFooterButton:focus {
+  outline: 1px -moz-dialogtext dotted;
+  outline-offset: -5px;
+}
+
+/*** List items and similar elements in the summary ***/
+
+:root {
+  --downloads-item-height: 6em;
+  --downloads-item-border-top-color: hsla(0,0%,100%,.2);
+  --downloads-item-border-bottom-color: hsla(0,0%,0%,.15);
+  --downloads-item-font-size-factor: 0.9;
+  --downloads-item-target-margin-bottom: 7px;
+  --downloads-item-details-margin-top: 1px;
+  --downloads-item-details-opacity: 0.6;
+}
+
 .downloadButton:focus > .button-box {
   outline: 1px -moz-dialogtext dotted;
 }
 
-.downloadButton > .button-box > .button-icon {
-  margin: 0 !important;
-  opacity: 0.5;
+/*** Highlighted list items ***/
+
+#downloadsPanel[keyfocus] #downloadsListBox:focus > richlistitem[type="download"][selected] {
+  outline: 1px -moz-dialogtext dotted;
+  outline-offset: -1px;
 }
-.downloadButton:hover > .button-box > .button-icon {
-  opacity: 0.8;
+
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"][exists]:hover,
+richlistitem[type="download"][showingsubview] {
+  border-radius: 3px;
+  border-top: 1px solid hsla(0,0%,100%,.3);
+  border-bottom: 1px solid hsla(0,0%,0%,.2);
+  background-color: Highlight;
+  background-image: linear-gradient(hsla(0,0%,100%,.1), transparent);
+  color: HighlightText;
+  cursor: inherit;
 }
-.downloadButton:hover:active > .button-box > .button-icon {
-  opacity: 1;
+
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"][exists][verdict="Malware"]:hover,
+richlistitem[type="download"][showingsubview][verdict="Malware"] {
+  background-color: hsl(4, 82%, 47%);
+  color: white;
 }
 
 /*** Button icons ***/
 
-.downloadButton.downloadConfirmBlock,
-.downloadButton.downloadCancel {
-  list-style-image: url("chrome://symbolic-icons/skin/close.svg");
+.downloadButton.downloadIconCancel {
+  list-style-image: url("chrome://symbolic-icons/skin/cancel.svg");
+}
+richlistitem[type="download"]:hover .downloadButton.downloadIconCancel {
+
+}
+richlistitem[type="download"]:hover .downloadButton.downloadIconCancel:hover {
+  opacity: .5;
+}
+richlistitem[type="download"]:hover .downloadButton.downloadIconCancel:active {
+  opacity: .8;
 }
 
-.downloadButton.downloadShow {
+.downloadButton.downloadIconShow {
   list-style-image: url("chrome://symbolic-icons/skin/folder.svg");
 }
+richlistitem[type="download"]:not([state="1"]):hover .downloadButton.downloadIconShow {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+}
+richlistitem[type="download"]:not([state="1"]):hover .downloadButton.downloadIconShow:hover {
+  opacity: .8;
+}
+richlistitem[type="download"]:not([state="1"]):hover .downloadButton.downloadIconShow:active {
+  opacity: 1;
+}
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadIconShow {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+}
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadIconShow:hover {
+  opacity: .8;
+}
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadIconShow:active {
+  opacity: 1;
+}
 
-.downloadButton.downloadRetry {
+.downloadButton.downloadIconRetry {
   list-style-image: url("chrome://symbolic-icons/skin/view-refresh.svg");
+}
+richlistitem[type="download"]:hover .downloadButton.downloadIconRetry {
+
+}
+richlistitem[type="download"]:hover .downloadButton.downloadIconRetry:hover {
+  opacity: .5;
+}
+richlistitem[type="download"]:hover .downloadButton.downloadIconRetry:active {
+  opacity: .8;
+}
+
+.downloadButton.downloadShowBlockedInfo {
+  list-style-image: url("chrome://symbolic-icons/skin/error.svg");
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo {
+
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:hover {
+  opacity: .5;
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:active {
+  opacity: .8;
 }

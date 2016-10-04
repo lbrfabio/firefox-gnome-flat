@@ -48,14 +48,11 @@ textbox:not(.padded) .textbox-input-box {
 panel[type="autocomplete"],
 panel[type="autocomplete-richlistbox"],
 .autocomplete-history-popup {
-  border-width: 1px;
-  -moz-border-top-colors: ThreeDDarkShadow;
-  -moz-border-right-colors: ThreeDDarkShadow;
-  -moz-border-bottom-colors: ThreeDDarkShadow;
-  -moz-border-left-colors: ThreeDDarkShadow;
+  border: 1px solid ThreeDShadow;
   padding: 0;
   /* The awesomebar popup should open just below the navbar bottom border. */
   margin-top: 1px;
+  color: -moz-FieldText;
   background-color: -moz-Field;
 }
 
@@ -69,7 +66,6 @@ panel[type="autocomplete-richlistbox"],
   -moz-appearance: none !important;
   border: none !important;
   background-color: transparent !important;
-  color: MenuText;
 }
 
 .autocomplete-treecol {
@@ -109,8 +105,7 @@ treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
   background-color: transparent;
 }
 
-.autocomplete-richlistitem[selected="true"] {
-  background-color: Highlight;
+.autocomplete-richlistitem[selected] {
   color: HighlightText;
 }
 
@@ -142,7 +137,7 @@ treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
 }
 
 .ac-site-icon {
-  width: 16px; 
+  width: 16px;
   height: 16px;
   margin-bottom: -2px;
   margin-inline-start: 3px;

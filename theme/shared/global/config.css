@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 #warningScreen {
-  font: 11pt cantarell;
+  font: 10pt Roboto;
   background-color: #f6f6f4;
   background-image: linear-gradient(to bottom, #eeeeec, #f6f6f4);
   background-size: 100% 5em;
@@ -11,17 +11,8 @@
   color: ButtonText;
 }
 
-#warningBox {
-  /*
-  background-color: transparent;
-  color: -moz-FieldText;
-  border: 0px solid ThreeDShadow;
-  border-radius: 10px;
-  padding: 3em;
-  padding-inline-start: 30px;
-  margin-left: 1em;
-  margin-right: 1em;
-  */
+.title {
+  background-image: url("chrome://global/skin/icons/warning.svg");
 }
 
 #warningInnerBox {

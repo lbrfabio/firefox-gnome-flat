@@ -104,12 +104,12 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 
 .findbar-textbox:-moz-locale-dir(ltr) {
   border-radius: 3px;
-  border-right-width: 1;
+  border-right-width: 1px;
 }
 
 .findbar-textbox:-moz-locale-dir(rtl) {
   border-radius:3px;
-  border-left-width: 1;
+  border-left-width: 1px;
 }
 
 .findbar-textbox[focused="true"] {
@@ -157,7 +157,7 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 .findbar-find-previous:focus,
 .findbar-find-next:focus {
   border-color: Highlight;
-  box-shadow: inset 0 0 1px 0 Highlight;
+  box-shadow: 0 0 1px 0 Highlight inset;
 }
 
 .findbar-find-previous:not([disabled]):active,
@@ -212,8 +212,16 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 }
 
 .findbar-highlight,
-.findbar-case-sensitive {
+.findbar-case-sensitive,
+.findbar-entire-word {
   margin-inline-start: 5px;
+}
+
+.findbar-entire-word {
+  list-style-image: url(chrome://symbolic-icons/skin/find-entire-word.svg);
+}
+.findbar-entire-word[disabled="true"] {
+  opacity: 0.5;
 }
 
 .findbar-highlight {
@@ -230,5 +238,5 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 }
 
 .find-status-icon[status="pending"] {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://global/skin/icons/loading.png");
 }

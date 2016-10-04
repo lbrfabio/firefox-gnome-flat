@@ -2,6 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 :root {
   -moz-appearance: none;
   font-size: 75%;
@@ -115,6 +119,13 @@
 .newtab-customize {
   height: 28px;
   width: 28px;
+}
+
+#newtab-customize-button {
+  font-size: 28px;
+  padding: 0;
+  /* only display the text label when CSS backgrounds are disabled (e.g. in high contrast mode) */
+  color: transparent;
 }
 
 #newtab-customize-button:-moz-any(:hover, :active, [active]) {

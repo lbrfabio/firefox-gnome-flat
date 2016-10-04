@@ -1022,11 +1022,6 @@ toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button {
   -moz-image-region: rect(0px, 96px, 16px, 80px);
 }
 
-#pocket-button[cui-areatype="menu-panel"] > .toolbarbutton-icon,
-toolbarpaletteitem[place="palette"] > #feedly-toolbar-button > .toolbarbutton-icon {
-  opacity: .76;
-}
-
 @media not all and (min-resolution: 1.1dppx) {
   toolbaritem[sdkstylewidget="true"] > toolbarbutton {
     /* FIXME */
@@ -5588,6 +5583,7 @@ notification.heartbeat {
   padding: 0;
   overflow: hidden;
 }
+*/
 
 /* User Context UI browser styles */
 
@@ -5663,5 +5659,4 @@ notification.heartbeat {
 /* ::::: Extensions ::::: */
 
 %include extensions/extensions.inc.css
-
 

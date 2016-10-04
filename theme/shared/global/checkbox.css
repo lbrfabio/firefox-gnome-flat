@@ -31,7 +31,7 @@ checkbox {
   -moz-box-align: center;
   margin: 2px;
   border-right: 2px solid transparent;
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
 }
 
 .checkbox-label-center-box {
@@ -43,7 +43,7 @@ checkbox {
 }
 
 .checkbox-icon[src] {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 .checkbox-label {

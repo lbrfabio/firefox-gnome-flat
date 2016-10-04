@@ -218,8 +218,8 @@ toolbarbutton.bookmark-item:not(.subviewbutton):hover:active,
 toolbarbutton.bookmark-item[open="true"] {
   padding-top: 3px;
   padding-bottom: 1px;
-  -moz-padding-start: 4px;
-  -moz-padding-end: 2px;
+  padding-inline-start: 4px;
+  padding-inline-end: 2px;
 }
 
 .bookmark-item > .toolbarbutton-icon,
@@ -342,7 +342,7 @@ menuitem.bookmark-item {
 }
 
 .bookmark-item > .menu-iconic-left > .menu-iconic-icon {
-  -moz-padding-start: 0px;
+  padding-inline-start: 0px;
 }
 
 /* Bookmark drag and drop styles */
@@ -362,7 +362,7 @@ menuitem.bookmark-item {
 .menupopup-drop-indicator {
   list-style-image: none;
   height: 2px;
-  -moz-margin-end: -4em;
+  margin-inline-end: -4em;
   background-color: Highlight;
 }
 
@@ -1066,9 +1066,9 @@ toolbarpaletteitem[place="palette"] > :-moz-any(#edit-controls, #zoom-controls) 
 
   overflow: hidden;
   margin: -1px  -1px !important;
-  -moz-margin-start: 6px !important;
+  margin-inline-start: 6px !important;
   padding: 1px 0;
-  -moz-padding-start: 7px;
+  padding-inline-start: 7px;
 }
 
 toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
@@ -1078,14 +1078,14 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
 
 #toolbar-menubar > :-moz-any(#window-controls, .window-controls) {
   margin: 0 2px !important;
-  -moz-margin-end: 6px !important;
+  margin-inline-end: 6px !important;
   padding: 2px 0;
-  -moz-padding-start: 7px;
+  padding-inline-start: 7px;
 }
 
 #TabsToolbar > :-moz-any(#window-controls, .window-controls) {
   margin: 0px 3px 2px 3px !important;
-  -moz-margin-start: 6px !important;
+  margin-inline-start: 6px !important;
 }
 
 :-moz-any(#window-controls, .window-controls) > toolbarbutton {
@@ -1187,7 +1187,7 @@ toolbar[brighttext] .searchbar-textbox {
 }
 
 .urlbar-input-box {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
   padding-top: 3px;
   padding-bottom: 3px;
 }
@@ -1235,8 +1235,8 @@ toolbar[brighttext] .searchbar-textbox {
 
 #urlbar-search-splitter {
   -moz-appearance: none;
-  -moz-margin-start: -3px;
-  -moz-margin-end: -3px;
+  margin-inline-start: -3px;
+  margin-inline-end: -3px;
   width: 6px;
 }
 
@@ -1246,14 +1246,14 @@ toolbar[brighttext] .searchbar-textbox {
 #urlbar-display-box {
   margin-top: -1px;
   margin-bottom: -1px;
-  -moz-border-end: 1px solid #AAA;
-  -moz-margin-end: 3px;
+  border-inline-end: 1px solid #AAA;
+  margin-inline-end: 3px;
 }
 
 .urlbar-display {
   margin-top: 0;
   margin-bottom: 0;
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
   color: GrayText;
 }
 
@@ -1261,8 +1261,8 @@ toolbar[brighttext] .searchbar-textbox {
   border-bottom: 1px solid hsla(210, 4%, 10%, 0.14);
   background-color: hsla(210, 4%, 10%, 0.07);
   padding: 6px 0;
-  -moz-padding-start: 44px;
-  -moz-padding-end: 6px;
+  padding-inline-start: 44px;
+  padding-inline-end: 6px;
   background-image: url("chrome://browser/skin/info.svg");
   background-clip: padding-box;
   background-position: 20px center;
@@ -1280,7 +1280,7 @@ toolbar[brighttext] .searchbar-textbox {
 }
 
 #PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > description > label.text-link {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 #PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > button {
@@ -1289,7 +1289,7 @@ toolbar[brighttext] .searchbar-textbox {
   border-radius: 3px;
   padding: 4px 16px;
   margin: 0;
-  -moz-margin-start: 10px;
+  margin-inline-start: 10px;
 }
 
 #PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > button[anonid="search-suggestions-notification-disable"] {
@@ -1328,7 +1328,7 @@ toolbar[brighttext] .searchbar-textbox {
 /* ::::: Identity box ::::: */
 
 #identity-box {
-  -moz-border-end: 1px solid transparent;
+  border-inline-end: 1px solid transparent;
   padding: 3px 0px 3px 5px;
   margin: 0;
   font-size: .9em;
@@ -1341,8 +1341,8 @@ toolbar[brighttext] .searchbar-textbox {
 }
 
 #identity-icon-labels {
-  -moz-padding-start: 2px;
-  -moz-padding-end: 5px;
+  padding-inline-start: 2px;
+  padding-inline-end: 5px;
 }
 
 #identity-box:hover {
@@ -1358,7 +1358,7 @@ toolbar[brighttext] .searchbar-textbox {
 toolbar[brighttext] #identity-box:-moz-any(:hover:active, [open="true"]),
 toolbar[brighttext] #identity-box:-moz-any(:hover:active, [open="true"]):before {
   background-image: linear-gradient(to bottom, #272727, #333333);
-  -moz-border-end: 1px solid hsla(0,0%,0%,.25);
+  border-inline-end: 1px solid hsla(0,0%,0%,.25);
 }
 
 /* */
@@ -1372,11 +1372,11 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI:bef
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
-  -moz-border-end: 1px solid hsla(0,0%,39%,.22);
-  -moz-margin-end: 4px;
+  border-inline-end: 1px solid hsla(0,0%,39%,.22);
+  margin-inline-end: 4px;
 }
 toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
-  -moz-border-end: 1px solid hsla(0,0%,0%,.25);
+  border-inline-end: 1px solid hsla(0,0%,0%,.25);
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI:-moz-any(:hover:active, [open="true"]),
@@ -1401,12 +1401,12 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIden
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
-  -moz-border-end: 1px solid hsla(90,81%,45%,.25);
+  border-inline-end: 1px solid hsla(90,81%,45%,.25);
   color: #00aa00;
-  -moz-margin-end: 4px;
+  margin-inline-end: 4px;
 }
 toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
-  -moz-border-end: 1px solid hsla(0,0%,0%,.25);
+  border-inline-end: 1px solid hsla(0,0%,0%,.25);
   color: inherit;
 }
 
@@ -1444,8 +1444,8 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIden
 
 .popup-progress-label,
 .popup-progress-meter {
-  -moz-margin-start: 0;
-  -moz-margin-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 .popup-progress-cancel {
@@ -1454,7 +1454,7 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIden
   border: none;
   padding: 0;
   margin: 0;
-  -moz-margin-start: 5px;
+  margin-inline-start: 5px;
   min-height: 0;
   min-width: 0;
   list-style-image: url("moz-icon://stock/gtk-cancel?size=menu");
@@ -1482,7 +1482,7 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIden
   height: 100%;
   width: 8px;
   margin: 0;
-  -moz-margin-start: -8px;
+  margin-inline-start: -8px;
 }
 #identity-box:-moz-locale-dir(rtl):before {
   right: 0;
@@ -1496,8 +1496,8 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIden
   height: 16px;
   margin-top: 2px;
   margin-bottom: 2px;
-  -moz-margin-start: 0px;
-  -moz-margin-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
   list-style-image: url(chrome://browser/skin/identity-icon.svg#normal);
   /*opacity: 0.35;*/
 }
@@ -1563,8 +1563,8 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIden
   height: 16px;
   margin-top: 2px;
   margin-bottom: 2px;
-  -moz-margin-start: 2px;
-  -moz-margin-end: 3px;
+  margin-inline-start: 2px;
+  margin-inline-end: 3px;
   /*
   list-style-image: url(chrome://symbolic-icons/skin/connection-icons.svg#generic);
   */
@@ -1620,7 +1620,7 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #
 .popup-notification-icon {
   width: 64px;
   height: 64px;
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
 }
 
 .popup-notification-icon[popupid="geolocation"] {
@@ -1731,7 +1731,7 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #
   border-style: solid;
   border-color: #fff;
   border-image: url(chrome://browser/skin/urlbar-arrow.svg) 0 8 0 0 fill;
-  -moz-margin-end: 0;
+  margin-inline-end: 0;
   z-index: 1;
   opacity: 1;
 }
@@ -2055,7 +2055,7 @@ notification[value="translation"] menulist > .menulist-dropmarker {
 }
 
 .translation-welcome-content {
-  -moz-margin-start: 16px;
+  margin-inline-start: 16px;
 }
 
 .translation-welcome-headline {
@@ -2086,7 +2086,7 @@ notification[value="translation"] {
 
 notification[value="translation"] button,
 notification[value="translation"] menulist {
-  -moz-padding-end: 1ch;
+  padding-inline-end: 1ch;
 }
 
 notification[value="translation"] menulist {
@@ -2102,8 +2102,8 @@ notification[value="translation"] button {
 notification[value="translation"] button,
 notification[value="translation"] menulist,
 notification[value="translation"] menulist > .menulist-label-box {
-  -moz-margin-start: 1ch;
-  -moz-margin-end: 1ch;
+  margin-inline-start: 1ch;
+  margin-inline-end: 1ch;
 }
 
 notification[value="translation"] button:hover,
@@ -2128,11 +2128,11 @@ notification[value="translation"] button[anonid="translate"]:active {
 notification[value="translation"] button > .button-box,
 notification[value="translation"] button[type="menu"] > .button-box > .button-menu-dropmarker {
   padding: 0;
-  -moz-margin-start: 3ch;
+  margin-inline-start: 3ch;
 }
 
 notification[value="translation"] button:not([type="menu"]) > .button-box {
-  -moz-margin-end: 3ch;
+  margin-inline-end: 3ch;
 }
 
 notification[value="translation"] menulist > .menulist-dropmarker {
@@ -2464,14 +2464,14 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker {
   -moz-appearance: none !important;
-  -moz-padding-end: 3px;
-  -moz-padding-start: 3px;
+  padding-inline-end: 3px;
+  padding-inline-start: 3px;
 }
 
 #nav-bar[reliefbuttons="true"] #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker {
-  -moz-padding-end: 6px;
-  -moz-padding-start: 6px;
-  -moz-margin-start: 0;
+  padding-inline-end: 6px;
+  padding-inline-start: 6px;
+  margin-inline-start: 0;
   -moz-box-align: center;
 }
 
@@ -2534,7 +2534,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 .panel-promo-icon {
   list-style-image: url("chrome://browser/skin/sync-notification-24.png");
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
   vertical-align: middle;
 }
 
@@ -2591,7 +2591,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 #sidebar-throbber[loading="true"] {
   list-style-image: url("chrome://global/skin/icons/loading_16.png");
-  -moz-margin-end: 4px;
+  margin-inline-end: 4px;
 }
 
 .browserContainer > findbar {
@@ -2651,7 +2651,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 */
 
 .tabbrowser-tabs {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 #tabbrowser-tabs {
@@ -2791,8 +2791,8 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 }
 
 .tab-background {
-  -moz-margin-end: -1px;
-  -moz-margin-start: 0;
+  margin-inline-end: -1px;
+  margin-inline-start: 0;
 }
 
 .tabbrowser-tab > .tab-stack {
@@ -2819,13 +2819,13 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 .tab-content {
   -moz-binding: url(chrome://browser/skin/gnomeBindings.xml#label-center);
-  -moz-padding-end: 9px;
-  -moz-padding-start: 9px;
+  padding-inline-end: 9px;
+  padding-inline-start: 9px;
 }
 
 .tabbrowser-tab[pinned] .tab-content {
-  -moz-padding-end: 6px;
-  -moz-padding-start: 7px;
+  padding-inline-end: 6px;
+  padding-inline-start: 7px;
 }
 
 .tab-throbber,
@@ -2834,8 +2834,8 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   height: 18px;
   border: 1px solid transparent;
   margin: 1px 0;
-  -moz-margin-start: -1px;
-  -moz-margin-end: 3px;
+  margin-inline-start: -1px;
+  margin-inline-end: 3px;
   list-style-image: url(chrome://mozapps/skin/places/defaultFavicon.png);
 }
 
@@ -2843,8 +2843,8 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   width: 16px;
   height: 16px;
   margin-top: -10px;
-  -moz-margin-start: -12px;
-  -moz-margin-end: -4px;
+  margin-inline-start: -12px;
+  margin-inline-end: -4px;
   display: none;
 }
 
@@ -2917,8 +2917,8 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 .tab-throbber[pinned],
 .tab-icon-image[pinned],
 .tabs-newtab-button > .toolbarbutton-icon {
-  -moz-margin-start: 0px;
-  -moz-margin-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 .tabbrowser-tab:focus > .tab-stack > .tab-content {
@@ -2956,7 +2956,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 /* Sound icon */
 
 .tab-icon-sound {
-  -moz-margin-start: 4px;
+  margin-inline-start: 4px;
   width: 16px;
   height: 16px;
   padding: 0;
@@ -3050,7 +3050,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 #TabsToolbar .tab-close-button {
   -moz-appearance: none;
   margin: 1px 0;
-  -moz-margin-end: -3px;
+  margin-inline-end: -3px;
   padding: 0;
   background: none;
   border: 1px solid transparent;
@@ -3111,7 +3111,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 .tabs-newtab-button {
   margin: 0;
-  -moz-margin-end: -1px;
+  margin-inline-end: -1px;
   padding: 0 5px;
 }
 
@@ -3133,7 +3133,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 /* Tabbrowser arrowscrollbox arrows */
 
 .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
-  -moz-padding-end: 1px;
+  padding-inline-end: 1px;
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-up,
@@ -3144,19 +3144,19 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):not(:active) {
--moz-border-end-color: #d4d5db !important;
+border-inline-end-color: #d4d5db !important;
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled]):not(:active) {
-  -moz-border-start-color: #d4d5db !important;
+  border-inline-start-color: #d4d5db !important;
 }
 
 #TabsToolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):not(:active) {
-  -moz-border-end-color: hsla(0,0%,0%,.1) !important;
+  border-inline-end-color: hsla(0,0%,0%,.1) !important;
 }
 
 #TabsToolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled]):not(:active) {
-  -moz-border-start-color: hsla(0,0%,0%,.1) !important;
+  border-inline-start-color: hsla(0,0%,0%,.1) !important;
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-down[notifybgtab] {
@@ -3260,7 +3260,7 @@ menuitem:hover > hbox > .alltabs-endimage[soundplaying] {
 /* Sidebar */
 #sidebar-throbber[loading="true"] {
   list-style-image: url("chrome://global/skin/icons/loading_16.png");
-  -moz-margin-end: 4px;
+  margin-inline-end: 4px;
 }
 
 toolbarbutton.chevron {
@@ -3538,7 +3538,7 @@ html|*#fullscreen-exit-button {
   -moz-appearance: none;
   color: inherit;
   border-width: 0;
-  -moz-border-end: 1px solid hsla(210,8%,5%,.45);
+  border-inline-end: 1px solid hsla(210,8%,5%,.45);
   box-shadow: -1px 0 0 hsla(210,16%,76%,.15) inset, 1px 0 0 hsla(210,16%,76%,.15);
 }
 
@@ -4014,7 +4014,7 @@ html|*#gcli-output-frame {
 }
 
 .center-item-label {
-  -moz-margin-start: 6px;
+  margin-inline-start: 6px;
   margin-bottom: 0;
   text-overflow: ellipsis;
 }
@@ -4024,7 +4024,7 @@ html|*#gcli-output-frame {
   background-repeat: no-repeat;
   width: 16px;
   height: 15px;
-  -moz-margin-start: 6px;
+  margin-inline-start: 6px;
 }
 
 .click-to-play-plugins-notification-button-container {
@@ -4144,7 +4144,7 @@ notification.pluginVulnerable .messageImage {
   border-left: 1px solid hsla(180,20%,10%,.3);
   box-shadow: 0 3px 5px hsla(180,20%,10%,.1),
               0 0 7px hsla(180,20%,10%,.1);
-  -moz-margin-start: 38px;
+  margin-inline-start: 38px;
 }
 
 /*** Status and progress indicator ***/
@@ -4293,7 +4293,7 @@ toolbar[brighttext] #downloads-indicator-progress > .progress-bar {
   background-color: #555753;
   border: 1px solid;
   border-color: hsla(0,0%,0%,.6) hsla(0,0%,0%,.4) hsla(0,0%,0%,.4);
-  -moz-border-start: none;
+  border-inline-start: none;
   border-radius: 0 2px 2px 0;
 }
 
@@ -4325,7 +4325,7 @@ toolbar[brighttext] #downloads-indicator-progress > .progress-remainder {
   text-shadow: none;
   background-image: linear-gradient(#B4211B, #8A1915);
   border-radius: 1px;
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 /* Social toolbar item */
@@ -4580,11 +4580,11 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button {
 }
 
 chatbar {
-  -moz-margin-end: 20px;
+  margin-inline-end: 20px;
 }
 
 chatbox {
-  -moz-margin-start: 4px;
+  margin-inline-start: 4px;
   background-color: transparent;
 }
 
@@ -4596,11 +4596,11 @@ chatbar > chatbox {
   box-shadow: 0 0 5px rgba(0,0,0,.3);
   /* Offset the chatbox the same amount as the box-shadows' spread, to make it
      visible. */
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
 }
 
 window > chatbox {
-  -moz-margin-start: 0px;
+  margin-inline-start: 0px;
   margin: 0px;
   border: none;
   padding: 0px;
@@ -4783,7 +4783,7 @@ window > chatbox {
 #customization-lwtheme-button > .box-inherit > .box-inherit > .button-text,
 #customization-titlebar-visibility-button > .button-box > .button-text {
   /* Sadly, button.css thinks its margins are perfect for everyone. */
-  -moz-margin-start: 6px !important;
+  margin-inline-start: 6px !important;
 }
 
 #customization-lwtheme-button > .box-inherit > .box-inherit > .button-icon {
@@ -4921,7 +4921,7 @@ toolbarpaletteitem[place="toolbar"] {
 }
 
 #personal-bookmarks[cui-areatype="toolbar"]:not([overflowedItem=true]) > #bookmarks-toolbar-placeholder > .toolbarbutton-icon {
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
 }
 
 #customization-palette > toolbarpaletteitem > label {
@@ -4947,9 +4947,9 @@ toolbarpaletteitem[place="toolbar"] {
   border: 1px solid transparent;
   margin: 0 -5px 5px;
   padding-top: 0;
-  -moz-padding-end: 5px;
+  padding-inline-end: 5px;
   padding-bottom: 0;
-  -moz-padding-start: 0;
+  padding-inline-start: 0;
 }
 
 .customization-lwtheme-menu-theme[defaulttheme] {
@@ -5021,7 +5021,7 @@ toolbarpaletteitem[place="toolbar"] {
 }
 
 .customization-lwtheme-menu-footeritem:first-child {
-  -moz-border-end: 1px solid hsla(180,20%,10%,.15);
+  border-inline-end: 1px solid hsla(180,20%,10%,.15);
 }
 
 #customization-tipPanel > .panel-arrowcontainer > .panel-arrowcontent {
@@ -5090,7 +5090,7 @@ toolbarpaletteitem[place="toolbar"] {
 .customization-tipPanel-closeBox > .close-icon {
   -moz-appearance: none;
   border: 0;
-  -moz-margin-end: -25px;
+  margin-inline-end: -25px;
 }
 
 #customization-tipPanel > .panel-arrowcontainer > .panel-arrowbox > .panel-arrow[side="left"],
@@ -5155,7 +5155,7 @@ toolbarpaletteitem[place="toolbar"] {
 #main-window[privatebrowsingmode=temporary] #private-browsing-indicator {
   background: url(chrome://symbolic-icons/skin/privatebrowsing.svg) center no-repeat;
   width: 36px;
-  -moz-margin-start: -10px;
+  margin-inline-start: -10px;
   opacity: 0.4;
 }
 */
@@ -5182,7 +5182,7 @@ toolbarpaletteitem[place="toolbar"] {
 }
 
 #UITourTooltipBody {
-  -moz-margin-end: 14px;
+  margin-inline-end: 14px;
 }
 
 #UITourTooltipBody > vbox {
@@ -5190,14 +5190,14 @@ toolbarpaletteitem[place="toolbar"] {
 }
 
 #UITourTooltipIconContainer {
-  -moz-margin-start: -16px;
+  margin-inline-start: -16px;
 }
 
 #UITourTooltipIcon {
   width: 48px;
   height: 48px;
-  -moz-margin-start: 28px;
-  -moz-margin-end: 28px;
+  margin-inline-start: 28px;
+  margin-inline-end: 28px;
 }
 
 #UITourTooltipTitle,
@@ -5208,14 +5208,14 @@ toolbarpaletteitem[place="toolbar"] {
 #UITourTooltipTitle {
   font-size: 1.45rem;
   font-weight: bold;
-  -moz-margin-start: 0;
-  -moz-margin-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   margin: 0 0 9px 0;
 }
 
 #UITourTooltipDescription {
-  -moz-margin-start: 0;
-  -moz-margin-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   font-size: 1.15rem;
   line-height: 1.8rem;
   margin-bottom: 0; /* Override global.css */
@@ -5226,7 +5226,7 @@ toolbarpaletteitem[place="toolbar"] {
   border: none;
   background-color: transparent;
   min-width: 0;
-  -moz-margin-start: 4px;
+  margin-inline-start: 4px;
   margin-top: -2px;
 }
 
@@ -5249,13 +5249,13 @@ toolbarpaletteitem[place="toolbar"] {
 
 #UITourTooltipButtons > label:first-child,
 #UITourTooltipButtons > button:first-child {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 #UITourTooltipButtons > button[image] > .button-box > .button-icon {
   width: 16px;
   height: 16px;
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
 }
 
 #UITourTooltipButtons > label,
@@ -5354,16 +5354,16 @@ notification.heartbeat {
 .messageText.heartbeat {
   color: #333333;
   text-shadow: none;
-  -moz-margin-start: 0px;
+  margin-inline-start: 0px;
   /* The !important is required to override OSX default style. */
-  -moz-margin-end: 12px !important;
+  margin-inline-end: 12px !important;
 }
 
 .messageImage.heartbeat {
   width: 24px;
   height: 24px;
-  -moz-margin-start: 8px;
-  -moz-margin-end: 8px;
+  margin-inline-start: 8px;
+  margin-inline-end: 8px;
 }
 
 .messageImage.heartbeat.pulse-onshow {
@@ -5383,7 +5383,7 @@ notification.heartbeat {
 /* Learn More link styles */
 .heartbeat > .text-link {
   color: #0095DD;
-  -moz-margin-start: 0px;
+  margin-inline-start: 0px;
 }
 
 .heartbeat > .text-link:hover {
@@ -5420,8 +5420,8 @@ notification.heartbeat {
 .heartbeat > #star-rating-container > .star-x  {
   background: url("chrome://browser/skin/heartbeat-star-off.svg");
   cursor: pointer;
-  /* Overrides the -moz-margin-end for all platforms defined in the .plain class */
-  -moz-margin-end: 4px !important;
+  /* Overrides the margin-inline-end for all platforms defined in the .plain class */
+  margin-inline-end: 4px !important;
   width: 16px;
   height: 16px;
 }
@@ -5449,7 +5449,7 @@ notification.heartbeat {
 }
 
 #UITourTooltipClose {
-  -moz-margin-end: -4px;
+  margin-inline-end: -4px;
   height: 16px;
   width: 16px;
 }
@@ -5574,8 +5574,8 @@ notification.heartbeat {
 #context-navigation > .menuitem-iconic > .menu-iconic-left {
   visibility: visible;
   /* override toolkit/themes/linux/global/menu.css */
-  -moz-padding-end: 0 !important;
-  -moz-margin-end: 0 !important;
+  padding-inline-end: 0 !important;
+  margin-inline-end: 0 !important;
 }
 
 /*

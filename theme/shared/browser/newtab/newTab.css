@@ -269,7 +269,7 @@ div.newtab-cell {
 
 /*
 .newtab-site[pinned] .newtab-title {
-  -moz-padding-start: 24px;
+  padding-inline-start: 24px;
 }
 
 .newtab-site[pinned] .newtab-title::before {

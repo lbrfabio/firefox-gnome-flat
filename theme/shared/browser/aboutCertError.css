@@ -36,7 +36,7 @@ p > b {
   max-width: 55em;
   margin: 5em auto 0;
   padding: 3em 0;
-  -moz-padding-start: 5em;
+  padding-inline-start: 5em;
   background-image: url(chrome://browser/skin/about-pages/connection-untrusted.svg);
   background-repeat: no-repeat;
   background-position: 56px 51px;
@@ -48,11 +48,11 @@ p > b {
 }
 
 #errorTitle {
-  -moz-margin-start: 150px;
+  margin-inline-start: 150px;
 }
 
 #errorLongContent {
-  -moz-margin-start: 150px;
+  margin-inline-start: 150px;
   padding: 0 24px;
 }
 
@@ -120,7 +120,7 @@ p > b {
 
 #exceptionDialogButton,
 #getMeOutOfHereButton {
-  -moz-margin-start: 17px;
+  margin-inline-start: 17px;
 }
 
 #reportCertificateErrorRetry,

@@ -16,7 +16,7 @@ body {
 ul, ol {
   margin: 0;
   padding: 0;
-  -moz-margin-start: 1.5em;
+  margin-inline-start: 1.5em;
 }
 
 ul > li, ol > li {
@@ -41,7 +41,7 @@ h1 {
   max-width: 610px;
   margin: auto 0;
   padding: 1em 0 3em 0;
-  -moz-padding-start: calc(35px + 160px + 35px);
+  padding-inline-start: calc(35px + 160px + 35px);
 }
 
 #errorPageContainer:-moz-dir(rtl) {
@@ -50,8 +50,8 @@ h1 {
 
 @media (max-width: 675px) {
   #errorPageContainer {
-    -moz-margin-start: 0;
-    -moz-padding-start: 0;
+    margin-inline-start: 0;
+    padding-inline-start: 0;
     background-image: none !important;
   }
 }
@@ -87,7 +87,7 @@ h1 {
 
 #errorTryAgain {
   margin-top: 2em;
-  -moz-margin-start: 1.2em;
+  margin-inline-start: 1.2em;
 }
 
 #errorContainer {
@@ -145,7 +145,7 @@ div#weakCryptoAdvanced {
   float: right;
   /* Align with the "Try Again" button */
   margin-top: 24px;
-  -moz-margin-end: 24px;
+  margin-inline-end: 24px;
 }
 
 div#weakCryptoAdvanced a {
@@ -160,7 +160,7 @@ span.downArrow {
   display: inline-block;
   vertical-align: middle;
   font-size: 0.6em;
-  -moz-margin-start: 0.5em;
+  margin-inline-start: 0.5em;
   transform: scaleY(0.7);
 }
 

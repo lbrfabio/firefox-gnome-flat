@@ -32,7 +32,7 @@ h1 {
 
 ul, ol {
   margin: 0;
-  -moz-margin-start: 1.5em;
+  margin-inline-start: 1.5em;
   padding: 0;
 }
 
@@ -50,7 +50,7 @@ ul {
   max-width: 55em;
   margin: 5em auto 0;
   padding: 3em 0;
-  -moz-padding-start: 5em;
+  padding-inline-start: 5em;
   background-repeat: no-repeat;
   background-position: 7em 2.5em;
   color: ButtonText;
@@ -75,11 +75,11 @@ ul {
 #errorTitle {
   color: #babdb6;
   text-shadow: 0 1px 0 white;
-  -moz-margin-start: 80px;
+  margin-inline-start: 80px;
 }
 
 #errorLongContent {
-  -moz-margin-start: 80px;
+  margin-inline-start: 80px;
 }
 
 #errorShortDesc > p {
@@ -100,14 +100,14 @@ ul {
 
 #errorTryAgain {
   margin-top: 2em;
-  -moz-margin-start: calc(80px + 24px + 17px);
+  margin-inline-start: calc(80px + 24px + 17px);
 }
 
 #brand {
   position: absolute;
   right: 0;
   bottom: -1.5em;
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
   opacity: .4;
 }
 
@@ -138,11 +138,11 @@ ul {
 /* Custom styling for 'blacklist' error class */
 
 :root.blacklist #errorTitle {
-  -moz-margin-start: 150px;
+  margin-inline-start: 150px;
 }
 
 :root.blacklist #errorLongContent {
-  -moz-margin-start: 150px;
+  margin-inline-start: 150px;
 }
 
 :root.blacklist #errorPageContainer {
@@ -164,7 +164,7 @@ ul {
 }
 
 :root.blacklist #buttons {
-  -moz-padding-start: 17px;
+  padding-inline-start: 17px;
 }
 
 /* Remove out-of place images in about:robots */
@@ -175,7 +175,7 @@ ul {
 /* ::::: Ignore warning ::::: */
 
 #ignoreWarning {
-  -moz-margin-start: 80px;
+  margin-inline-start: 80px;
   padding: 0 24px;
   text-align: end !important;
 }
@@ -197,7 +197,7 @@ ul {
 
 #errorTitle,
 #errorLongContent {
-  -moz-margin-start: 150px;
+  margin-inline-start: 150px;
 }
 
 #errorPageContainer {
@@ -215,7 +215,7 @@ ul {
 }
 
 #errorTryAgain {
-  -moz-margin-start: calc(150px + 24px + 17px);
+  margin-inline-start: calc(150px + 24px + 17px);
 }
 
 }

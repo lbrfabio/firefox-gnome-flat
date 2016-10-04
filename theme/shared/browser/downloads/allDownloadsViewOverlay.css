@@ -43,91 +43,89 @@
   margin: 3px;
   border: none;
   padding: 5px;
-  list-style-image: url("chrome://browser/skin/downloads/buttons.png");
 }
 
 /*** Button icons ***/
 
 .downloadButton.downloadConfirmBlock,
 .downloadButton.downloadCancel {
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
+  list-style-image: url("chrome://symbolic-icons/skin/cancel.svg");
 }
 richlistitem.download:hover > .downloadButton.downloadConfirmBlock,
 richlistitem.download:hover > .downloadButton.downloadCancel {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
+  opacity: .8;
 }
 richlistitem.download:hover > .downloadButton.downloadConfirmBlock:hover,
 richlistitem.download:hover > .downloadButton.downloadCancel:hover {
-  -moz-image-region: rect(0px, 48px, 16px, 32px);
+  opacity: .5;
 }
 richlistitem.download:hover > .downloadButton.downloadConfirmBlock:active,
 richlistitem.download:hover > .downloadButton.downloadCancel:active {
-  -moz-image-region: rect(0px, 64px, 16px, 48px);
+  opacity: 1;
 }
 richlistitem.download[selected] > .downloadButton.downloadConfirmBlock,
 richlistitem.download[selected] > .downloadButton.downloadCancel {
-  -moz-image-region: rect(0px, 80px, 16px, 64px);
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }
 richlistitem.download:hover[selected] > .downloadButton.downloadConfirmBlock,
 richlistitem.download:hover[selected] > .downloadButton.downloadCancel {
-  -moz-image-region: rect(0px, 96px, 16px, 80px);
+  opacity: .5;
 }
 richlistitem.download:hover[selected] > .downloadButton.downloadConfirmBlock:hover,
 richlistitem.download:hover[selected] > .downloadButton.downloadCancel:hover {
-  -moz-image-region: rect(0px, 112px, 16px, 96px);
+  opacity: .8;
 }
 richlistitem.download:hover[selected] > .downloadButton.downloadConfirmBlock:active,
 richlistitem.download:hover[selected] > .downloadButton.downloadCancel:active {
-  -moz-image-region: rect(0px, 128px, 16px, 112px);
+  opacity: 1;
 }
 
 .downloadButton.downloadShow {
-  -moz-image-region: rect(16px, 16px, 32px, 0px);
+  list-style-image: url("chrome://symbolic-icons/skin/folder.svg");
 }
 richlistitem.download:hover > .downloadButton.downloadShow {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
+  opacity: .8;
 }
 richlistitem.download:hover > .downloadButton.downloadShow:hover {
-  -moz-image-region: rect(16px, 48px, 32px, 32px);
+  opacity: .5;
 }
 richlistitem.download:hover > .downloadButton.downloadShow:active {
-  -moz-image-region: rect(16px, 64px, 32px, 48px);
+  opacity: 1;
 }
 richlistitem.download[selected] > .downloadButton.downloadShow {
-  -moz-image-region: rect(16px, 80px, 32px, 64px);
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }
 richlistitem.download:hover[selected] > .downloadButton.downloadShow {
-  -moz-image-region: rect(16px, 96px, 32px, 80px);
+  opacity: .5;
 }
 richlistitem.download:hover[selected] > .downloadButton.downloadShow:hover {
-  -moz-image-region: rect(16px, 112px, 32px, 96px);
+  opacity: .8;
 }
 richlistitem.download:hover[selected] > .downloadButton.downloadShow:active {
-  -moz-image-region: rect(16px, 128px, 32px, 112px);
+  opacity: 1;
 }
 
 .downloadButton.downloadRetry {
-  -moz-image-region: rect(32px, 16px, 48px, 0px);
+  list-style-image: url("chrome://symbolic-icons/skin/view-refresh.svg");
 }
 richlistitem.download:hover > .downloadButton.downloadRetry {
-  -moz-image-region: rect(32px, 32px, 48px, 16px);
+  opacity: .8;
 }
 richlistitem.download:hover > .downloadButton.downloadRetry:hover {
-  -moz-image-region: rect(32px, 48px, 48px, 32px);
+  opacity: .5;
 }
 richlistitem.download:hover > .downloadButton.downloadRetry:active {
-  -moz-image-region: rect(32px, 64px, 48px, 48px);
+  opacity: 1;
 }
 richlistitem.download[selected] > .downloadButton.downloadRetry {
-  -moz-image-region: rect(32px, 80px, 48px, 64px);
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }
 richlistitem.download:hover[selected] > .downloadButton.downloadRetry {
-  -moz-image-region: rect(32px, 96px, 48px, 80px);
+  opacity: .5;
 }
 richlistitem.download:hover[selected] > .downloadButton.downloadRetry:hover {
-  -moz-image-region: rect(32px, 112px, 48px, 96px);
+  opacity: .8;
 }
 richlistitem.download:hover[selected] > .downloadButton.downloadRetry:active {
-  -moz-image-region: rect(32px, 128px, 48px, 112px);
+  opacity: 1;
 }
-

@@ -219,12 +219,12 @@
 #font-type-buttons > button.selected,
 #color-scheme-buttons > button:active:hover,
 #color-scheme-buttons > button.selected {
-  box-shadow: inset 0 -3px 0 0 #fc6420;
+  box-shadow: inset 0 -3px 0 0 #5294e2;
 }
 
 #font-type-buttons > button:active:hover,
 #font-type-buttons > button.selected {
-  border-bottom: 1px solid #FC6420;
+  border-bottom: 1px solid #5294e2;
 }
 
 /* Make the serif button content the same size as the sans-serif button content. */
@@ -314,16 +314,16 @@
 
 .close-button:hover {
   background-image: url("chrome://global/skin/reader/RM-Close-24x24.svg#close-hover");
-  background-color: #d94141;
-  border-bottom: 1px solid #d94141;
-  border-right: 1px solid #d94141;
+  background-color: #ff4747;
+  border-bottom: 1px solid #ff4747;
+  border-right: 1px solid #ff4747;
 }
 
 .close-button:hover:active {
   background-image: url("chrome://global/skin/reader/RM-Close-24x24.svg#close-hover");
-  background-color: #AE2325;
-  border-bottom: 1px solid #AE2325;
-  border-right: 1px solid #AE2325;
+  background-color: #5294e2;
+  border-bottom: 1px solid #5294e2;
+  border-right: 1px solid #5294e2;
 }
 
 .style-button {

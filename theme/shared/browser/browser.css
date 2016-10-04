@@ -5563,6 +5563,10 @@ notification.heartbeat {
   opacity: 0.85;
 }
 
+#context-navigation > .menuitem-iconic[_moz-menuactive=true]:not([disabled=true]) > .menu-iconic-left > .menu-iconic-icon {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+}
+
 #context-navigation {
   -moz-appearance: menuitem;
   padding-top: 4px;

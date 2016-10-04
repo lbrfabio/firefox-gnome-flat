@@ -1737,7 +1737,7 @@ menuitem.subviewbutton {
 menu.subviewbutton > .menu-right {
   -moz-appearance: none;
   list-style-image: url(chrome://browser/skin/places/bookmarks-menu-arrow.png);
-  -moz-image-region: rect(0, 16px, 16px, 0);
+  -moz-image-region: rect(0, 32px, 16px, 16px);
   width: 16px;
   height: 16px;
 }
@@ -1745,6 +1745,12 @@ menu.subviewbutton > .menu-right {
 menu[disabled="true"].subviewbutton > .menu-right {
   -moz-image-region: rect(0, 32px, 16px, 16px);
 }
+
+/*
+menu[_moz-menuactive="true"].subviewbutton  > .menu-right {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
+}
+*/
 
 menu.subviewbutton > .menu-right:-moz-locale-dir(rtl) {
   transform: scaleX(-1);

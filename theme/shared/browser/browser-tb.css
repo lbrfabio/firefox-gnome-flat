@@ -189,6 +189,12 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
   opacity: 1;
 }
 
+#nav-bar .toolbarbutton-1:-moz-any(:hover:active, [checked="true"], [open="true"]):not([disabled=true]) .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:-moz-any(:hover:active, [checked="true"], [open="true"]) .toolbarbutton-badge-stack,
+#nav-bar .toolbarbutton-1:-moz-any(:hover:active, [checked="true"], [open="true"]) .toolbarbutton-menubutton-dropmarker {
+  filter: url("chrome://browser/skin/symbolic-icons-colors.svg#white") !important;
+}
+
 #TabsToolbar .toolbarbutton-1 {
   margin: 0;
   padding: 0 5px;

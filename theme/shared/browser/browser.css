@@ -31,8 +31,8 @@
   --tab-selected-background-color: #f0f0f0;
   --tab-selected-bottom-line-color: #d4d5db;
 
-  --tab-selected-extra-line-color: #d4d5db;
-  --tab-hover-extra-line-color: #d4d5db;
+  --tab-selected-border-color: #d4d5db;
+  --tab-hover-border-color: #d4d5db;
 
   --panel-separator-color: hsla(210,4%,10%,.07);
 }
@@ -2753,13 +2753,13 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 .tabbrowser-tab:hover .tab-background-middle {
   background: var(--tab-hover-background-color);
   -moz-border-bottom-colors: var(--tab-hover-bottom-line-color);
-  -moz-border-top-colors: var(--tab-hover-extra-line-color);
+  -moz-border-top-colors: var(--tab-selected-border-color);
 }
 
 .tabbrowser-tab[visuallyselected=true] .tab-background-middle {
   background: var(--tab-selected-background-color);
   -moz-border-bottom-colors: var(--tab-selected-bottom-line-color);
-  -moz-border-top-colors: var(--tab-hover-extra-line-color);
+  -moz-border-top-colors: var(--tab-selected-border-color);
 }
 
 .tab-background-start,
@@ -2768,25 +2768,24 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   width: 1px;
 }
 
-.tab-background-start[visuallyselected=true],
-.tab-background-end[visuallyselected=true] {
-  background: #c0c0c0;
-  background-image: linear-gradient(to top, var(--tab-selected-bottom-line-color),  var(--tab-selected-extra-line-color) 2px,  var(--tab-selected-extra-line-color));
+.tab-background-start[selected=true],
+.tab-background-end[selected=true] {
+  background: var(--tab-selected-border-color);
 }
 
-#TabsToolbar[brighttext] .tab-background-start[visuallyselected=true],
-#TabsToolbar[brighttext] .tab-background-end[visuallyselected=true] {
+#TabsToolbar[brighttext] .tab-background-start[selected=true],
+#TabsToolbar[brighttext] .tab-background-end[selected=true] {
   background: #282b2b;
   background-image: linear-gradient(to top, var(--tab-selected-bottom-line-color), #282b2b 2px, #282b2b);
 }
 
-.tabbrowser-tab:hover .tab-background-start:not([visuallyselected=true]),
-.tabbrowser-tab:hover .tab-background-end:not([visuallyselected=true]) {
-  background: hsla(0,0%,68%,.3); /* #c9c9c9 */
+.tabbrowser-tab:hover .tab-background-start:not([selected=true]),
+.tabbrowser-tab:hover .tab-background-end:not([selected=true]) {
+  background: var(--tab-hover-border-color);
 }
 
-#TabsToolbar[brighttext] .tabbrowser-tab:hover .tab-background-start:not([visuallyselected=true]),
-#TabsToolbar[brighttext] .tabbrowser-tab:hover .tab-background-end:not([visuallyselected=true]) {
+#TabsToolbar[brighttext] .tabbrowser-tab:hover .tab-background-start:not([selected=true]),
+#TabsToolbar[brighttext] .tabbrowser-tab:hover .tab-background-end:not([selected=true]) {
   background: #2a2f2f;
 }
 

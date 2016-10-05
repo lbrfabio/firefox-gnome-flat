@@ -4,20 +4,36 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      width="16" height="16" viewBox="0 0 16 16">
+<style>
+
+.fieldtext {
+  fill: #c6c8cb;
+  /* The fill-opacity needs to be sufficient for high-contrast settings, and
+     pathological Gtk themes where -moz-fieldtext provides low contrast by
+     default. */
+  fill-opacity: 1;
+}
+
+
+.highlighttext {
+  fill: highlighttext;
+  fill-opacity: 1;
+}
+
+.black {
+  fill: black;
+  fill-opacity: .6;
+}
+
+.white {
+  fill: white;
+  fill-opacity: .7;
+}
+
+</style>
   <style>
     svg > g:not(:target) {
       display: none;
-    }
-    .icon-default {
-      fill: #c6c8cb;
-    }
-    #icon-black > .icon-default {
-      fill: black;
-      fill-opacity: .6;
-    }
-    #icon-white > .icon-default {
-      fill: white;
-      fill-opacity: .7;
     }
   </style>
 
@@ -27,7 +43,6 @@
     <rect id="shape-lock-base" x="3" y="7" width="10" height="7" rx="1" ry="1" />
 
     <mask id="mask-clasp-cutout">
-      <rect width="16" height="16" fill="#000" />
       <use xlink:href="#shape-lock-clasp-outer" fill="#fff" />
       <use xlink:href="#shape-lock-clasp-inner" fill="#000" />
       <line x1="2" y1="13" x2="14" y2="1.5" stroke="#000" stroke-width="2" />
@@ -36,7 +51,6 @@
     </mask>
 
     <mask id="mask-base-cutout">
-      <rect width="16" height="16" fill="#000" />
       <use xlink:href="#shape-lock-base" fill="#fff" />
       <line x1="2" y1="14.8" x2="14" y2="3.2" stroke="#000" stroke-width="1.8" />
     </mask>
@@ -50,17 +64,17 @@
   </defs>
 
   <g id="icon">
-    <use xlink:href="#lock" class="icon-default"/>
+    <use xlink:href="#lock" class="fieldtext"/>
     <use xlink:href="#strike-through-red"/>
   </g>
 
   <g id="icon-black">
-    <use xlink:href="#lock" class="icon-default"/>
+    <use xlink:href="#lock" class="black"/>
     <use xlink:href="#strike-through-red"/>
   </g>
 
   <g id="icon-white">
-    <use xlink:href="#lock" class="icon-default"/>
+    <use xlink:href="#lock" class="white"/>
     <use xlink:href="#strike-through-red"/>
   </g>
 </svg>

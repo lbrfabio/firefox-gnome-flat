@@ -38,7 +38,7 @@
   --arrowpanel-dimmed-further: hsla(0,0%,80%,.45);
   --arrowpanel-dimmed-even-further: hsla(0,0%,80%,.8);
 
-  --panel-separator-color: hsla(210,4%,10%,.10);
+  --panel-separator-color: hsla(210,4%,10%,.07);
 
   --urlbar-separator-color: #d8dadf;
 }
@@ -1673,7 +1673,6 @@ toolbar[brighttext] .searchbar-textbox {
   list-style-image: url(chrome://global/skin/icons/autocomplete-search.svg#search-icon);
   width: 16px;
   height: 16px;
-  opacity: 1;
 }
 
 /* SHARING ICON */
@@ -1753,10 +1752,6 @@ toolbar[brighttext] .searchbar-textbox {
   margin-bottom: 2px;
   margin-inline-start: 2px;
   margin-inline-end: 3px;
-  /*
-  list-style-image: url(chrome://symbolic-icons/skin/connection-icons.svg#generic);
-  */
-  opacity: 1;
   visibility: collapse;
 }
 

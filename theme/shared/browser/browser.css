@@ -1225,6 +1225,18 @@ toolbar[brighttext] .searchbar-textbox {
   opacity: 0.35;
 }
 
+.urlbar-icon:hover {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#red-light);
+}
+
+.urlbar-icon:-moz-any(hover:active,[readeractive]) {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
+}
+
+.urlbar-icon:-moz-any(:hover,hover:active,[readeractive]) {
+  opacity: 1;
+}
+
 /* ::::: URL Bar Zoom Reset Button ::::: */
 @keyframes urlbar-zoom-reset-pulse {
   0% {
@@ -1686,21 +1698,19 @@ toolbar[brighttext] .searchbar-textbox {
 }
 
 #identity-box[sharing="camera"] > #sharing-icon {
-  list-style-image: url("chrome://browser/skin/notification-icons.svg#camera");
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#camera-sharing");
 }
 
 #identity-box[sharing="microphone"] > #sharing-icon {
-  list-style-image: url("chrome://browser/skin/notification-icons.svg#microphone");
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#microphone-sharing");
 }
 
 #identity-box[sharing="screen"] > #sharing-icon {
-  list-style-image: url("chrome://browser/skin/notification-icons.svg#screen");
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#screen-sharing");
 }
 
 #identity-box[sharing] > #sharing-icon {
   display: -moz-box;
-  filter: url("chrome://browser/skin/filters.svg#fill");
-  fill: rgb(224, 41, 29);
   animation-delay: -1.5s;
 }
 
@@ -1808,28 +1818,13 @@ toolbar[brighttext] .searchbar-textbox {
   margin-inline-end: 10px;
 }
 
-.camera-icon,
-.geo-icon,
-.indexedDB-icon,
-.install-icon,
-.login-icon,
-.microphone-icon,
-.plugin-icon,
-.popup-icon,
-.screen-icon,
-.desktop-notification-icon,
-.popup-notification-icon[popupid="geolocation"],
-.popup-notification-icon[popupid="indexedDB-permissions-prompt"],
-.popup-notification-icon[popupid="password"],
-.popup-notification-icon[popupid="webRTC-shareDevices"],
-.popup-notification-icon[popupid="webRTC-shareMicrophone"],
-.popup-notification-icon[popupid="webRTC-shareScreen"],
-.popup-notification-icon[popupid="web-notifications"] {
+.notification-anchor-icon:not(.plugin-blocked):-moz-lwtheme,
+#blocked-permissions-container > .blocked-permission-icon:-moz-lwtheme {
   filter: url(chrome://browser/skin/filters.svg#fill);
-  fill: #c6c8cb;
+  fill: currentColor;
 }
 
-.notification-anchor-icon:not(.plugin-blocked):hover {
+.notification-anchor-icon:not(.plugin-blocked):not(:hover) {
   opacity: 1;
 }
 
@@ -1878,12 +1873,20 @@ toolbar[brighttext] .searchbar-textbox {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#camera);
 }
 
+.camera-icon.in-use {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#camera-sharing);
+}
+
 .camera-icon.blocked-permission-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#camera-blocked);
 }
 
 .microphone-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone);
+}
+
+.microphone-icon.in-use {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone-sharing);
 }
 
 .microphone-icon.blocked-permission-icon {
@@ -1897,6 +1900,10 @@ toolbar[brighttext] .searchbar-textbox {
 .popup-notification-icon[popupid="webRTC-shareScreen"],
 .screen-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#screen);
+}
+
+.screen-icon.in-use {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#screen-sharing);
 }
 
 .screen-icon.blocked-permission-icon {
@@ -2426,19 +2433,6 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 /* Popup blocker button */
 #page-report-button {
   list-style-image: url(chrome://symbolic-icons/skin/info.svg);
-  opacity: .3;
-}
-
-#page-report-button:hover {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#red-light);
-}
-
-#page-report-button:hover:active {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
-}
-
-#page-report-button:-moz-any(:hover,hover:active) {
-  opacity: 1;
 }
 
 /* Reader mode button */
@@ -2451,17 +2445,11 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 #reader-mode-button:hover,
 #reader-mode-button[readeractive]:hover {
   -moz-image-region: rect(0, 32px, 16px, 16px);
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#red-light);
 }
 
 #reader-mode-button:hover:active,
 #reader-mode-button[readeractive] {
   -moz-image-region: rect(0, 48px, 16px, 32px);
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
-}
-
-#reader-mode-button:-moz-any(:hover,hover:active,[readeractive]) {
-  opacity: 1;
 }
 
 /* social share panel */
@@ -4064,8 +4052,7 @@ html|*#gcli-output-frame {
 }
 
 .messageImage[value="plugin-hidden"] {
-  list-style-image: url("chrome://browser/skin/notification-pluginNormal.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
+  list-style-image: url(chrome://symbolic-icons/skin/plugin.svg);
 }
 
 /* Keep any changes to this style in sync with pluginProblem.css */
@@ -4076,7 +4063,7 @@ notification.pluginVulnerable {
 }
 
 notification.pluginVulnerable .messageImage {
-  list-style-image: url("chrome://browser/skin/notification-pluginBlocked.png");
+  list-style-image: url(chrome://symbolic-icons/skin/plugin-blocked.svg);
 }
 
 #notification-popup[popupid="login-fill"] > .panel-arrowcontainer > .panel-arrowcontent {

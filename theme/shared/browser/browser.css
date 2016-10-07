@@ -1210,6 +1210,17 @@ toolbar[brighttext] .searchbar-textbox {
   opacity: 0.35;
 }
 
+.urlbar-icon:hover {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#red-light);
+}
+
+.urlbar-icon:-moz-any(hover:active,[readeractive]) {
+  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
+}
+
+.urlbar-icon:-moz-any(:hover,hover:active,[readeractive]) {
+  opacity: 1;
+}
 #urlbar-search-footer {
   border-top: 1px solid hsla(210,4%,10%,.14);
   background-color: hsla(210,4%,10%,.07);
@@ -2359,19 +2370,6 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 /* Popup blocker button */
 #page-report-button {
   list-style-image: url(chrome://symbolic-icons/skin/info.svg);
-  opacity: .3;
-}
-
-#page-report-button:hover {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#red-light);
-}
-
-#page-report-button:hover:active {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
-}
-
-#page-report-button:-moz-any(:hover,hover:active) {
-  opacity: 1;
 }
 
 /* Reader mode button */
@@ -2384,17 +2382,11 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 #reader-mode-button:hover,
 #reader-mode-button[readeractive]:hover {
   -moz-image-region: rect(0, 32px, 16px, 16px);
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#red-light);
 }
 
 #reader-mode-button:hover:active,
 #reader-mode-button[readeractive] {
   -moz-image-region: rect(0, 48px, 16px, 32px);
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
-}
-
-#reader-mode-button:-moz-any(:hover,hover:active,[readeractive]) {
-  opacity: 1;
 }
 
 /* social share panel */

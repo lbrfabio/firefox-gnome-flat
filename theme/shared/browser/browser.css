@@ -1733,8 +1733,8 @@ toolbar[brighttext] .searchbar-textbox {
 #tracking-protection-icon {
   width: 16px;
   height: 16px;
-  margin-inline-start: 5px;
-  margin-inline-end: 3px;
+  margin-inline-start: 3px;
+  margin-inline-end: 0px;
 }
 
 #tracking-protection-icon[animate] {
@@ -1761,23 +1761,24 @@ toolbar[brighttext] .searchbar-textbox {
   margin-top: 2px;
   margin-bottom: 2px;
   margin-inline-start: 2px;
-  margin-inline-end: 3px;
   visibility: collapse;
 }
 
 
 
 #notification-popup-box {
+  padding: 5px 0px;
+  margin: -5px 0px;
+  margin-inline-end: -5px;
+  padding-inline-end: 5px;
   position: relative;
   background-color: hsla(0,0%,100%,.0);
   background-clip: padding-box;
-  padding-left: 4px;
   border-radius: 2.5px 0 0 2.5px;
   border-width: 0 0px 0 0;
   border-style: solid;
   border-color: #fff;
   border-image: url(chrome://browser/skin/urlbar-arrow.svg) 0 8 0 0 fill;
-  -moz-margin-end: 1px;
   z-index: 1;
   opacity: 1;
 }
@@ -1786,7 +1787,8 @@ toolbar[brighttext] .searchbar-textbox {
 #blocked-permissions-container > .blocked-permission-icon {
   width: 16px;
   height: 16px;
-  margin: 0 0 0 4px;
+  margin-inline-start: 5px;
+  margin-inline-end: 1px;
 }
 
 .notification-anchor-icon:hover,
@@ -1862,6 +1864,8 @@ toolbar[brighttext] .searchbar-textbox {
 
 .login-icon {
   list-style-image: url(chrome://symbolic-icons/skin/key.svg);
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: #c6c8cb;
 }
 
 .popup-notification-icon[popupid="password"] {
@@ -1920,6 +1924,8 @@ toolbar[brighttext] .searchbar-textbox {
 .popup-notification-icon[popupid="drmContentPlaying"],
 .drm-icon {
   list-style-image: url("chrome://browser/skin/drm-icon.svg#chains");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: #c6c8cb;
 }
 
 .drm-icon:hover:active {
@@ -1941,6 +1947,8 @@ toolbar[brighttext] .searchbar-textbox {
 
 .install-icon {
   list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg#default);
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: #7cb65c;
 }
 
 .popup-notification-icon[popupid="xpinstall-disabled"],
@@ -2620,11 +2628,6 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   min-width: 16px;
 }
 
-#sidebar-throbber[loading="true"] {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
-  margin-inline-end: 4px;
-}
-
 .browserContainer > findbar {
   background-color: -moz-dialog;
   color: -moz-DialogText;
@@ -3263,7 +3266,7 @@ border-inline-end-color: #d4d5db !important;
 }
 
 .alltabs-item[busy] > .menu-iconic-left > .menu-iconic-icon {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://global/skin/icons/loading.png");
 }
 
 .alltabs-item[tabIsVisible] {
@@ -3289,7 +3292,7 @@ menuitem:hover > hbox > .alltabs-endimage[soundplaying] {
 
 /* Sidebar */
 #sidebar-throbber[loading="true"] {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://global/skin/icons/loading.png");
   margin-inline-end: 4px;
 }
 

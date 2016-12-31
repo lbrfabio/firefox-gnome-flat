@@ -81,7 +81,7 @@
 }
 
 #identity-popup-multiView > .panel-viewcontainer > .panel-viewstack > .panel-subviews {
-  background: var(--panel-arrowcontent-background);
+  background: var(--arrowpanel-background);
   padding: 0;
 }
 
@@ -123,12 +123,8 @@
   width: var(--identity-popup-expander-width);
   border: 0 none;
   -moz-appearance: none;
-  background-image: url("chrome://browser/skin/controlcenter/arrow-subview.svg"),
-                    linear-gradient(rgba(255,255,255,0.3), transparent);
+  background: url("chrome://browser/skin/controlcenter/arrow-subview.svg") center no-repeat;
   background-size: 16px, auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
 }
 
 .identity-popup-expander:-moz-locale-dir(rtl) {
@@ -156,6 +152,8 @@
 
 .identity-popup-expander:hover {
   background-color: var(--arrowpanel-dimmed);
+  background-image: url("chrome://browser/skin/controlcenter/arrow-subview.svg"),
+                    linear-gradient(rgba(255,255,255,0.3), transparent);
 }
 
 .identity-popup-expander:hover:active {
@@ -226,7 +224,7 @@
 
 #identity-popup[connection=chrome] #identity-popup-securityView,
 #identity-popup[connection=chrome] #identity-popup-security-content {
-  background-image: url(chrome://branding/content/icon48.png);
+  background-image: url(chrome://symbolic-icons/skin/firefox.svg);
 }
 
 #identity-popup[connection^=secure] #identity-popup-securityView,
@@ -382,6 +380,16 @@ description#identity-popup-content-verifier,
 
 @keyframes in-use-blink {
   50% { opacity: 0; }
+}
+
+.identity-popup-permission-label,
+.identity-popup-permission-state-label {
+  /* We need to align the action buttons and permission icons with the text.
+     This is tricky because the icon height is defined in pixels, while the
+     font height can vary with platform and system settings, and at least on
+     Windows the default font metrics reserve more extra space for accents.
+     This value is a good compromise for different platforms and font sizes. */
+  margin-top: -0.1em;
 }
 
 .identity-popup-permission-label {

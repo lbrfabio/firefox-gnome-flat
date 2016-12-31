@@ -53,6 +53,10 @@ richlistitem.download[verdict="Uncommon"] .downloadBlockedBadge {
   background-image: url("chrome://browser/skin/info.svg");
 }
 
+richlistitem.download > toolbarseparator {
+  display: none;
+}
+
 .downloadTarget {
   margin-bottom: 3px;
   cursor: inherit;
@@ -66,6 +70,7 @@ richlistitem.download[verdict="Uncommon"] .downloadBlockedBadge {
 
 .downloadButton {
   -moz-appearance: none;
+  -moz-box-align: center;
   background: transparent;
   min-width: 0;
   min-height: 0;
@@ -155,4 +160,10 @@ richlistitem.download[selected]:hover .downloadButton.downloadIconRetry:hover {
 }
 richlistitem.download[selected]:hover .downloadButton.downloadIconRetry:active {
   opacity: 1;
+}
+
+/*** List items ***/
+
+:root {
+  --downloads-item-height: 5em;
 }

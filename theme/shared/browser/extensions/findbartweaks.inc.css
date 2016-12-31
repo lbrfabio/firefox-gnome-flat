@@ -27,3 +27,8 @@ findbar[hideLabels] toolbarbutton[anonid="find-case-sensitive"] {
     list-style-image: url(chrome://symbolic-icons/skin/find-case-sensitive.svg) !important;
 	-moz-image-region: rect(0px 16px 16px 0px) !important;
 }
+
+findbar[hideLabels] toolbarbutton[anonid="find-entire-word"] {
+	list-style-image: url("chrome://symbolic-icons/skin/find-entire-word.svg") !important;
+	-moz-image-region: unset !important;
+}

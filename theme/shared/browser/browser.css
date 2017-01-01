@@ -34,6 +34,7 @@
   --tab-selected-border-color: #d4d5db;
   --tab-hover-border-color: #d4d5db;
 
+  --arrowpanel-dimmed-lighter: hsla(0,0%,80%,.18);
   --arrowpanel-dimmed: hsla(0,0%,80%,.3);
   --arrowpanel-dimmed-further: hsla(0,0%,80%,.45);
   --arrowpanel-dimmed-even-further: hsla(0,0%,80%,.8);
@@ -5168,8 +5169,8 @@ notification.heartbeat {
 }
 */
 
-/* hide all left menuitems icons not context-navigation or bookmark-item*/
- :not(#context-navigation) > .menuitem-iconic:not(.bookmark-item) > .menu-iconic-left > .menu-iconic-icon {
+/* force hide all left menuitems icons except: context-navigation, bookmark-item, contextsearch */
+ :not(#context-navigation) > .menuitem-iconic:not(.bookmark-item):not(.contextsearchx) > .menu-iconic-left > .menu-iconic-icon {
  visibility: hidden !important;
 }
 

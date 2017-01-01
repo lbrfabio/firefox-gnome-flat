@@ -38,7 +38,7 @@
 
 .downloadBlockedBadge {
   margin: 0 4px;
-  background: url("moz-icon://stock/gtk-dialog-error?size=dialog") top right / 16px no-repeat;
+  background: url("chrome://browser/skin/downloads/download-blocked.svg") top right / 16px no-repeat;
 }
 
 .downloadBlockedBadge:-moz-locale-dir(rtl) {
@@ -77,89 +77,66 @@ richlistitem.download > toolbarseparator {
   margin: 3px;
   border: none;
   padding: 5px;
+  color: inherit;
 }
 
-/*** List items ***/
+.downloadButton > .button-box {
+  -moz-appearance: none;
+  padding: 2px !important;
+  border-radius: 50%;
+  border-color: var(--arrowpanel-dimmed-even-further);
+  color: graytext;
+}
 
-:root {
-  --downloads-item-height: 5em;
+.downloadButton > .button-box > .button-icon {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+}
+
+.downloadButton > .button-box > .button-text {
+  display: none;
+}
+
+.downloadButton:hover > .button-box {
+  border-color: graytext;
+  background-color: graytext;
+  color: -moz-field;
+}
+
+.downloadButton:hover:active > .button-box {
+  background-color: -moz-fieldtext;
+}
+
+richlistitem.download[selected] > .downloadButtonArea > .downloadButton > .button-box {
+  color: inherit;
+}
+
+richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover > .button-box {
+  border-color: HighlightText;
+  background-color: HighlightText;
+  color: Highlight;
+}
+
+richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover:active > .button-box {
+  background-color: -moz-field;
+  color: -moz-fieldtext;
 }
 
 /*** Button icons ***/
 
-.downloadButton.downloadIconCancel {
+.downloadIconCancel > .button-box > .button-icon {
   list-style-image: url("chrome://symbolic-icons/skin/cancel.svg");
 }
-richlistitem.download:hover .downloadButton.downloadIconCancel {
-  opacity: .8;
-}
-richlistitem.download:hover .downloadButton.downloadIconCancel:hover {
-  opacity: .5;
-}
-richlistitem.download:hover .downloadButton.downloadIconCancel:active {
-  opacity: 1;
-}
-richlistitem.download[selected] .downloadButton.downloadIconCancel {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconCancel {
-  opacity: .5;
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconCancel:hover {
-  opacity: .8;
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconCancel:active {
-  opacity: 1;
-}
 
-.downloadButton.downloadIconShow {
+.downloadIconShow > .button-box > .button-icon {
   list-style-image: url("chrome://symbolic-icons/skin/folder.svg");
 }
-richlistitem.download:hover .downloadButton.downloadIconShow {
-  opacity: .8;
-}
-richlistitem.download:hover .downloadButton.downloadIconShow:hover {
-  opacity: .5;
-}
-richlistitem.download:hover .downloadButton.downloadIconShow:active {
-  opacity: 1;
-}
-richlistitem.download[selected] .downloadButton.downloadIconShow {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconShow {
-  opacity: .5;
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconShow:hover {
-  opacity: .8;
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconShow:active {
-  opacity: 1;
-}
 
-.downloadButton.downloadIconRetry {
+.downloadIconRetry > .button-box > .button-icon {
   list-style-image: url("chrome://symbolic-icons/skin/view-refresh.svg");
-}
-richlistitem.download:hover .downloadButton.downloadIconRetry {
-  opacity: .8;
-}
-richlistitem.download:hover .downloadButton.downloadIconRetry:hover {
-  opacity: .5;
-}
-richlistitem.download:hover .downloadButton.downloadIconRetry:active {
-  opacity: 1;
-}
-richlistitem.download[selected] .downloadButton.downloadIconRetry {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconRetry {
-  opacity: .5;
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconRetry:hover {
-  opacity: .8;
-}
-richlistitem.download[selected]:hover .downloadButton.downloadIconRetry:active {
-  opacity: 1;
 }
 
 /*** List items ***/

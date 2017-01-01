@@ -108,9 +108,10 @@ toolbarseparator.downloadsDropmarkerSplitter {
 
 richlistitem[type="download"] > toolbarseparator {
   margin: 10px 0;
+  border-color: transparent;
 }
 
-/*richlistitem[type="download"]:hover > toolbarseparator,*/
+richlistitem[type="download"]:hover > toolbarseparator,
 #downloadsFooter:hover toolbarseparator.downloadsDropmarkerSplitter,
 #downloadsFooter[showingdropdown] toolbarseparator {
   margin: 0;
@@ -137,7 +138,7 @@ richlistitem[type="download"] > toolbarseparator {
   height: 16px;
   list-style-image: url("chrome://browser/skin/downloads/menubutton-dropmarker.svg");
   filter: url("chrome://browser/skin/filters.svg#fill");
-  fill: currentColor;
+  fill: graytext;
 }
 
 /* Override default icon size which is too small for this dropdown */
@@ -148,7 +149,7 @@ richlistitem[type="download"] > toolbarseparator {
 
 #downloadsSummary {
   padding: 0 12px;
-  cursor: inherit;
+  cursor: pointer;
   -moz-user-focus: normal;
 }
 
@@ -176,6 +177,10 @@ richlistitem[type="download"] {
   padding: 0;
 }
 
+richlistitem[type="download"]:hover {
+  background-color: var(--arrowpanel-dimmed-lighter);
+}
+
 richlistitem[type="download"]:last-child {
   border-bottom: none;
 }
@@ -195,7 +200,7 @@ richlistitem[type="download"] > .downloadMainArea {
 
 .downloadBlockedBadge {
   margin: 0 4px;
-  background: url("moz-icon://stock/gtk-dialog-error?size=dialog") top right / 16px no-repeat;
+  background: url("chrome://browser/skin/downloads/download-blocked.svg") top right / 16px no-repeat;
 }
 
 .downloadBlockedBadge:-moz-locale-dir(rtl) {
@@ -252,18 +257,106 @@ richlistitem[type="download"][verdict] > toolbarseparator {
 
 .downloadButton {
   -moz-appearance: none;
+  -moz-box-align: center;
   min-width: 0;
   min-height: 0;
-  margin: 3px;
+  margin: 0;
   border: none;
   background: transparent;
   padding: 8px;
+  color: graytext;
 }
 
 .downloadButton > .button-box {
+  -moz-appearance: none;
+  padding: 2px !important;
+  border-radius: 50%;
+  border-color: var(--arrowpanel-dimmed-even-further);
+  background-color: HighlightText;
+  color: graytext;
+}
+
+.downloadButton:hover > .button-box {
+  border-color: var(--arrowpanel-dimmed-even-further);
+  background-color: var(--arrowpanel-dimmed-even-further);
+  color: HighlightText;
+}
+
+.downloadButton:hover:active > .button-box {
+  border-color: Highlight;
+  background-color: Highlight;
+  color: HighlightText;
+}
+
+.downloadButton > .button-box > .button-icon {
+  width: 16px;
+  height: 16px;
+  margin: 1px;
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+}
+
+.downloadButton > .button-box > .button-text {
+  margin: 0 !important;
   padding: 0;
 }
 
+/*richlistitem[type="download"][state="1"][exists]:hover > .downloadMainArea,
+richlistitem[type="download"]:not([verdict]):hover > .downloadButtonArea {
+  background-color: var(--arrowpanel-dimmed);
+}
+
+richlistitem[type="download"][state="1"][exists] .downloadMainArea:hover,
+richlistitem[type="download"]:not([verdict]) > .downloadButtonArea:hover,
+richlistitem[type="download"][verdict]:hover {
+  background-color: var(--arrowpanel-dimmed-further);
+}
+
+richlistitem[type="download"][state="1"][exists] > .downloadMainArea:hover:active,
+richlistitem[type="download"]:not([verdict]) > .downloadButtonArea:hover:active,
+richlistitem[type="download"][verdict]:hover:active {
+  background-color: var(--arrowpanel-dimmed-even-further);
+}*/
+
+richlistitem[type="download"][showingsubview] {
+  background-color: Highlight;
+  color: HighlightText;
+  transition: background-color var(--panelui-subview-transition-duration),
+              color var(--panelui-subview-transition-duration);
+}
+
+richlistitem[type="download"][verdict="Malware"]:hover,
+richlistitem[type="download"][verdict="Malware"]:hover:active,
+richlistitem[type="download"][verdict="Malware"][showingsubview] {
+  background-color: #aa1b08;
+  color: white;
+}
+
+richlistitem[type="download"][verdict="Malware"]:hover > .downloadButtonArea > .downloadButton {
+  color: inherit;
+}
+
+/*** Button icons ***/
+
+.downloadIconCancel > .button-box > .button-icon {
+  list-style-image: url("chrome://symbolic-icons/skin/cancel.svg");
+}
+
+.downloadIconShow > .button-box > .button-icon {
+  list-style-image: url("chrome://symbolic-icons/skin/folder.svg");
+}
+
+.downloadIconRetry > .button-box > .button-icon {
+  list-style-image: url("chrome://symbolic-icons/skin/view-refresh.svg");
+}
+
+.downloadShowBlockedInfo > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#arrow-right");
+}
+
+.downloadShowBlockedInfo > .button-box > .button-icon:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#arrow-left");
+}
 
 /*** Blocked subview ***/
 
@@ -299,7 +392,7 @@ richlistitem[type="download"][verdict] > toolbarseparator {
 }
 
 #downloadsPanel-blockedSubview[verdict=Malware] {
-  background-image: url("moz-icon://stock/gtk-dialog-error?size=dialog");
+  background-image: url("chrome://browser/skin/downloads/download-blocked.svg");
 }
 
 #downloadsPanel-blockedSubview-title {
@@ -349,84 +442,4 @@ richlistitem[type="download"][verdict] > toolbarseparator {
 #downloadsPanel[keyfocus] #downloadsListBox:focus > richlistitem[type="download"][selected] {
   outline: 1px -moz-dialogtext dotted;
   outline-offset: -1px;
-}
-
-#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"][exists]:hover,
-richlistitem[type="download"][showingsubview] {
-  border-radius: 3px;
-  border-top: 1px solid hsla(0,0%,100%,.3);
-  border-bottom: 1px solid hsla(0,0%,0%,.2);
-  background-color: Highlight;
-  background-image: linear-gradient(hsla(0,0%,100%,.1), transparent);
-  color: HighlightText;
-  cursor: inherit;
-}
-
-#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"][exists][verdict="Malware"]:hover,
-richlistitem[type="download"][showingsubview][verdict="Malware"] {
-  background-color: hsl(4, 82%, 47%);
-  color: white;
-}
-
-/*** Button icons ***/
-
-.downloadButton.downloadIconCancel {
-  list-style-image: url("chrome://symbolic-icons/skin/cancel.svg");
-}
-richlistitem[type="download"]:hover .downloadButton.downloadIconCancel {
-
-}
-richlistitem[type="download"]:hover .downloadButton.downloadIconCancel:hover {
-  opacity: .5;
-}
-richlistitem[type="download"]:hover .downloadButton.downloadIconCancel:active {
-  opacity: .8;
-}
-
-.downloadButton.downloadIconShow {
-  list-style-image: url("chrome://symbolic-icons/skin/folder.svg");
-}
-richlistitem[type="download"]:not([state="1"]):hover .downloadButton.downloadIconShow {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
-}
-richlistitem[type="download"]:not([state="1"]):hover .downloadButton.downloadIconShow:hover {
-  opacity: .8;
-}
-richlistitem[type="download"]:not([state="1"]):hover .downloadButton.downloadIconShow:active {
-  opacity: 1;
-}
-#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadIconShow {
-  filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
-}
-#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadIconShow:hover {
-  opacity: .8;
-}
-#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"]:hover .downloadButton.downloadIconShow:active {
-  opacity: 1;
-}
-
-.downloadButton.downloadIconRetry {
-  list-style-image: url("chrome://symbolic-icons/skin/view-refresh.svg");
-}
-richlistitem[type="download"]:hover .downloadButton.downloadIconRetry {
-
-}
-richlistitem[type="download"]:hover .downloadButton.downloadIconRetry:hover {
-  opacity: .5;
-}
-richlistitem[type="download"]:hover .downloadButton.downloadIconRetry:active {
-  opacity: .8;
-}
-
-.downloadButton.downloadShowBlockedInfo {
-  list-style-image: url("chrome://symbolic-icons/skin/error.svg");
-}
-richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo {
-
-}
-richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:hover {
-  opacity: .5;
-}
-richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:active {
-  opacity: .8;
 }

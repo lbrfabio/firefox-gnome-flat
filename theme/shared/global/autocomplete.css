@@ -48,12 +48,13 @@ textbox:not(.padded) .textbox-input-box {
 panel[type="autocomplete"],
 panel[type="autocomplete-richlistbox"],
 .autocomplete-history-popup {
-  border: 1px solid ThreeDShadow;
+  border: 0px solid ThreeDShadow;
   padding: 0;
   /* The awesomebar popup should open just below the navbar bottom border. */
   margin-top: 1px;
   color: -moz-FieldText;
   background-color: -moz-Field;
+  -moz-appearance: none;
 }
 
 .autocomplete-history-popup {

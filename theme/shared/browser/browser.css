@@ -1076,13 +1076,12 @@ toolbar[brighttext] .searchbar-textbox {
 }
 
 #urlbar-search-splitter {
+  /* The splitter width should equal the location and search bars' combined
+     neighboring margin and border width. */
+  width: 8px;
+  margin: 0 -4px;
+  position: relative;
   -moz-appearance: none;
-  margin-inline-start: -3px;
-  margin-inline-end: -3px;
-  width: 6px;
-}
-
-#urlbar-search-splitter + #search-container > #searchbar > .searchbar-textbox {
 }
 
 #urlbar-display-box {
@@ -1223,6 +1222,9 @@ toolbar[brighttext] .searchbar-textbox {
   visibility: visible;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon,
 #urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
   list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon);
   visibility: visible;
@@ -1231,13 +1233,6 @@ toolbar[brighttext] .searchbar-textbox {
 #urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
 #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon {
   list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon);
-  visibility: visible;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon {
-  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon);
   visibility: visible;
 }
 
@@ -1281,6 +1276,9 @@ toolbar[brighttext] .searchbar-textbox {
   visibility: visible;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon:-moz-lwtheme,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon:-moz-lwtheme,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon:-moz-lwtheme,
 #urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon:-moz-lwtheme {
   list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-black);
   visibility: visible;
@@ -1289,13 +1287,6 @@ toolbar[brighttext] .searchbar-textbox {
 #urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon:-moz-lwtheme,
 #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon:-moz-lwtheme {
   list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon-black);
-  visibility: visible;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon:-moz-lwtheme,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon:-moz-lwtheme,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon:-moz-lwtheme {
-  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-black);
   visibility: visible;
 }
 
@@ -1493,10 +1484,11 @@ toolbar[brighttext] .searchbar-textbox {
 
 #identity-box[sharing] > #identity-icon,
 #sharing-icon {
-  animation: 3s linear pulse infinite;
+  animation: 3s linear identity-box-sharing-icon-pulse infinite;
 }
 
-@keyframes pulse {
+/* This should remain identical to tab-sharing-icon-pulse in tabs.inc.css */
+@keyframes identity-box-sharing-icon-pulse {
   0%, 16.66%, 83.33%, 100% {
     opacity: 0;
   }
@@ -1591,20 +1583,10 @@ toolbar[brighttext] .searchbar-textbox {
   }
 }
 
-.popup-notification-icon {
-  width: 64px;
-  height: 64px;
-  margin-inline-end: 10px;
-}
-
 .notification-anchor-icon:not(.plugin-blocked):-moz-lwtheme,
 #blocked-permissions-container > .blocked-permission-icon:-moz-lwtheme {
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: url(chrome://global/skin/filters.svg#fill);
   fill: currentColor;
-}
-
-.notification-anchor-icon:not(.plugin-blocked):not(:hover) {
-  opacity: 1;
 }
 
 /* INDIVIDUAL NOTIFICATIONS */
@@ -1641,7 +1623,7 @@ toolbar[brighttext] .searchbar-textbox {
 
 .login-icon {
   list-style-image: url(chrome://symbolic-icons/skin/key.svg);
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: url(chrome://global/skin/filters.svg#fill);
   fill: #c6c8cb;
 }
 
@@ -1727,7 +1709,7 @@ html|*#webRTC-previewVideo {
 .popup-notification-icon[popupid="drmContentPlaying"],
 .drm-icon {
   list-style-image: url("chrome://browser/skin/drm-icon.svg#chains");
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: url(chrome://global/skin/filters.svg#fill);
   fill: #c6c8cb;
 }
 
@@ -1750,7 +1732,7 @@ html|*#webRTC-previewVideo {
 
 .install-icon {
   list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg#default);
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: url(chrome://global/skin/filters.svg#fill);
   fill: #7cb65c;
 }
 
@@ -1850,6 +1832,15 @@ html|*#webRTC-previewVideo {
 
 .addon-install-confirmation-name {
   font-weight: bold;
+}
+
+.addon-webext-perm-header {
+  font-size: 1.3em;
+}
+
+.addon-webext-name {
+  font-weight: bold;
+  margin: 0;
 }
 
 /* Notification icon box */
@@ -2203,14 +2194,12 @@ html|span.ac-tag {
 }
 
 .ac-type-icon[type=keyword],
-.ac-site-icon[type=searchengine],
-.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage) {
+.ac-site-icon[type=searchengine] {
   list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#keyword);
 }
 
 .ac-type-icon[type=keyword][selected],
-.ac-site-icon[type=searchengine][selected],
-.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected) {
+.ac-site-icon[type=searchengine][selected] {
   list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#keyword-active);
 }
 
@@ -2671,9 +2660,41 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   width: 1px;
 }
 
-.tab-background-start[selected=true],
-.tab-background-end[selected=true] {
-  background: var(--tab-selected-border-color);
+.tab-icon-image[sharing]:not([selected]),
+.tab-sharing-icon-overlay {
+  animation: 3s linear tab-sharing-icon-pulse infinite;
+}
+
+/* This should remain identical to identity-box-sharing-icon-pulse in identity-block.inc.css */
+@keyframes tab-sharing-icon-pulse {
+  0%, 16.66%, 83.33%, 100% {
+    opacity: 0;
+  }
+  33.33%, 66.66% {
+    opacity: 1;
+  }
+}
+
+.tab-icon-image[sharing]:not([selected]) {
+  animation-delay: -1.5s;
+}
+
+.tab-sharing-icon-overlay {
+  /* 16px of the icon + 6px of margin-inline-end of .tab-icon-image */
+  margin-inline-start: -22px;
+  position: relative;
+}
+
+.tab-sharing-icon-overlay[sharing="camera"] {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#camera-sharing");
+}
+
+.tab-sharing-icon-overlay[sharing="microphone"] {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#microphone-sharing");
+}
+
+.tab-sharing-icon-overlay[sharing="screen"] {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#screen-sharing");
 }
 
 #TabsToolbar[brighttext] .tab-background-start[selected=true],
@@ -2801,7 +2822,8 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white");
 }
 
-#TabsToolbar[brighttext] .tab-icon-overlay[muted]:not([crashed]):not(:hover) {
+#TabsToolbar[brighttext] .tab-icon-overlay[muted]:not([crashed]):not([selected]):not(:hover),
+.tab-icon-overlay[muted][selected]:-moz-lwtheme-brighttext:not(:hover) {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white-muted");
 }
 
@@ -2815,7 +2837,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 }
 
 .tab-throbber[progress] {
-  list-style-image: url(chrome://browser/skin/tabbrowser/loading.png);
+  list-style-image: url("chrome://global/skin/icons/loading.png");
 }
 
 #TabsToolbar[brighttext] .tab-throbber {
@@ -3676,7 +3698,7 @@ html|*.pointerlockfswarning-exit-button {
 /* NOTE: THESE NEED TO STAY IN SYNC WITH LIGHT-THEME.CSS AND DARK-THEME.CSS.
    We are copy/pasting variables from light-theme and dark-theme,
    since they aren't loaded in this context (within browser.css). */
-:root[devtoolstheme="light"] #developer-toolbar {
+#browser-bottombox[devtoolstheme="light"] #developer-toolbar {
   --gcli-background-color: #fcfcfc; /* --theme-tab-toolbar-background */
   --gcli-input-background: #fcfcfc; /* --theme-toolbar-background */
   --gcli-input-focused-background: #ffffff; /* --theme-sidebar-background */
@@ -3688,7 +3710,7 @@ html|*.pointerlockfswarning-exit-button {
   --command-line-image-focus: url(chrome://devtools/skin/images/commandline-icon.svg#light-theme-focus); /* --theme-command-line-image-focus */
 }
 
-:root[devtoolstheme="dark"] #developer-toolbar {
+#browser-bottombox[devtoolstheme="dark"] #developer-toolbar {
   --gcli-background-color: #272b35; /* --theme-toolbar-background */
   --gcli-input-background: #272b35; /* --theme-tab-toolbar-background */
   --gcli-input-focused-background: #272b35; /* --theme-tab-toolbar-background */
@@ -3721,8 +3743,8 @@ html|*.pointerlockfswarning-exit-button {
   margin: auto 10px;
 }
 
-:root[devtoolstheme="light"] #developer-toolbar > .developer-toolbar-button:not([checked=true]) > image,
-:root[devtoolstheme="light"] .gclitoolbar-input-node:not([focused=true])::before  {
+#browser-bottombox[devtoolstheme="light"] #developer-toolbar > .developer-toolbar-button:not([checked=true]) > image,
+#browser-bottombox[devtoolstheme="light"] .gclitoolbar-input-node:not([focused=true])::before  {
   filter: invert(1);
 }
 
@@ -3732,7 +3754,7 @@ html|*.pointerlockfswarning-exit-button {
 }
 
 /* The toolkit close button is low contrast in the dark theme so invert it. */
-:root[devtoolstheme="dark"] #developer-toolbar > .close-icon:not(:hover) > image {
+#browser-bottombox[devtoolstheme="dark"] #developer-toolbar > .close-icon:not(:hover) > image {
   filter: invert(1);
 }
 
@@ -4362,7 +4384,7 @@ toolbar[brighttext] #downloads-indicator-progress > .progress-remainder {
   width: 20px;
   height: 20px;
   border-radius: 2px;
-  background-image: url("chrome://browser/skin/theme-switcher-icon.png");
+  background-image: url("chrome://browser/content/default-theme-icon.svg");
   background-size: contain;
 }
 
@@ -4531,7 +4553,7 @@ toolbarpaletteitem[place="toolbar"]:not([mousedown="true"]):-moz-focusring {
 }
 
 .customization-lwtheme-menu-theme[defaulttheme] {
-  list-style-image: url(chrome://browser/skin/theme-switcher-icon.png);
+  list-style-image: url(chrome://browser/content/default-theme-icon.svg);
 }
 
 .customization-lwtheme-menu-theme[active="true"],

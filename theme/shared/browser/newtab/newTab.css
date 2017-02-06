@@ -162,7 +162,7 @@ body.compact .newtab-cell {
 }
 
 /* SITES */
-body:not(.compact) .newtab-site {
+.newtab-site {
   border-radius: var(--cell-corner-radius);
   box-shadow: 0 1px 3px #c1c1c1;
   text-decoration: none;
@@ -174,9 +174,9 @@ body:not(.compact) .newtab-site {
   background-position: 50% calc(50% - (24px / 2)); /* Half height, compensate for text title */
 }
 
-body:not(.compact) .newtab-cell:not([ignorehover]) .newtab-control:hover ~ .newtab-link,
-body:not(.compact) .newtab-cell:not([ignorehover]) .newtab-link:hover,
-body:not(.compact) .newtab-site[dragged] {
+.newtab-cell:not([ignorehover]) .newtab-control:hover ~ .newtab-link,
+.newtab-cell:not([ignorehover]) .newtab-link:hover,
+.newtab-site[dragged] {
   box-shadow: 0 0 3px rgba(8,22,37,.3);
 }
 
@@ -214,6 +214,16 @@ body.compact .newtab-thumbnail {
   outline-offset: -1px;
 }
 
+.newtab-thumbnail.placeholder {
+  color: white;
+  font-size: 85px;
+  line-height: 200%;
+}
+
+body.compact .newtab-thumbnail.placeholder {
+  font-size: 45px;
+}
+
 .newtab-cell:not([ignorehover]) .newtab-site:hover .newtab-thumbnail.enhanced-content {
   opacity: 0;
 }
@@ -223,6 +233,10 @@ body.compact .newtab-thumbnail {
 .newtab-site[type=organic] .newtab-thumbnail,
 .newtab-site[type=sponsored] .newtab-thumbnail {
   background-position: center center;
+}
+
+body.compact .newtab-site[type=affiliate] .newtab-thumbnail {
+  background-position: center 30%;
 }
 
 .newtab-site[type=affiliate] .newtab-thumbnail,
@@ -247,6 +261,9 @@ body.compact .newtab-title {
   background-color: hsla(0,0%,90%,1);
   font-size: 90%;
   line-height: 21px;
+  border: none
+  border-top-color: 1px solid hsla(0,0%,0%,.1);
+  background-clip: padding-box;
 }
 
 .newtab-title,
@@ -257,12 +274,6 @@ body.compact .newtab-title {
 body.compact .newtab-title,
 body.compact .newtab-suggested {
   color: rgba(0,0,0,0.55);
-}
-
-body.compact .newtab-title {
-  border: none
-  border-top-color: 1px solid hsla(0,0%,0%,.1);
-  background-clip: padding-box;
 }
 
 .newtab-suggested[active] {
@@ -280,7 +291,7 @@ body:not(.compact) .newtab-site:hover .newtab-title {
 
 body.compact .newtab-site:hover .newtab-title {
   color: white;
-  background-color: hsla(0,0%,20%,.8);
+  background-color: hsla(0,0%,20%,.85);
   /*border-color: hsla(0,0%,0%,.8);
   border-top-color: white;*/
 }

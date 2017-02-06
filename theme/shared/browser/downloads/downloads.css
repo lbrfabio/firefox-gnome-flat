@@ -22,11 +22,9 @@
 
 #downloadsListBox {
   background: transparent;
-  padding: 0;
   color: inherit;
   -moz-appearance: none;
   margin: 0;
-  border: none;
 }
 
 #emptyDownloads {
@@ -148,7 +146,6 @@ richlistitem[type="download"]:hover > toolbarseparator,
 }
 
 #downloadsSummary {
-  padding: 0 12px;
   -moz-user-focus: normal;
 }
 
@@ -165,15 +162,13 @@ richlistitem[type="download"]:hover > toolbarseparator,
 #downloadsSummary,
 richlistitem[type="download"] {
   height: var(--downloads-item-height);
-  padding-inline-end: 0;
-  color: inherit;
 }
 
 richlistitem[type="download"] {
-  margin: 0;
   border-bottom: 1px solid var(--panel-separator-color);
   background: transparent;
   padding: 0;
+  color: inherit;
 }
 
 richlistitem[type="download"]:hover {
@@ -184,21 +179,14 @@ richlistitem[type="download"]:last-child {
   border-bottom: none;
 }
 
-richlistitem[type="download"] > .downloadMainArea {
-  padding: 8px;
-}
-
 .downloadTypeIcon {
-  margin-top: 8px;
-  margin-inline-end: 12px;
-  margin-bottom: 8px;
-  margin-inline-start: 0;
+  margin: 8px 13px;
   width: 32px;
   height: 32px;
 }
 
 .downloadBlockedBadge {
-  margin: 0 4px;
+  margin: 0 5px;
   background: url("chrome://browser/skin/downloads/download-blocked.svg") top right / 16px no-repeat;
 }
 
@@ -228,24 +216,23 @@ richlistitem[type="download"][verdict="Uncommon"] .downloadBlockedBadge {
    font-size of .downloadContainer's parent, we use calc to go from the
    smaller font-size back to the original font-size.
  */
-#downloadsSummaryDetails,
 .downloadContainer {
   font-size: calc(100% * var(--downloads-item-font-size-factor));
+  margin-inline-end: 13px;
 }
 
 #downloadsSummaryDescription,
 .downloadTarget {
-  margin-bottom: var(--downloads-item-target-margin-bottom);
-}
-
-.downloadTarget {
+  margin: 0;
   font-size: calc(100% / var(--downloads-item-font-size-factor));
 }
 
 #downloadsSummaryDetails,
 .downloadDetails {
-  margin-top: var(--downloads-item-details-margin-top);
   opacity: var(--downloads-item-details-opacity);
+  /* Use calc() to keep the height consistent with .downloadTarget, so that the
+     progress bar can be vertically centered. */
+  margin: 4px 0 calc(1em / var(--downloads-item-font-size-factor) - 1em);
 }
 
 richlistitem[type="download"][verdict] > toolbarseparator {
@@ -298,21 +285,16 @@ richlistitem[type="download"][verdict] > toolbarseparator {
   padding: 0;
 }
 
-/*richlistitem[type="download"][state="1"][exists]:hover > .downloadMainArea,
-richlistitem[type="download"]:not([verdict]):hover > .downloadButtonArea {
-  background-color: var(--arrowpanel-dimmed);
-}
-
-richlistitem[type="download"][state="1"][exists] .downloadMainArea:hover,
+/*richlistitem[type="download"][state="1"][exists] .downloadMainArea:hover,
 richlistitem[type="download"]:not([verdict]) > .downloadButtonArea:hover,
 richlistitem[type="download"][verdict]:hover {
-  background-color: var(--arrowpanel-dimmed-further);
+  background-color: var(--arrowpanel-dimmed);
 }
 
 richlistitem[type="download"][state="1"][exists] > .downloadMainArea:hover:active,
 richlistitem[type="download"]:not([verdict]) > .downloadButtonArea:hover:active,
 richlistitem[type="download"][verdict]:hover:active {
-  background-color: var(--arrowpanel-dimmed-even-further);
+  background-color: var(--arrowpanel-dimmed-further);
 }*/
 
 richlistitem[type="download"][showingsubview] {
@@ -413,9 +395,7 @@ richlistitem[type="download"][verdict="Malware"][showingsubview] {
 .downloadProgress {
   height: 6px;
   border-radius: 1px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-inline-start: 6px;
+  margin: 4px 0 0;
   margin-inline-end: 12px;
 
   /* for overriding rules in progressmeter.css */
@@ -482,31 +462,18 @@ richlistitem[type="download"][verdict="Malware"][showingsubview] {
   }
 }
 
-/*** Panel and outer controls ***/
-
-#downloadsPanel[keyfocus] #downloadsSummary:focus,
-#downloadsPanel[keyfocus] .downloadsPanelFooterButton:focus {
-  outline: 1px -moz-dialogtext dotted;
-  outline-offset: -5px;
-}
-
 /*** List items and similar elements in the summary ***/
 
 :root {
-  --downloads-item-height: 6em;
+  --downloads-item-height: 5.5em;
   --downloads-item-font-size-factor: 0.9;
-  --downloads-item-target-margin-bottom: 7px;
-  --downloads-item-details-margin-top: 1px;
   --downloads-item-details-opacity: 0.6;
 }
 
-.downloadButton:focus > .button-box {
-  outline: 1px -moz-dialogtext dotted;
-}
-
-/*** Highlighted list items ***/
-
-#downloadsPanel[keyfocus] #downloadsListBox:focus > richlistitem[type="download"][selected] {
+#downloadsPanel[keyfocus] #downloadsListBox:focus > richlistitem[type="download"][selected],
+#downloadsPanel[keyfocus] #downloadsSummary:focus,
+#downloadsPanel[keyfocus] .downloadsPanelFooterButton:focus,
+.downloadButton:focus {
   outline: 1px -moz-dialogtext dotted;
   outline-offset: -1px;
 }

@@ -34,6 +34,14 @@
   --tab-selected-border-color: #d4d5db;
   --tab-hover-border-color: #d4d5db;
 
+  --toolbarbutton-hover-background: #fafbfb;
+  --toolbarbutton-hover-bordercolor: #d8dadf;
+  --toolbarbutton-hover-boxshadow: none;
+
+  --toolbarbutton-active-background: #5294e2;
+  --toolbarbutton-active-bordercolor: #4f8ed9;
+  --toolbarbutton-active-boxshadow: none;
+
   --arrowpanel-dimmed-lighter: hsla(0,0%,80%,.18);
   --arrowpanel-dimmed: hsla(0,0%,80%,.3);
   --arrowpanel-dimmed-further: hsla(0,0%,80%,.45);
@@ -270,6 +278,13 @@ toolbarbutton.bookmark-item:not(.subviewbutton):hover:-moz-lwtheme {
 toolbarpaletteitem[place="palette"] > #personal-bookmarks > #bookmarks-toolbar-placeholder,
 #personal-bookmarks[cui-areatype="menu-panel"] > #bookmarks-toolbar-placeholder {
   list-style-image: url("chrome://browser/skin/places/bookmarksToolbar-menuPanel.png") !important;
+}
+
+/* Force white color for bookmark-item*/
+.bookmark-item[open="true"] > .toolbarbutton-icon,
+.bookmark-item[open="true"] > .toolbarbutton-text,
+.bookmark-item[open="true"] > .toolbarbutton-menu-dropmarker {
+    filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }
 
 /* ----- BOOKMARK STAR ANIMATION ----- */

@@ -1211,12 +1211,14 @@ menuitem.panel-subview-footer:not([disabled])[_moz-menuactive]:active,
   padding: 0;
 }
 
+#PlacesToolbarItems menuseparator,
 .PanelUI-subView menuseparator,
 .PanelUI-subView toolbarseparator {
   margin-inline-start: -5px;
   margin-inline-end: -4px;
 }
 
+#PlacesToolbarItems menuseparator.small-separator,
 .PanelUI-subView menuseparator.small-separator,
 .PanelUI-subView toolbarseparator.small-separator {
   margin-left: 5px;
@@ -1226,6 +1228,18 @@ menuitem.panel-subview-footer:not([disabled])[_moz-menuactive]:active,
 .cui-widget-panelview menuseparator.small-separator {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+#PlacesToolbarItems toolbarbutton > menupopup menuseparator {
+  filter: url("chrome://global/skin/filters.svg#fill") !important;
+  fill: var(--panel-separator-color) !important;
+  margin: 6px 0 !important;
+  padding: 0 !important;
+}
+
+#PlacesToolbarItems toolbarbutton > menupopup menuseparator.small-separator {
+  margin-left: 5px !important;
+  margin-right: 5px !important;
 }
 
 .subviewbutton > .menu-accel-container {

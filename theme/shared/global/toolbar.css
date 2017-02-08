@@ -49,6 +49,8 @@ toolbarseparator {
   margin : 0;
   border: 0;
   min-width: 2px;
+  filter: url("chrome://global/skin/filters.svg#fill");
+  fill: var(--panel-separator-color);
 }
 
 toolbarspacer {

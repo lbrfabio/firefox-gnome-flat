@@ -357,11 +357,4 @@ window#aboutDialog[title*="Mozilla Firefox"] #clientBox {
   color: -moz-DialogText;
 }
 
-/* Fix for some extensions */
-/* FIXME */
-toolbaritem .toolbarbutton-menubutton-button,
-toolbaritem .toolbarbutton-menubutton-button:hover {
-  background: transparent !important;
-  border-width: 0 !important;
-  box-shadow: none !important;
-}
+

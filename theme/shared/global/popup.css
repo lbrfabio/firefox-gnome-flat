@@ -8,9 +8,19 @@
 
 menupopup,
 panel {
+  /*
   -moz-appearance: menupopup;
+  */
   min-width: 1px;
   color: MenuText;
+}
+
+panel {
+  -moz-appearance: menupopup;
+}
+
+menupopup {
+  background-color: Menu;
 }
 
 /* ::::: arrow panel ::::: */

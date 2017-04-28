@@ -14,7 +14,7 @@
 
 %define nestedButtons #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button
 
-%define primaryToolbarButtons #back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #e10s-button, #panic-button, #webide-button
+%define primaryToolbarButtons #back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #containers-panelmenu, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #e10s-button, #panic-button, #webide-button
 
 %define primaryToolbarButtons @primaryToolbarButtons@, @nestedButtons@
 
@@ -556,6 +556,10 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
   filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
 }
 
+#containers-panelmenu[cui-areatype="toolbar"] {
+  list-style-image: url(chrome://symbolic-icons/skin/new-container-tab.svg);
+}
+
 #feed-button[cui-areatype="toolbar"] {
   list-style-image: url(chrome://symbolic-icons/skin/rss.svg);
 }
@@ -714,6 +718,11 @@ toolbarpaletteitem[place="palette"] > #sync-button {
 
 #sync-button[cui-areatype="menu-panel"][status="active"] .toolbarbutton-icon {
   filter: url(chrome://browser/skin/symbolic-icons-colors.svg#azure);
+}
+
+#containers-panelmenu[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #containers-panelmenu {
+  list-style-image: url(chrome://symbolic-icons/skin/new-container-tab.svg);
 }
 
 #feed-button[cui-areatype="menu-panel"],
@@ -2232,9 +2241,21 @@ html|span.ac-tag {
   padding: 0 1px;
 }
 
+.ac-separator:not([selected=true]),
+.ac-url:not([selected=true]),
+.ac-action:not([selected=true]) {
+  color: -moz-nativehyperlinktext;
+}
+
 .ac-tags-text[selected] > html|span.ac-tag {
   background-color: HighlightText;
   color: Highlight;
+}
+
+html|span.ac-emphasize-text-title,
+html|span.ac-emphasize-text-tag,
+html|span.ac-emphasize-text-url {
+  font-weight: 600;
 }
 
 .ac-type-icon[type=bookmark] {
@@ -3232,7 +3253,7 @@ border-inline-end-color: #d4d5db !important;
   border-inline-start-color: hsla(0,0%,0%,.1) !important;
 }
 
-.tabbrowser-arrowscrollbox > .scrollbutton-down[notifybgtab] {
+.tabbrowser-arrowscrollbox > .scrollbutton-down[highlight] {
   background: #93bfed !important;
   transition: 0.5s background ease-out !important;
 }
@@ -3474,7 +3495,7 @@ html|*#fullscreen-exit-button {
 }
 
 .devtools-responsiveui-toolbar {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   background: transparent;
   /* text color is textColor from dark theme, since no theme is applied to
    * the responsive toolbar.
@@ -3487,7 +3508,7 @@ html|*#fullscreen-exit-button {
 }
 
 .devtools-responsiveui-textinput {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   background: #333;
   color: #fff;
   border: 1px solid #111;
@@ -3504,7 +3525,7 @@ html|*#fullscreen-exit-button {
 
 .devtools-responsiveui-menulist,
 .devtools-responsiveui-toolbarbutton {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   -moz-box-align: center;
   min-width: 32px;
   min-height: 22px;
@@ -3518,12 +3539,12 @@ html|*#fullscreen-exit-button {
 }
 
 .devtools-responsiveui-menulist .menulist-editable-box {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   background-color: transparent;
 }
 
 .devtools-responsiveui-menulist html|*.menulist-editable-input {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   color: inherit;
   text-align: center;
 }
@@ -3582,7 +3603,7 @@ html|*#fullscreen-exit-button {
 }
 
 .devtools-responsiveui-menulist > .menulist-dropmarker {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   display: -moz-box;
   background-color: transparent;
   list-style-image: url("chrome://devtools/skin/images/dropmarker.svg");
@@ -3592,7 +3613,7 @@ html|*#fullscreen-exit-button {
 }
 
 .devtools-responsiveui-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-button {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   color: inherit;
   border-width: 0;
   border-inline-end: 1px solid hsla(210,8%,5%,.45);
@@ -3610,7 +3631,7 @@ html|*#fullscreen-exit-button {
 
 .devtools-responsiveui-toolbarbutton[type=menu] > .toolbarbutton-menu-dropmarker,
 .devtools-responsiveui-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-dropmarker {
-  -moz-appearance: none !important;
+  -moz-appearance: none !important; appearance: none !important;
   list-style-image: url("chrome://devtools/skin/images/dropmarker.svg");
   -moz-box-align: center;
   padding: 0 3px;
@@ -3724,7 +3745,7 @@ html|*#fullscreen-exit-button {
 }
 
 .devtools-responsiveui-hardware-buttons {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   padding: 20px;
 
   border: 1px solid #FFFFFF;
@@ -3746,7 +3767,7 @@ html|*#fullscreen-exit-button {
 
 .devtools-responsiveui-sleep-button {
   -moz-user-focus: ignore;
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   /* compensate browserStack top padding */
   margin-top: -67px;
   margin-right: 10px;
@@ -3774,7 +3795,7 @@ html|*#fullscreen-exit-button {
 .devtools-responsiveui-volume-up-button,
 .devtools-responsiveui-volume-down-button {
   -moz-user-focus: ignore;
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   border: 1px solid red;
   min-width: 8px;
   height: 40px;
@@ -3842,7 +3863,7 @@ html|*#fullscreen-exit-button {
 }
 
 #developer-toolbar {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   padding: 0;
   min-height: 32px;
   background-color: var(--gcli-background-color);
@@ -3850,7 +3871,7 @@ html|*#fullscreen-exit-button {
 }
 
 #developer-toolbar > toolbarbutton {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   border: none;
   background-color: transparent;
   margin: 0;
@@ -3930,7 +3951,7 @@ html|*#gcli-output-frame {
 #gcli-tooltip {
   border-width: 0;
   background-color: transparent;
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
 }
 
 .gclitoolbar-input-node,
@@ -3948,7 +3969,7 @@ html|*#gcli-output-frame {
 }
 
 .gclitoolbar-input-node {
-  -moz-appearance: none;
+  -moz-appearance: none; appearance: none;
   color: var(--gcli-input-color);
   background-color: var(--gcli-input-background);
   background-repeat: no-repeat;

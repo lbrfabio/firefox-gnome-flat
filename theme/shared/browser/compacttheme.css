@@ -10,6 +10,8 @@
   --space-above-tabbar: 0px;
   --toolbarbutton-text-shadow: none;
   --backbutton-urlbar-overlap: 0px;
+  /* 18px icon + 2 * 5px padding + 1 * 1px border */
+  --forwardbutton-width: 29px;
 }
 
 :root:-moz-lwtheme-brighttext {
@@ -57,9 +59,7 @@ toolbar:-moz-lwtheme-brighttext  {
   --toolbarbutton-active-boxshadow: none;
   --toolbarbutton-active-bordercolor: rgba(25,33,38,.8);
   --toolbarbutton-checkedhover-backgroundcolor: #3C5283;
-
 }
-
 :root:-moz-lwtheme-darktext {
   --url-and-searchbar-background-color: #fff;
 
@@ -99,7 +99,6 @@ toolbar:-moz-lwtheme-darktext {
 #main-window[tabsintitlebar][customizing] {
   --space-above-tabbar: 9px;
 }
-
 /* Override @tabCurveHalfWidth@ and @tabCurveWidth@.  XXX: Switch to a CSS variable once the perf is sorted out - bug 1088771 */
 .tab-background-middle {
   border-left-width: 0;
@@ -174,14 +173,53 @@ toolbar:-moz-lwtheme-darktext {
   text-shadow: var(--toolbarbutton-text-shadow);
 }
 
-/* Using toolbar[brighttext] instead of important to override linux */
-toolbar[brighttext] #downloads-indicator-counter {
-  text-shadow: var(--toolbarbutton-text-shadow);
-  color: var(--chrome-color);
-}
-
 #TabsToolbar {
   text-shadow: none !important;
+}
+
+/* Back and forward button */
+
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon {
+  background: var(--chrome-nav-buttons-background) !important;
+  border-radius: 0 !important;
+  padding: var(--toolbarbutton-inner-padding) 5px !important;
+  margin: 0 !important;
+  border: 1px solid var(--chrome-nav-bar-controls-border-color) !important;
+  box-shadow: none !important;
+  height: auto !important;
+}
+
+/* the normal theme adds box-shadow: <stuff> !important when the back-button is [open]. Fix: */
+#back-button[open="true"] > .toolbarbutton-icon {
+  box-shadow: none !important;
+}
+
+#forward-button > .toolbarbutton-icon {
+  border-inline-start: none !important;
+}
+
+/* Override a box shadow for disabled back button */
+#main-window:not([customizing]) #back-button[disabled] > .toolbarbutton-icon {
+  box-shadow: none !important;
+}
+
+/* Override !important properties for hovered back button */
+#main-window #back-button:hover:not([disabled="true"]) > .toolbarbutton-icon,
+#main-window #forward-button:hover:not([disabled="true"]) > .toolbarbutton-icon {
+  background: var(--chrome-nav-buttons-hover-background) !important;
+  box-shadow: none !important;
+}
+
+#back-button > .toolbarbutton-icon {
+  border-radius: 2px 0 0 2px !important;
+}
+
+#nav-bar .toolbarbutton-1:not([type=menu-button]),
+#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 /* URL bar and search bar*/
@@ -194,58 +232,13 @@ toolbar[brighttext] #downloads-indicator-counter {
   box-shadow: none !important;
 }
 
-
-#identity-icon:-moz-lwtheme-brighttext {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#normal-white);
-}
-
-#identity-box:hover > #identity-icon:not(.no-hover):-moz-lwtheme-brighttext,
-#identity-box[open=true] > #identity-icon:-moz-lwtheme-brighttext {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#hover-white);
-}
-
-#identity-box.grantedPermissions > #identity-icon:-moz-lwtheme-brighttext {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-white);
-}
-
-#identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover):-moz-lwtheme-brighttext,
-#identity-box.grantedPermissions[open=true] > #identity-icon:-moz-lwtheme-brighttext {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-hover-white);
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon:-moz-lwtheme-brighttext {
-  list-style-image: url(chrome://branding/content/identity-icons-brand.svg);
-}
-
-
-#tracking-protection-icon:-moz-lwtheme-brighttext {
-  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#enabled-white);
-}
-
-#tracking-protection-icon[state="loaded-tracking-content"]:-moz-lwtheme-brighttext {
-  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#disabled-white);
-}
-
-
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon:-moz-lwtheme-brighttext,
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon:-moz-lwtheme-brighttext,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon:-moz-lwtheme-brighttext {
-  list-style-image: url(chrome://browser/skin/connection-secure.svg);
-  visibility: visible;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon:-moz-lwtheme-brighttext,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon:-moz-lwtheme-brighttext,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon:-moz-lwtheme-brighttext,
-#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon:-moz-lwtheme-brighttext {
-  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon-white);
-  visibility: visible;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon:-moz-lwtheme-brighttext,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon:-moz-lwtheme-brighttext {
-  list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon-white);
-  visibility: visible;
+#identity-icon:-moz-lwtheme-brighttext,
+#tracking-protection-icon:-moz-lwtheme-brighttext,
+#connection-icon:-moz-lwtheme-brighttext,
+.notification-anchor-icon:-moz-lwtheme-brighttext,
+#blocked-permissions-container > .blocked-permission-icon:-moz-lwtheme-brighttext,
+#extension-icon:-moz-lwtheme-brighttext {
+  fill: rgba(255,255,255,.7);
 }
 
 #urlbar {
@@ -267,7 +260,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(
      value is set in the previous rule set. o_O */
   margin-inline-start: 0;
 }
-
 #urlbar-zoom-button:-moz-lwtheme-brighttext:hover {
   background-color: rgba(255,255,255,.2);
 }
@@ -293,13 +285,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(
 
 /* Use smaller back button icon */
 #back-button {
-  -moz-image-region: rect(0, 54px, 18px, 36px);
-}
-
-@media (min-resolution: 1.1dppx) {
-  #back-button {
-    -moz-image-region: rect(0, 108px, 36px, 72px);
-  }
+  list-style-image: url("chrome://browser/skin/back.svg");
 }
 
 .tab-background {
@@ -360,7 +346,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(
 
 .tab-icon-sound[soundplaying],
 .tab-icon-sound[muted] {
-  filter: url(chrome://global/skin/filters.svg#fill) !important; /* removes drop-shadow filter */
+  filter: none !important; /* removes drop-shadow filter */
 }
 
 /* Don't need space for the tab curves (66px - 30px) */
@@ -372,10 +358,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(
   /* Important needed because !important is used in browser.css */
   background-color: var(--tab-hover-background-color) !important;
   background-image: none;
-}
-
-:root {
-  --forwardbutton-width: 29px;
 }
 
 :root:-moz-lwtheme-darktext {
@@ -407,51 +389,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(
   color: inherit;
 }
 
-/* Allow buttons with -moz-appearance set to look normal on hover and open states */
-#navigator-toolbox .toolbarbutton-1:-moz-any(:hover, [open="true"]),
-#PlacesToolbar toolbarbutton.bookmark-item:-moz-any(:hover, [open="true"]) {
-  color: initial;
-}
-
-/* Square back and forward buttons */
-#back-button > .toolbarbutton-icon,
-#forward-button > .toolbarbutton-icon {
-  margin: 0;
-  border: 1px solid var(--chrome-nav-bar-controls-border-color);
-  padding: 2px 5px;
-  background: var(--chrome-nav-buttons-background);
-  box-shadow: none !important;
-}
-
-#forward-button > .toolbarbutton-icon {
-  border-inline-start: none;
-}
-
-/* Override a box shadow for disabled back button */
-#main-window:not([customizing]) #back-button[disabled] > .toolbarbutton-icon {
-  box-shadow: none !important;
-}
-
-#back-button:hover:not([disabled="true"]) > .toolbarbutton-icon,
-#forward-button:hover:not([disabled="true"]) > .toolbarbutton-icon {
-  background: var(--chrome-nav-buttons-hover-background) !important;
-}
-
-#back-button > .toolbarbutton-icon {
-  border-radius: 2px 0 0 2px !important;
-}
-
 .urlbar-history-dropmarker {
   -moz-appearance: none;
   padding: 0 3px;
   list-style-image: var(--urlbar-dropmarker-url);
   -moz-image-region: var(--urlbar-dropmarker-region);
-}
-
-/* Add the proper background for tab overflow */
-#alltabs-button,
-#new-tab-button {
-  background: var(--chrome-background-color);
 }
 
 #new-tab-button:hover > .toolbarbutton-icon {

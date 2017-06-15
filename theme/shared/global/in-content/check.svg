@@ -12,8 +12,8 @@
     }
     use[id$="-inverted"] {
       fill: #fff;
-      stroke: #0095dd;
-      stroke-width: 0.5;
+      stroke: #fff;
+      stroke-width: 1;
     }
     use[id$="-native"] {
       fill: -moz-dialogText;

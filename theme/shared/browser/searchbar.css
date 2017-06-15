@@ -119,11 +119,8 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 
 /* ... */
 
-@media (min-resolution: 1.1dppx) {
-  .searchbar-engine-image {
-    list-style-image: url("chrome://mozapps/skin/places/defaultFavicon@2x.png");
-  }
 
+@media (min-resolution: 1.1dppx) {
   .searchbar-search-button {
     list-style-image: url("chrome://browser/skin/search-indicator@2x.png");
     -moz-image-region: rect(0, 40px, 40px, 0);
@@ -216,6 +213,7 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 .search-panel-one-offs {
   margin: 0 !important;
   border-top: 1px solid var(--panel-separator-color);
+  background-color: var(--arrowpanel-dimmed);
 }
 
 .searchbar-engine-one-off-item {
@@ -254,6 +252,12 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   background-image: none;
 }
 
+.searchbar-engine-one-off-item:not([selected]):not(.dummy):hover,
+.addengine-item:hover {
+  background-color: var(--arrowpanel-dimmed-further);
+  color: inherit;
+}
+
 .searchbar-engine-one-off-item[selected] {
   background-color: Highlight;
   background-image: none;
@@ -261,7 +265,6 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 }
 
 .searchbar-engine-one-off-item > .button-box {
-  border: none;
   padding: 0;
 }
 
@@ -274,6 +277,10 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   margin-inline-end: 0;
   width: 16px;
   height: 16px;
+}
+
+.search-add-engines {
+  background-color: var(--arrowpanel-dimmed);
 }
 
 .addengine-item {
@@ -370,6 +377,7 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   min-height: 32px;
 }
 
+.search-setting-button:hover,
 .search-setting-button[selected] {
   background-color: var(--arrowpanel-dimmed-further);
 }

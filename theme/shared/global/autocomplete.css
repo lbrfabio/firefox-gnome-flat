@@ -147,12 +147,8 @@ treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
   list-style-image: url("chrome://symbolic-icons/skin/defaultFavicon.svg");
 }
 
-.ac-site-icon[selected] {
-  list-style-image: url("chrome://symbolic-icons/skin/defaultFavicon.svg");
-}
-
 .ac-type-icon {
-  width: 16px; 
+  width: 16px;
   height: 16px;
   margin-inline-start: 6px;
   margin-inline-end: 4px;

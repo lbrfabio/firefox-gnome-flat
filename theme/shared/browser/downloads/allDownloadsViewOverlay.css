@@ -81,6 +81,10 @@ richlistitem.download > toolbarseparator {
   padding: 0 18px;
 }
 
+.downloadButton:-moz-focusring {
+  -moz-outline-radius: 50%;
+}
+
 .downloadButton > .button-box {
   -moz-appearance: none;
   padding: 2px !important;
@@ -137,7 +141,7 @@ richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover:ac
 }
 
 .downloadIconRetry > .button-box > .button-icon {
-  list-style-image: url("chrome://browser/skin/panel-icons.svg#retry");
+  list-style-image: url("chrome://browser/skin/panel-icon-retry.svg");
 }
 
 /*** Progressmeter ***/

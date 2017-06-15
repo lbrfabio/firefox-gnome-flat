@@ -8,17 +8,11 @@
 <style>
 
 .fieldtext {
-  fill: -moz-fieldtext;
-  /* The fill-opacity needs to be sufficient for high-contrast settings, and
-     pathological Gtk themes where -moz-fieldtext provides low contrast by
-     default. */
-  fill-opacity: .7;
+  fill: GrayText;
 }
-
 
 .highlighttext {
   fill: highlighttext;
-  fill-opacity: 1;
 }
 
 .black {

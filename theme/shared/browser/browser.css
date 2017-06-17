@@ -2532,6 +2532,8 @@ html|span.ac-emphasize-text-url {
   list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#keyword);
 }
 
+.autocomplete-richlistitem:hover .ac-type-icon[type=keyword],
+.autocomplete-richlistitem:hover .ac-site-icon[type=searchengine],
 .ac-type-icon[type=keyword][selected],
 .ac-site-icon[type=searchengine][selected] {
   list-style-image: url(chrome://symbolic-icons/skin/autocomplete-icons.svg#keyword-active);

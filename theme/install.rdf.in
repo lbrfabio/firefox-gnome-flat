@@ -12,6 +12,7 @@
     <em:creator>GNOME Integration Team</em:creator>
     <em:contributor>GNOME Integration Team</em:contributor>
     <em:internalName>Adwaita</em:internalName>
+    <em:multiprocessCompatible>true</em:multiprocessCompatible>
 
     <em:localized>
       <Description em:locale="ar">

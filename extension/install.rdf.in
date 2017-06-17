@@ -12,6 +12,7 @@
     <em:homepageURL>https://github.com/gnome-integration-team/firefox-gnome</em:homepageURL>
     <em:creator>GNOME Integration Team</em:creator>
     <em:contributor>Alexander Seleznev</em:contributor>
+    <em:multiprocessCompatible>true</em:multiprocessCompatible>
 
     <em:localized>
       <Description em:locale="de">

@@ -1653,16 +1653,21 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl) {
   opacity: 0.7;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.extensionPage,
+#urlbar[pageproxystate="valid"] > #identity-box.extensionPage:before,
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI,
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI:before {
   background: hsla(0,0%,78%,.15);
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.extensionPage,
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
   border-inline-end: 1px solid hsla(0,0%,39%,.22);
   margin-inline-end: 4px;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.extensionPage:-moz-any(:hover:active, [open="true"]),
+#urlbar[pageproxystate="valid"] > #identity-box.extensionPage:-moz-any(:hover:active, [open="true"]):before,
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI:-moz-any(:hover:active, [open="true"]),
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI:-moz-any(:hover:active, [open="true"]):before {
   background: linear-gradient(to bottom, #d1d1d1, #fff);

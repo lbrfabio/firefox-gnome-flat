@@ -217,6 +217,13 @@ findbar toolbarbutton[disabled="true"]:active:hover {
   margin-inline-start: 5px;
 }
 
+.findbar-highlight > .toolbarbutton-text,
+.findbar-case-sensitive > .toolbarbutton-text,
+.findbar-entire-word  > .toolbarbutton-text{
+  display: none;
+}
+
+
 .findbar-entire-word {
   list-style-image: url(chrome://symbolic-icons/skin/find-entire-word.svg);
 }
@@ -225,9 +232,17 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 }
 
 .findbar-highlight {
-  list-style-image: url(chrome://symbolic-icons/skin/highlight.svg);
+  list-style-image: url(chrome://symbolic-icons/skin/find-highlight.png);
 }
 .findbar-highlight[disabled="true"] {
+  opacity: 0.5;
+}
+
+.findbar-case-sensitive {
+  list-style-image: url(chrome://symbolic-icons/skin/find-case-sensitive.svg);
+}
+
+.findbar-case-sensitive[disabled="true"] {
   opacity: 0.5;
 }
 

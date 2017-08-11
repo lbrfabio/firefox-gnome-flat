@@ -1388,7 +1388,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl) {
 
 #PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][animate] hbox[anonid="search-suggestions-hint-typing"] {
   overflow: hidden;
-  max-width: 8ch;
+  max-width: 12ch;
   width: 0;
   animation-name: search-suggestions-hint-typing;
   animation-duration: 500ms;
@@ -1406,7 +1406,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl) {
 
 @keyframes search-suggestions-hint-typing {
   from { width: 0; }
-  to   { width: 8ch; }
+  to   { width: 12ch; }
 }
 
 #PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][animate] hbox[anonid="search-suggestions-hint-box"] {
@@ -1473,6 +1473,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl) {
   outline: 1px dotted;
   outline-offset: -3px;
 }
+
 
 #identity-box {
   border-inline-end: 1px solid transparent;
@@ -2130,8 +2131,34 @@ html|*#webRTC-previewVideo {
   font-weight: bold;
 }
 
-.addon-webext-perm-header {
-  font-size: 1.3em;
+html|*.addon-webext-perm-list {
+  margin-block-end: 0;
+  padding-inline-start: 10px;
+}
+
+.addon-webext-perm-text {
+  margin-inline-start: 0;
+}
+
+.popup-notification-description[popupid="addon-webext-permissions"],
+.popup-notification-description[popupid="addon-installed"] {
+  display: none;
+}
+
+.addon-webext-perm-notification-content,
+.addon-installed-notification-content {
+  margin-top: 0;
+}
+
+#addon-webext-perm-header {
+  /* Align the text more closely with the icon by clearing some top line height. */
+  margin-top: -1px;
+  margin-inline-start: 0;
+}
+
+#addon-installed-notification-header {
+  /* Align the text more closely with the icon by clearing some top line height. */
+  margin-top: -1px;
 }
 
 .addon-webext-name {

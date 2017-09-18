@@ -1801,7 +1801,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl) {
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
-  list-style-image: url(chrome://browser/skin/connection-mixed-active-blocked.svg);
+  list-style-image: url(chrome://browser/skin/connection-mixed-active-blocked.svg#icon);
   visibility: visible;
 }
 
@@ -1862,7 +1862,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl) {
    type of icon displayed. This rule must be defined before the others in order
    for its list-style-image to be overridden. */
 .notification-anchor-icon {
-  list-style-image: url(moz-icon://stock/gtk-dialog-info?size=16);
+  /*list-style-image: url(moz-icon://stock/gtk-dialog-info?size=16);*/
 }
 
 /* INDIVIDUAL NOTIFICATIONS */
